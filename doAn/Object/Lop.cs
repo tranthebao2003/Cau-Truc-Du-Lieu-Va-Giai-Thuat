@@ -1,4 +1,5 @@
-﻿using System;
+﻿using doAn.List; // project doAn.list để thu muc Object co thể tìm thấy thư mục list
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace doAn.Object
         public string tenLop { get; set; } 
         public int namHoc { get; set; } //1000 -> 9999
 
-        public DsSinhVien dssv;
+        public DsSinhVien dssv; // con trỏ này trỏ đến class dssv 
 
         public Lop()
         {
@@ -24,5 +25,30 @@ namespace doAn.Object
             this.tenLop = tenLop;
             this.namHoc = namHoc;
         }
+
+        public void input()
+        {
+
+            do
+            {
+                Console.Write("Nhap ma lop: ");
+                this.maLop = Console.ReadLine(); // gán thẳng cho thuộc tính của đối tượng
+            } while (this.maLop.Trim().Length > 15 || this.maLop.Trim().Length == 0); // trim loại bỏ khoảng trắng
+
+            do
+            {
+                Console.Write("Nhap ten mon hoc: ");
+                this.tenLop = Console.ReadLine();
+            } while (this.maLop.Trim().Length == 0); // trim loại bỏ khoảng trắng
+         
+            do
+            {
+                Console.Write("Nhap nam hoc: ");
+                this.namHoc = Convert.ToInt32(Console.ReadLine());
+            } while (namHoc <= 0);
+
+            this.dssv = new DsSinhVien();
+        }
+
     }
 }
