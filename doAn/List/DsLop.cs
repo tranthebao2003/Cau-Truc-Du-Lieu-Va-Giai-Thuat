@@ -42,5 +42,17 @@ namespace doAn.List
             dsLop[size] = lop1;
             size++;
         }
+
+        public void remove(string maLop) // chưa xong
+        {
+            int index = 0;
+            for (int i = 0; i < length(); i++)
+            {
+                if (dsLop[i].maLop == maLop)
+                {
+                    index = i;
+                }
+            }
+        }
     }
 }
