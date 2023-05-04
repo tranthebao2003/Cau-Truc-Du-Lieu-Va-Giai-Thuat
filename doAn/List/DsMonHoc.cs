@@ -15,11 +15,11 @@ namespace doAn.Object
             public Node left;
             public Node right;
 
-            public Node(MonHoc monHoc, Node left, Node right)
+            public Node(MonHoc monHoc)
             {
                 this.monHoc = monHoc;
-                this.left = left;
-                this.right = right;
+                this.left = null;
+                this.right = null;
             }
         }
         #endregion
@@ -55,7 +55,7 @@ namespace doAn.Object
                 }
             }
 
-            Node n = new Node(e, null, null);
+            Node n = new Node(e);
             if (root != null)
             {
                 if (e.maMonHoc.CompareTo(temp.monHoc.maMonHoc) == -1)
