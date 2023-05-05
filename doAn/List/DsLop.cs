@@ -16,21 +16,20 @@ namespace doAn.List
             return size;
         }
 
-        public void add()
+        public void add(Lop a)
         {
-            Lop lop1 = new Lop();
-            lop1.input();
+
             int mark = 0;
             while (true)
             {
                 mark = 0;
                 for (int i = 0; i < length(); i++)
                 {
-                    if (dsLop[i].maLop == lop1.maLop)
+                    if (dsLop[i].maLop == a.maLop)
                     {
                         mark = 1;
                         Console.WriteLine("Ma lop da ton tai! Vui long nhap lai ma lop");
-                        lop1.maLop = Console.ReadLine();
+                        a.maLop = Console.ReadLine();
                     }
                 }
                 if (mark == 0)
@@ -38,12 +37,12 @@ namespace doAn.List
                     break;
                 }
             }
-            
-            dsLop[size] = lop1;
+
+            dsLop[size] = a;
             size++;
         }
 
-        public void remove(string maLop) 
+        public void remove(string maLop)
         {
             int index = 0;
             for (int i = 0; i < length(); i++)
@@ -58,26 +57,26 @@ namespace doAn.List
             {
                 dsLop[i] = dsLop[i + 1];
             }
-            size --;
+            size--;
         }
 
         public void edit(Lop lop)
         {
-            for (int i = 0;i < length();i++)
+            for (int i = 0; i < length(); i++)
             {
-                if (dsLop[i].maLop == lop.maLop) 
+                if (dsLop[i].maLop == lop.maLop)// tim vi tri lop can sua dua vao ma lop
                 {
-                    dsLop[i] = lop;
+                    dsLop[i] = lop; // thay doi du lieu cua lop cu thanh lop moi
                     break;
                 }
             }
         }
 
-        public void display(int fromYear, int toYear) 
+        public void display(int year)
         {
-            for (int i = 0; i < length();i++) 
+            for (int i = 0; i < length(); i++)
             {
-                if (dsLop[i].namHoc >= fromYear && dsLop[i].namHoc <= toYear)
+                if (dsLop[i].namHoc == year)
                 {
                     Console.WriteLine("Ma lop: " + dsLop[i].maLop);
                     Console.WriteLine("Ten lop: " + dsLop[i].tenLop);
