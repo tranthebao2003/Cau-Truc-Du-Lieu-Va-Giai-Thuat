@@ -18,13 +18,23 @@ namespace doAn.Object
         {
 
         }
-        public SinhVien(string maSV, string ho, string ten, bool phai, string soDT)
+
+        public void input()
         {
-            this.maSV = maSV;
-            this.ho = ho;
-            this.ten = ten;
-            this.phai = phai;
-            this.soDT = soDT;
+            Console.Write("Nhap ma sinh vien: ");
+            this.maSV = Console.ReadLine();
+
+            Console.Write("Nhap ho: ");
+            this.ho = Console.ReadLine();
+
+            Console.Write("Nhap ten: ");
+            this.ten = Console.ReadLine();
+
+            Console.Write("Nhap gio tinh flase(nam) true(nu): ");
+            this.phai = Convert.ToBoolean(Console.ReadLine());
+
+            Console.Write("Nhap so dien thoai: ");
+            this.soDT = Console.ReadLine();
         }
     }
 }
