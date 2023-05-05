@@ -16,15 +16,7 @@ namespace doAn.Object
         public MonHoc()
         {
         }
-
-        public MonHoc(string maMonHoc, string tenMonHoc, int tinChiLT, int tinChiTH)
-        {
-            this.maMonHoc = maMonHoc;
-            this.tenMonHoc = tenMonHoc;
-            this.tinChiLT = tinChiLT;
-            this.tinChiTH = tinChiTH;
-        }
-
+        // không cần hàm khởi tạo full tham so vì mik đã có phương thức input và gán thẳng những j ng dùng nhập vào thuộc tính lun roi
         public void input()
         {
            

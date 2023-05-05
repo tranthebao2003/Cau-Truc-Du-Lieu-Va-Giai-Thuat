@@ -15,7 +15,7 @@ namespace doAn.Object
             public Node left;
             public Node right;
 
-            public Node(MonHoc monHoc)
+            public Node(MonHoc monHoc) // khi khởi tạo thằng đầu tiên thì hiển nhiên 2 con trỏ left, right phải là null
             {
                 this.monHoc = monHoc;
                 this.left = null;
