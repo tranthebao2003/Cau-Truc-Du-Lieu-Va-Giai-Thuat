@@ -43,7 +43,7 @@ namespace doAn.List
             size++;
         }
 
-        public void remove(string maLop) // chưa xong
+        public void remove(string maLop) 
         {
             int index = 0;
             for (int i = 0; i < length(); i++)
@@ -51,6 +51,38 @@ namespace doAn.List
                 if (dsLop[i].maLop == maLop)
                 {
                     index = i;
+                    break;
+                }
+            }
+            for (int i = index; i < size; i++)
+            {
+                dsLop[i] = dsLop[i + 1];
+            }
+            size --;
+        }
+
+        public void edit(Lop lop)
+        {
+            for (int i = 0;i < length();i++)
+            {
+                if (dsLop[i].maLop == lop.maLop) 
+                {
+                    dsLop[i] = lop;
+                    break;
+                }
+            }
+        }
+
+        public void display(int fromYear, int toYear) 
+        {
+            for (int i = 0; i < length();i++) 
+            {
+                if (dsLop[i].namHoc >= fromYear && dsLop[i].namHoc <= toYear)
+                {
+                    Console.WriteLine("Ma lop: " + dsLop[i].maLop);
+                    Console.WriteLine("Ten lop: " + dsLop[i].tenLop);
+                    Console.WriteLine("Nam hoc: " + dsLop[i].namHoc);
+                    Console.WriteLine();
                 }
             }
         }
