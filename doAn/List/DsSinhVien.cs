@@ -57,71 +57,67 @@ namespace doAn.List
                 Node ptr = head;
                 while (ptr != null)
                 {
+                    // so sanh chuỗi ten+ho của sv mới truyền vào với all những sv trước đó
+
+
                     if ((ptr.sv.ten + ptr.sv.ho).CompareTo(e.ten + e.ho) == 1)
                     {
                         if (position == 0)
                         {
-                            addFirst(e);
+                            addFirst(a); // truyền vao Node sv được tạo ra bởi 1 sinh vien
                             break;
                         }
                         else
                         {
-                            addAny(e, position);
+                            addAny(a, position);
                             break;
                         }
                     }
                     else
                     {
                         position++;
-                        if (position == length())
+                        if (position == length()) // so sánh vị trí cần chèn vs kích thước list nếu vị trí == kích thước nghĩa là chèn ở cuối
                         {
-                            adddLast(e);
+                            adddLast(a); // truyền vao Node sv đã tạo
                         }
                     }
-                    ptr = ptr.next;
+                    ptr = ptr.next; // phải để ở đầu vì nếu để ở cuối sau khi đã thêm thì nó sẽ bị lặp lại
                 }
             }
             size += 1;
         }
 
-        public void addFirst(SinhVien e)
+        public void addFirst(Node e)
         {
-            Node a = new Node(e);
             if (isEmpty())
             {
-                head = a;
-                tail = a;
+                head = e;
+                tail = e;
             }
             else
             {
-                a.next = head;
-                head = a;
+                e.next = head;
+                head = e;
             }
-            size += 1;
         }
 
-        public void addAny(SinhVien e, int position)
+        public void addAny(Node e, int position) // đang có vấn đề
         {
-            Node a = new Node(e);
-
             Node ptr = head;
             int i = 1;
-            while (i < position - 1)
+            while (i < position) // tìm vị trí cần chèn
             {
                 ptr = ptr.next;
                 i += 1;
             }
-            a.next = ptr.next;
-            ptr.next = a;
-            size += 1;
+            e.next = ptr.next;
+            ptr.next = e;
         }
 
-        public void adddLast(SinhVien e)
+        public void adddLast(Node sv)
         {
-            Node b = new Node(e);
-            Node ptr = tail;
-            tail.next = b;
-            tail = b;
+            tail.next = sv;
+            tail = sv;
         }
 
         public void display()

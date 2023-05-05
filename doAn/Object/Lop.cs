@@ -19,12 +19,8 @@ namespace doAn.Object
         {
 
         }
-        public Lop(string maLop, string tenLop, int namHoc)
-        {
-            this.maLop = maLop;
-            this.tenLop = tenLop;
-            this.namHoc = namHoc;
-        }
+
+        // không cần hàm khởi tạo full tham so vì mik đã có phương thức input và gán thẳng những j ng dùng nhập vào thuộc tính lun roi
 
         public void input()
         {
