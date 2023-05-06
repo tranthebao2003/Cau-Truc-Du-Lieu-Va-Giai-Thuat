@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace doAn.formCon
 {
-    public partial class frmInputSV : Form
+    public partial class frmInputLop : Form
     {
-        public frmInputSV()
+        public frmInputLop()
         {
             InitializeComponent();
+        }
+
+        private void btnNhapLop_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
