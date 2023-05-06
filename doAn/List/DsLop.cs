@@ -18,7 +18,6 @@ namespace doAn.List
 
         public void add(Lop a)
         {
-
             int mark = 0;
             while (true)
             {
