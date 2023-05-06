@@ -21,7 +21,7 @@ namespace doAn.Object
         {
            
             Console.Write("Nhap ma mon hoc: ");
-            this.maMonHoc = Console.ReadLine(); // gán thẳng cho thuộc tính của đối tượng
+            this.maMonHoc = Console.ReadLine(); // gán thẳng cho thuộc tính của đối tượng (#)
 
             Console.Write("Nhap ten mon hoc: ");
             this.tenMonHoc = Console.ReadLine();

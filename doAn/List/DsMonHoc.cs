@@ -41,7 +41,7 @@ namespace doAn.Object
             {
                 temp = temproot; // 2 thằng này giờ đang lưu trữ địa chỉ của root
                 
-                if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 0)
+                if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 0)//note
                 {
                     return;
                 }
