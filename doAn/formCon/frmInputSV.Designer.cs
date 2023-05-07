@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.btnThoatNhapLop = new System.Windows.Forms.Button();
-            this.btnNhapLop = new System.Windows.Forms.Button();
-            this.txtInPutMaLop = new System.Windows.Forms.TextBox();
-            this.txtInPutNamHoc = new System.Windows.Forms.TextBox();
-            this.txtInPutTenLop = new System.Windows.Forms.TextBox();
+            this.btnNhap = new System.Windows.Forms.Button();
+            this.txtInPutMaSV = new System.Windows.Forms.TextBox();
+            this.txtInPutTen = new System.Windows.Forms.TextBox();
+            this.txtInPutHo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtInputSDT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radNam = new System.Windows.Forms.RadioButton();
+            this.radNu = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnThoatNhapLop
@@ -53,39 +53,40 @@
             this.btnThoatNhapLop.Size = new System.Drawing.Size(75, 23);
             this.btnThoatNhapLop.TabIndex = 0;
             // 
-            // btnNhapLop
+            // btnNhap
             // 
-            this.btnNhapLop.Location = new System.Drawing.Point(57, 253);
-            this.btnNhapLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnNhapLop.Name = "btnNhapLop";
-            this.btnNhapLop.Size = new System.Drawing.Size(92, 34);
-            this.btnNhapLop.TabIndex = 1;
-            this.btnNhapLop.Text = "Nhập";
-            this.btnNhapLop.UseVisualStyleBackColor = true;
+            this.btnNhap.Location = new System.Drawing.Point(57, 253);
+            this.btnNhap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.Size = new System.Drawing.Size(92, 34);
+            this.btnNhap.TabIndex = 1;
+            this.btnNhap.Text = "Nhập";
+            this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
-            // txtInPutMaLop
+            // txtInPutMaSV
             // 
-            this.txtInPutMaLop.Location = new System.Drawing.Point(167, 61);
-            this.txtInPutMaLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtInPutMaLop.Name = "txtInPutMaLop";
-            this.txtInPutMaLop.Size = new System.Drawing.Size(226, 30);
-            this.txtInPutMaLop.TabIndex = 2;
+            this.txtInPutMaSV.Location = new System.Drawing.Point(167, 61);
+            this.txtInPutMaSV.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtInPutMaSV.Name = "txtInPutMaSV";
+            this.txtInPutMaSV.Size = new System.Drawing.Size(226, 30);
+            this.txtInPutMaSV.TabIndex = 2;
             // 
-            // txtInPutNamHoc
+            // txtInPutTen
             // 
-            this.txtInPutNamHoc.Location = new System.Drawing.Point(86, 154);
-            this.txtInPutNamHoc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtInPutNamHoc.Name = "txtInPutNamHoc";
-            this.txtInPutNamHoc.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutNamHoc.TabIndex = 3;
+            this.txtInPutTen.Location = new System.Drawing.Point(86, 154);
+            this.txtInPutTen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtInPutTen.Name = "txtInPutTen";
+            this.txtInPutTen.Size = new System.Drawing.Size(133, 30);
+            this.txtInPutTen.TabIndex = 3;
             // 
-            // txtInPutTenLop
+            // txtInPutHo
             // 
-            this.txtInPutTenLop.Location = new System.Drawing.Point(86, 109);
-            this.txtInPutTenLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtInPutTenLop.Name = "txtInPutTenLop";
-            this.txtInPutTenLop.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutTenLop.TabIndex = 4;
+            this.txtInPutHo.Location = new System.Drawing.Point(86, 109);
+            this.txtInPutHo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtInPutHo.Name = "txtInPutHo";
+            this.txtInPutHo.Size = new System.Drawing.Size(133, 30);
+            this.txtInPutHo.TabIndex = 4;
             // 
             // label1
             // 
@@ -151,13 +152,13 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Số điện thoại";
             // 
-            // textBox1
+            // txtInputSDT
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 201);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 30);
-            this.textBox1.TabIndex = 11;
+            this.txtInputSDT.Location = new System.Drawing.Point(172, 201);
+            this.txtInputSDT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtInputSDT.Name = "txtInputSDT";
+            this.txtInputSDT.Size = new System.Drawing.Size(221, 30);
+            this.txtInputSDT.TabIndex = 11;
             // 
             // label6
             // 
@@ -169,27 +170,27 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Giới tính";
             // 
-            // radioButton1
+            // radNam
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(327, 154);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 28);
-            this.radioButton1.TabIndex = 13;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radNam.AutoSize = true;
+            this.radNam.Location = new System.Drawing.Point(327, 154);
+            this.radNam.Name = "radNam";
+            this.radNam.Size = new System.Drawing.Size(73, 28);
+            this.radNam.TabIndex = 13;
+            this.radNam.TabStop = true;
+            this.radNam.Text = "Nam";
+            this.radNam.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radNu
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(262, 155);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 28);
-            this.radioButton2.TabIndex = 14;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radNu.AutoSize = true;
+            this.radNu.Location = new System.Drawing.Point(262, 155);
+            this.radNu.Name = "radNu";
+            this.radNu.Size = new System.Drawing.Size(59, 28);
+            this.radNu.TabIndex = 14;
+            this.radNu.TabStop = true;
+            this.radNu.Text = "Nữ";
+            this.radNu.UseVisualStyleBackColor = true;
             // 
             // frmInputSV
             // 
@@ -198,25 +199,26 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(482, 303);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radNu);
+            this.Controls.Add(this.radNam);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtInputSDT);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtInPutTenLop);
-            this.Controls.Add(this.txtInPutNamHoc);
-            this.Controls.Add(this.txtInPutMaLop);
-            this.Controls.Add(this.btnNhapLop);
+            this.Controls.Add(this.txtInPutHo);
+            this.Controls.Add(this.txtInPutTen);
+            this.Controls.Add(this.txtInPutMaSV);
+            this.Controls.Add(this.btnNhap);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmInputSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập lớp";
+            this.Load += new System.EventHandler(this.frmInputSV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,19 +227,19 @@
         #endregion
 
         private System.Windows.Forms.Button btnThoatNhapLop;
-        private System.Windows.Forms.Button btnNhapLop;
-        private System.Windows.Forms.TextBox txtInPutMaLop;
-        private System.Windows.Forms.TextBox txtInPutNamHoc;
-        private System.Windows.Forms.TextBox txtInPutTenLop;
+        private System.Windows.Forms.Button btnNhap;
+        private System.Windows.Forms.TextBox txtInPutMaSV;
+        private System.Windows.Forms.TextBox txtInPutTen;
+        private System.Windows.Forms.TextBox txtInPutHo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtInputSDT;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radNam;
+        private System.Windows.Forms.RadioButton radNu;
     }
 }
