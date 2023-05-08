@@ -93,20 +93,5 @@ namespace doAn.List
                 Console.WriteLine("Diem: " + c);
             }
         }
-
-        public DsLop lop1 ;
-        public Diem diem;
-    
-
-        public void search(string a, string b, int c)
-        {
-            for (int i=0; i < lop1.length(); i++)
-            {
-                if (a == lop1.dsLop[i].maLop)
-                {
-                  
-                }
-            }
-        }
     }
 }
