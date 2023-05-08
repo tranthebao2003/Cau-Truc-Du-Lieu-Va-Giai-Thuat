@@ -70,7 +70,7 @@
             this.lblPhanMem.Location = new System.Drawing.Point(69, 22);
             this.lblPhanMem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblPhanMem.Name = "lblPhanMem";
-            this.lblPhanMem.Size = new System.Drawing.Size(815, 55);
+            this.lblPhanMem.Size = new System.Drawing.Size(664, 45);
             this.lblPhanMem.TabIndex = 2;
             this.lblPhanMem.Text = "Phần Mềm Quản Lí Điểm Sinh Viên ";
             // 
@@ -143,6 +143,7 @@
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
@@ -255,11 +256,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CancelButton = this.btnThoat;
-            this.ClientSize = new System.Drawing.Size(1182, 703);
+            this.ClientSize = new System.Drawing.Size(1264, 703);
             this.Controls.Add(this.grbDiemSo);
             this.Controls.Add(this.grbMonHoc);
             this.Controls.Add(this.btnThoat);
@@ -269,6 +270,8 @@
             this.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

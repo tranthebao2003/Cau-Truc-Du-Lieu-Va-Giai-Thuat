@@ -10,7 +10,7 @@ namespace doAn.List
     internal class DsLop
     {
         private int size = 0;
-        Lop[] dsLop = new Lop[1000];
+        public Lop[] dsLop = new Lop[1000];
         public int length()
         {
             return size;
