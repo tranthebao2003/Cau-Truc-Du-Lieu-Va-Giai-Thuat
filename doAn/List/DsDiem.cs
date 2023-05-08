@@ -10,9 +10,7 @@ namespace doAn.List
 {
     internal class DsDiem
     {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
         #region Node dach sach lien ket
         public class Node // đây cũng xem là thuộc tính của dsSinhVien
         {
@@ -95,8 +93,7 @@ namespace doAn.List
                 Console.WriteLine("Diem: " + c);
             }
         }
->>>>>>> Stashed changes
-=======
+
         public DsLop lop1 ;
         public Diem diem;
     
@@ -111,8 +108,5 @@ namespace doAn.List
                 }
             }
         }
-       
-       
->>>>>>> c54ece79c48c127426ce70339892d49ebce61386
     }
 }
