@@ -57,9 +57,9 @@ namespace doAn
 
         private void btnInSv_Click(object sender, EventArgs e)
         {
-            frmInputSV sv1 = new frmInputSV();
-            //ban đầu khi ng dung chưa ấn j thì nó sẽ ẩn bảng đi sau khi ng dùng click in thì nó sẽ hiện
-            grbDssv.Visible = true;
+            //frmInputSV sv1 = new frmInputSV();
+            ////ban đầu khi ng dung chưa ấn j thì nó sẽ ẩn bảng đi sau khi ng dùng click in thì nó sẽ hiện
+            //grbDssv.Visible = true;
         }
 
         private void btnXoaSv_Click(object sender, EventArgs e) // làm tới đây chưa xong
@@ -87,7 +87,14 @@ namespace doAn
         {
             if(lvSinhVien.SelectedItems.Count > 0)
             {
-
+                // nếu ng dùng chọn vào 1 dòng và ấn sửa thì nó se hien lại cái form nhập cho ng dung nhap
+                Program.lvItem = lvSinhVien.SelectedItems[0];
+                frmInputSV a = new frmInputSV();
+                a.txtInPutMaSV.Text = Program.lvItem.SubItems[0].Text;
+                a.txtInPutHo.Text = Program.lvItem.SubItems[1].Text;
+                a.txtInPutTen.Text = Program.lvItem.SubItems[2].Text;
+                a.txtInputSDT.Text = Program.lvItem.SubItems[4].Text;
+                a.Show();
             }
             else
             {

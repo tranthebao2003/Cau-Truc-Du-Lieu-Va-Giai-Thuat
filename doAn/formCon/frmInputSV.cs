@@ -47,7 +47,7 @@ namespace doAn.formCon
             }
             SinhVien sv1 = new SinhVien();
             sv1.maSV = txtInPutMaSV.Text;
-            sv1.ho = txtInPutHo.Text;
+            sv1.ho = txtInPutHo.Text; 
             sv1.ten = txtInPutTen.Text;
             sv1.soDT = txtInputSDT.Text;
             if(radNu.Checked == true) // nếu ng dùng click vao nữ thì ta cho phai là true
