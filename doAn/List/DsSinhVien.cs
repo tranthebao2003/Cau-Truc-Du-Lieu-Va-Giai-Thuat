@@ -167,13 +167,20 @@ namespace doAn.List
             size--;
         }
 
-        public void editSv(SinhVien a) // chưa test
+        public void editSv(SinhVien a)
         {
+            // ma sv khi làm trên window form thì ko bao giờ nhap sai đc vì lúc đó ng dùng sẽ chọn thay vì nhập
             Node ptr = head;
             Node e = new Node(a);
-            while(ptr != null) // tìm kiếm thang trùng mã để edit và lien ket thang moi vs thang phia truoc dong thoi lay ma ptr
+            while (ptr != null) // tìm kiếm thằng trùng mã để edit và lien ket thang moi vs thang phia truoc dong thoi lay ma ptr
             {
-                if(ptr.sv.maSV == e.sv.maSV)
+                if (head.sv.maSV == e.sv.maSV)
+                {
+                    e.next = ptr.next;
+                    head = e;
+                    break;
+                }
+                else if (ptr.sv.maSV == e.sv.maSV)
                 {
                     e.next = ptr.next;
                     break;
@@ -183,9 +190,10 @@ namespace doAn.List
             Node ptr2 = head;
             while (ptr2 != ptr) // tim thang ke thang dc thay the sau do lien ket no voi thang moi them vao
             {
-                if(ptr2.next == ptr)
+                if (ptr2.next == ptr)
                 {
                     ptr2.next = e;
+                    break;
                 }
                 ptr2 = ptr2.next;
             }

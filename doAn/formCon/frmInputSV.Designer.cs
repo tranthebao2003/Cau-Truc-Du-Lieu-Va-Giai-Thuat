@@ -228,18 +228,18 @@
 
         private System.Windows.Forms.Button btnThoatNhapLop;
         private System.Windows.Forms.Button btnNhap;
-        private System.Windows.Forms.TextBox txtInPutMaSV;
-        private System.Windows.Forms.TextBox txtInPutTen;
-        private System.Windows.Forms.TextBox txtInPutHo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtInputSDT;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radNam;
-        private System.Windows.Forms.RadioButton radNu;
+        public System.Windows.Forms.TextBox txtInPutMaSV;
+        public System.Windows.Forms.TextBox txtInPutTen;
+        public System.Windows.Forms.TextBox txtInPutHo;
+        public System.Windows.Forms.TextBox txtInputSDT;
+        public System.Windows.Forms.RadioButton radNam;
+        public System.Windows.Forms.RadioButton radNu;
     }
 }
