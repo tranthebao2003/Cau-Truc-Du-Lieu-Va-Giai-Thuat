@@ -52,6 +52,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="formCon\frmInputDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCon\frmInputDiem.Designer.cs">
+      <DependentUpon>frmInputDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formCon\frmInputLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCon\frmInputLop.Designer.cs">
+      <DependentUpon>frmInputLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formCon\frmInputMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCon\frmInputMon.Designer.cs">
+      <DependentUpon>frmInputMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formCon\frmInputSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCon\frmInputSV.Designer.cs">
+      <DependentUpon>frmInputSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="List\DsDiem.cs" />
     <Compile Include="List\DsLop.cs" />
     <Compile Include="List\DsSinhVien.cs" />
@@ -64,6 +88,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCon\frmInputDiem.resx">
+      <DependentUpon>frmInputDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCon\frmInputLop.resx">
+      <DependentUpon>frmInputLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCon\frmInputMon.resx">
+      <DependentUpon>frmInputMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCon\frmInputSV.resx">
+      <DependentUpon>frmInputSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -28,6 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            "",
+            ""}, -1);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            "",
+            ""}, -1);
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            "",
+            ""}, -1);
             this.btnNhapLop = new System.Windows.Forms.Button();
             this.lblPhanMem = new System.Windows.Forms.Label();
             this.btnInLop = new System.Windows.Forms.Button();
@@ -36,7 +45,6 @@
             this.btnNhapMon = new System.Windows.Forms.Button();
             this.btnInMon = new System.Windows.Forms.Button();
             this.btnInDiemTK = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnNhapDiem = new System.Windows.Forms.Button();
             this.btnInDiemTB = new System.Windows.Forms.Button();
             this.btnInDiem = new System.Windows.Forms.Button();
@@ -44,15 +52,43 @@
             this.grbSinhVien = new System.Windows.Forms.GroupBox();
             this.grbMonHoc = new System.Windows.Forms.GroupBox();
             this.grbDiemSo = new System.Windows.Forms.GroupBox();
+            this.btnthoat = new System.Windows.Forms.Button();
+            this.btnSuaSv = new System.Windows.Forms.Button();
+            this.btnXoaSv = new System.Windows.Forms.Button();
+            this.lvSinhVien = new System.Windows.Forms.ListView();
+            this.clnMaSV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnHo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnGioiTinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnSodt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.grbDssv = new System.Windows.Forms.GroupBox();
+            this.grbDsLop = new System.Windows.Forms.GroupBox();
+            this.lvLop = new System.Windows.Forms.ListView();
+            this.clnMaLop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnTenLop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnNamNhapHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnXoaLop = new System.Windows.Forms.Button();
+            this.btnSuaLop = new System.Windows.Forms.Button();
+            this.grbDsMon = new System.Windows.Forms.GroupBox();
+            this.lvDsMon = new System.Windows.Forms.ListView();
+            this.clnMaMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnTenMonHoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnSTCLT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clnSTCTH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnXoaMon = new System.Windows.Forms.Button();
+            this.btnSuaMon = new System.Windows.Forms.Button();
             this.grbLop.SuspendLayout();
             this.grbSinhVien.SuspendLayout();
             this.grbMonHoc.SuspendLayout();
             this.grbDiemSo.SuspendLayout();
+            this.grbDssv.SuspendLayout();
+            this.grbDsLop.SuspendLayout();
+            this.grbDsMon.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNhapLop
             // 
-            this.btnNhapLop.ForeColor = System.Drawing.Color.Black;
+            this.btnNhapLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnNhapLop.Location = new System.Drawing.Point(39, 33);
             this.btnNhapLop.Margin = new System.Windows.Forms.Padding(5);
             this.btnNhapLop.Name = "btnNhapLop";
@@ -60,14 +96,15 @@
             this.btnNhapLop.TabIndex = 1;
             this.btnNhapLop.Text = "Nhập lớp";
             this.btnNhapLop.UseVisualStyleBackColor = true;
+            this.btnNhapLop.Click += new System.EventHandler(this.btnNhapLop_Click);
             // 
             // lblPhanMem
             // 
             this.lblPhanMem.AutoSize = true;
             this.lblPhanMem.BackColor = System.Drawing.Color.Transparent;
             this.lblPhanMem.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhanMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblPhanMem.Location = new System.Drawing.Point(69, 22);
+            this.lblPhanMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(191)))), ((int)(((byte)(139)))));
+            this.lblPhanMem.Location = new System.Drawing.Point(23, 19);
             this.lblPhanMem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblPhanMem.Name = "lblPhanMem";
             this.lblPhanMem.Size = new System.Drawing.Size(664, 45);
@@ -76,7 +113,7 @@
             // 
             // btnInLop
             // 
-            this.btnInLop.ForeColor = System.Drawing.Color.Black;
+            this.btnInLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnInLop.Location = new System.Drawing.Point(39, 85);
             this.btnInLop.Margin = new System.Windows.Forms.Padding(4);
             this.btnInLop.Name = "btnInLop";
@@ -87,7 +124,7 @@
             // 
             // btnNhapSv
             // 
-            this.btnNhapSv.ForeColor = System.Drawing.Color.Black;
+            this.btnNhapSv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnNhapSv.Location = new System.Drawing.Point(39, 35);
             this.btnNhapSv.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapSv.Name = "btnNhapSv";
@@ -95,10 +132,11 @@
             this.btnNhapSv.TabIndex = 5;
             this.btnNhapSv.Text = "Nhập sinh viên";
             this.btnNhapSv.UseVisualStyleBackColor = true;
+            this.btnNhapSv.Click += new System.EventHandler(this.btnNhapSv_Click);
             // 
             // btnInSv
             // 
-            this.btnInSv.ForeColor = System.Drawing.Color.Black;
+            this.btnInSv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnInSv.Location = new System.Drawing.Point(39, 86);
             this.btnInSv.Margin = new System.Windows.Forms.Padding(4);
             this.btnInSv.Name = "btnInSv";
@@ -106,10 +144,11 @@
             this.btnInSv.TabIndex = 6;
             this.btnInSv.Text = "In danh sách sinh viên";
             this.btnInSv.UseVisualStyleBackColor = true;
+            this.btnInSv.Click += new System.EventHandler(this.btnInSv_Click);
             // 
             // btnNhapMon
             // 
-            this.btnNhapMon.ForeColor = System.Drawing.Color.Black;
+            this.btnNhapMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnNhapMon.Location = new System.Drawing.Point(37, 35);
             this.btnNhapMon.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMon.Name = "btnNhapMon";
@@ -117,10 +156,11 @@
             this.btnNhapMon.TabIndex = 7;
             this.btnNhapMon.Text = "Nhập môn học";
             this.btnNhapMon.UseVisualStyleBackColor = true;
+            this.btnNhapMon.Click += new System.EventHandler(this.btnNhapMon_Click);
             // 
             // btnInMon
             // 
-            this.btnInMon.ForeColor = System.Drawing.Color.Black;
+            this.btnInMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnInMon.Location = new System.Drawing.Point(37, 86);
             this.btnInMon.Margin = new System.Windows.Forms.Padding(4);
             this.btnInMon.Name = "btnInMon";
@@ -131,8 +171,8 @@
             // 
             // btnInDiemTK
             // 
-            this.btnInDiemTK.ForeColor = System.Drawing.Color.Black;
-            this.btnInDiemTK.Location = new System.Drawing.Point(342, 112);
+            this.btnInDiemTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnInDiemTK.Location = new System.Drawing.Point(1160, 42);
             this.btnInDiemTK.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDiemTK.Name = "btnInDiemTK";
             this.btnInDiemTK.Size = new System.Drawing.Size(281, 43);
@@ -140,28 +180,9 @@
             this.btnInDiemTK.Text = "In bảng điểm tổng kết";
             this.btnInDiemTK.UseVisualStyleBackColor = true;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThoat.ForeColor = System.Drawing.Color.DimGray;
-            this.btnThoat.Location = new System.Drawing.Point(969, 633);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(133, 34);
-            this.btnThoat.TabIndex = 10;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.button8_Click);
-            // 
             // btnNhapDiem
             // 
-            this.btnNhapDiem.ForeColor = System.Drawing.Color.Black;
+            this.btnNhapDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnNhapDiem.Location = new System.Drawing.Point(35, 42);
             this.btnNhapDiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapDiem.Name = "btnNhapDiem";
@@ -169,11 +190,12 @@
             this.btnNhapDiem.TabIndex = 11;
             this.btnNhapDiem.Text = "Nhập điểm";
             this.btnNhapDiem.UseVisualStyleBackColor = true;
+            this.btnNhapDiem.Click += new System.EventHandler(this.btnNhapDiem_Click);
             // 
             // btnInDiemTB
             // 
-            this.btnInDiemTB.ForeColor = System.Drawing.Color.Black;
-            this.btnInDiemTB.Location = new System.Drawing.Point(342, 42);
+            this.btnInDiemTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnInDiemTB.Location = new System.Drawing.Point(785, 42);
             this.btnInDiemTB.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDiemTB.Name = "btnInDiemTB";
             this.btnInDiemTB.Size = new System.Drawing.Size(281, 43);
@@ -183,8 +205,8 @@
             // 
             // btnInDiem
             // 
-            this.btnInDiem.ForeColor = System.Drawing.Color.Black;
-            this.btnInDiem.Location = new System.Drawing.Point(35, 112);
+            this.btnInDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnInDiem.Location = new System.Drawing.Point(410, 42);
             this.btnInDiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDiem.Name = "btnInDiem";
             this.btnInDiem.Size = new System.Drawing.Size(281, 43);
@@ -197,8 +219,8 @@
             this.grbLop.BackColor = System.Drawing.Color.Transparent;
             this.grbLop.Controls.Add(this.btnNhapLop);
             this.grbLop.Controls.Add(this.btnInLop);
-            this.grbLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.grbLop.Location = new System.Drawing.Point(753, 125);
+            this.grbLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.grbLop.Location = new System.Drawing.Point(33, 489);
             this.grbLop.Margin = new System.Windows.Forms.Padding(4);
             this.grbLop.Name = "grbLop";
             this.grbLop.Padding = new System.Windows.Forms.Padding(4);
@@ -212,23 +234,23 @@
             this.grbSinhVien.BackColor = System.Drawing.Color.Transparent;
             this.grbSinhVien.Controls.Add(this.btnNhapSv);
             this.grbSinhVien.Controls.Add(this.btnInSv);
-            this.grbSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.grbSinhVien.Location = new System.Drawing.Point(753, 301);
+            this.grbSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.grbSinhVien.Location = new System.Drawing.Point(561, 489);
             this.grbSinhVien.Margin = new System.Windows.Forms.Padding(4);
             this.grbSinhVien.Name = "grbSinhVien";
             this.grbSinhVien.Padding = new System.Windows.Forms.Padding(4);
             this.grbSinhVien.Size = new System.Drawing.Size(349, 148);
             this.grbSinhVien.TabIndex = 15;
             this.grbSinhVien.TabStop = false;
-            this.grbSinhVien.Text = "Sinh Viên";
+            this.grbSinhVien.Text = "Sinh viên";
             // 
             // grbMonHoc
             // 
             this.grbMonHoc.BackColor = System.Drawing.Color.Transparent;
             this.grbMonHoc.Controls.Add(this.btnNhapMon);
             this.grbMonHoc.Controls.Add(this.btnInMon);
-            this.grbMonHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.grbMonHoc.Location = new System.Drawing.Point(753, 477);
+            this.grbMonHoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.grbMonHoc.Location = new System.Drawing.Point(1158, 489);
             this.grbMonHoc.Margin = new System.Windows.Forms.Padding(4);
             this.grbMonHoc.Name = "grbMonHoc";
             this.grbMonHoc.Padding = new System.Windows.Forms.Padding(4);
@@ -244,29 +266,279 @@
             this.grbDiemSo.Controls.Add(this.btnInDiem);
             this.grbDiemSo.Controls.Add(this.btnInDiemTK);
             this.grbDiemSo.Controls.Add(this.btnInDiemTB);
-            this.grbDiemSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.grbDiemSo.Location = new System.Drawing.Point(51, 477);
+            this.grbDiemSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.grbDiemSo.Location = new System.Drawing.Point(33, 661);
             this.grbDiemSo.Margin = new System.Windows.Forms.Padding(4);
             this.grbDiemSo.Name = "grbDiemSo";
             this.grbDiemSo.Padding = new System.Windows.Forms.Padding(4);
-            this.grbDiemSo.Size = new System.Drawing.Size(664, 189);
+            this.grbDiemSo.Size = new System.Drawing.Size(1476, 118);
             this.grbDiemSo.TabIndex = 17;
             this.grbDiemSo.TabStop = false;
             this.grbDiemSo.Text = "Điểm số";
+            // 
+            // btnthoat
+            // 
+            this.btnthoat.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnthoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnthoat.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnthoat.FlatAppearance.BorderSize = 0;
+            this.btnthoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnthoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnthoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnthoat.ForeColor = System.Drawing.Color.DimGray;
+            this.btnthoat.Location = new System.Drawing.Point(1376, 796);
+            this.btnthoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnthoat.Name = "btnthoat";
+            this.btnthoat.Size = new System.Drawing.Size(133, 34);
+            this.btnthoat.TabIndex = 21;
+            this.btnthoat.Text = "Thoát";
+            this.btnthoat.UseVisualStyleBackColor = false;
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
+            // 
+            // btnSuaSv
+            // 
+            this.btnSuaSv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSuaSv.Location = new System.Drawing.Point(72, 333);
+            this.btnSuaSv.Name = "btnSuaSv";
+            this.btnSuaSv.Size = new System.Drawing.Size(90, 36);
+            this.btnSuaSv.TabIndex = 25;
+            this.btnSuaSv.Text = "Sửa";
+            this.btnSuaSv.UseVisualStyleBackColor = true;
+            this.btnSuaSv.Click += new System.EventHandler(this.btnSuaSv_Click);
+            // 
+            // btnXoaSv
+            // 
+            this.btnXoaSv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnXoaSv.Location = new System.Drawing.Point(440, 333);
+            this.btnXoaSv.Name = "btnXoaSv";
+            this.btnXoaSv.Size = new System.Drawing.Size(90, 36);
+            this.btnXoaSv.TabIndex = 26;
+            this.btnXoaSv.Text = "Xóa";
+            this.btnXoaSv.UseVisualStyleBackColor = true;
+            this.btnXoaSv.Click += new System.EventHandler(this.btnXoaSv_Click);
+            // 
+            // lvSinhVien
+            // 
+            this.lvSinhVien.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clnMaSV,
+            this.clnHo,
+            this.clnTen,
+            this.clnGioiTinh,
+            this.clnSodt});
+            this.lvSinhVien.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvSinhVien.FullRowSelect = true;
+            this.lvSinhVien.GridLines = true;
+            this.lvSinhVien.HideSelection = false;
+            this.lvSinhVien.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem7});
+            this.lvSinhVien.Location = new System.Drawing.Point(0, 41);
+            this.lvSinhVien.Name = "lvSinhVien";
+            this.lvSinhVien.Size = new System.Drawing.Size(610, 254);
+            this.lvSinhVien.TabIndex = 23;
+            this.lvSinhVien.UseCompatibleStateImageBehavior = false;
+            this.lvSinhVien.View = System.Windows.Forms.View.Details;
+            // 
+            // clnMaSV
+            // 
+            this.clnMaSV.Text = "Mã sinh viên";
+            this.clnMaSV.Width = 160;
+            // 
+            // clnHo
+            // 
+            this.clnHo.Text = "Họ";
+            this.clnHo.Width = 100;
+            // 
+            // clnTen
+            // 
+            this.clnTen.Text = "Tên";
+            this.clnTen.Width = 100;
+            // 
+            // clnGioiTinh
+            // 
+            this.clnGioiTinh.Text = "Giới tính";
+            this.clnGioiTinh.Width = 100;
+            // 
+            // clnSodt
+            // 
+            this.clnSodt.Text = "Số điện thoại";
+            this.clnSodt.Width = 160;
+            // 
+            // grbDssv
+            // 
+            this.grbDssv.BackColor = System.Drawing.Color.Transparent;
+            this.grbDssv.Controls.Add(this.lvSinhVien);
+            this.grbDssv.Controls.Add(this.btnXoaSv);
+            this.grbDssv.Controls.Add(this.btnSuaSv);
+            this.grbDssv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(191)))), ((int)(((byte)(139)))));
+            this.grbDssv.Location = new System.Drawing.Point(430, 97);
+            this.grbDssv.Name = "grbDssv";
+            this.grbDssv.Size = new System.Drawing.Size(610, 380);
+            this.grbDssv.TabIndex = 27;
+            this.grbDssv.TabStop = false;
+            this.grbDssv.Text = "Danh sách sinh viên";
+            // 
+            // grbDsLop
+            // 
+            this.grbDsLop.BackColor = System.Drawing.Color.Transparent;
+            this.grbDsLop.Controls.Add(this.lvLop);
+            this.grbDsLop.Controls.Add(this.btnXoaLop);
+            this.grbDsLop.Controls.Add(this.btnSuaLop);
+            this.grbDsLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(191)))), ((int)(((byte)(139)))));
+            this.grbDsLop.Location = new System.Drawing.Point(33, 97);
+            this.grbDsLop.Name = "grbDsLop";
+            this.grbDsLop.Size = new System.Drawing.Size(391, 380);
+            this.grbDsLop.TabIndex = 28;
+            this.grbDsLop.TabStop = false;
+            this.grbDsLop.Text = "Danh sách Lớp";
+            // 
+            // lvLop
+            // 
+            this.lvLop.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clnMaLop,
+            this.clnTenLop,
+            this.clnNamNhapHoc});
+            this.lvLop.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvLop.FullRowSelect = true;
+            this.lvLop.GridLines = true;
+            this.lvLop.HideSelection = false;
+            this.lvLop.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem8});
+            this.lvLop.Location = new System.Drawing.Point(0, 41);
+            this.lvLop.Name = "lvLop";
+            this.lvLop.Size = new System.Drawing.Size(391, 254);
+            this.lvLop.TabIndex = 23;
+            this.lvLop.UseCompatibleStateImageBehavior = false;
+            this.lvLop.View = System.Windows.Forms.View.Details;
+            // 
+            // clnMaLop
+            // 
+            this.clnMaLop.Text = "Mã lớp";
+            this.clnMaLop.Width = 120;
+            // 
+            // clnTenLop
+            // 
+            this.clnTenLop.Text = "Tên lớp";
+            this.clnTenLop.Width = 120;
+            // 
+            // clnNamNhapHoc
+            // 
+            this.clnNamNhapHoc.Text = "Năm nhập học";
+            this.clnNamNhapHoc.Width = 150;
+            // 
+            // btnXoaLop
+            // 
+            this.btnXoaLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnXoaLop.Location = new System.Drawing.Point(270, 333);
+            this.btnXoaLop.Name = "btnXoaLop";
+            this.btnXoaLop.Size = new System.Drawing.Size(90, 36);
+            this.btnXoaLop.TabIndex = 26;
+            this.btnXoaLop.Text = "Xóa";
+            this.btnXoaLop.UseVisualStyleBackColor = true;
+            this.btnXoaLop.Click += new System.EventHandler(this.btnXoaLop_Click);
+            // 
+            // btnSuaLop
+            // 
+            this.btnSuaLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSuaLop.Location = new System.Drawing.Point(35, 333);
+            this.btnSuaLop.Name = "btnSuaLop";
+            this.btnSuaLop.Size = new System.Drawing.Size(90, 36);
+            this.btnSuaLop.TabIndex = 25;
+            this.btnSuaLop.Text = "Sửa";
+            this.btnSuaLop.UseVisualStyleBackColor = true;
+            this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
+            // 
+            // grbDsMon
+            // 
+            this.grbDsMon.BackColor = System.Drawing.Color.Transparent;
+            this.grbDsMon.Controls.Add(this.lvDsMon);
+            this.grbDsMon.Controls.Add(this.btnXoaMon);
+            this.grbDsMon.Controls.Add(this.btnSuaMon);
+            this.grbDsMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(191)))), ((int)(((byte)(139)))));
+            this.grbDsMon.Location = new System.Drawing.Point(1046, 97);
+            this.grbDsMon.Name = "grbDsMon";
+            this.grbDsMon.Size = new System.Drawing.Size(461, 380);
+            this.grbDsMon.TabIndex = 28;
+            this.grbDsMon.TabStop = false;
+            this.grbDsMon.Text = "Danh sách môn";
+            // 
+            // lvDsMon
+            // 
+            this.lvDsMon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clnMaMonHoc,
+            this.clnTenMonHoc,
+            this.clnSTCLT,
+            this.clnSTCTH});
+            this.lvDsMon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvDsMon.FullRowSelect = true;
+            this.lvDsMon.GridLines = true;
+            this.lvDsMon.HideSelection = false;
+            this.lvDsMon.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem9});
+            this.lvDsMon.Location = new System.Drawing.Point(0, 41);
+            this.lvDsMon.Name = "lvDsMon";
+            this.lvDsMon.Size = new System.Drawing.Size(463, 254);
+            this.lvDsMon.TabIndex = 23;
+            this.lvDsMon.UseCompatibleStateImageBehavior = false;
+            this.lvDsMon.View = System.Windows.Forms.View.Details;
+            // 
+            // clnMaMonHoc
+            // 
+            this.clnMaMonHoc.Text = "Mã môn học";
+            this.clnMaMonHoc.Width = 140;
+            // 
+            // clnTenMonHoc
+            // 
+            this.clnTenMonHoc.Text = "Tên môn học";
+            this.clnTenMonHoc.Width = 140;
+            // 
+            // clnSTCLT
+            // 
+            this.clnSTCLT.Text = "STCLT";
+            this.clnSTCLT.Width = 90;
+            // 
+            // clnSTCTH
+            // 
+            this.clnSTCTH.Text = "STCTH";
+            this.clnSTCTH.Width = 90;
+            // 
+            // btnXoaMon
+            // 
+            this.btnXoaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnXoaMon.Location = new System.Drawing.Point(312, 333);
+            this.btnXoaMon.Name = "btnXoaMon";
+            this.btnXoaMon.Size = new System.Drawing.Size(90, 36);
+            this.btnXoaMon.TabIndex = 26;
+            this.btnXoaMon.Text = "Xóa";
+            this.btnXoaMon.UseVisualStyleBackColor = true;
+            this.btnXoaMon.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSuaMon
+            // 
+            this.btnSuaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSuaMon.Location = new System.Drawing.Point(65, 333);
+            this.btnSuaMon.Name = "btnSuaMon";
+            this.btnSuaMon.Size = new System.Drawing.Size(90, 36);
+            this.btnSuaMon.TabIndex = 25;
+            this.btnSuaMon.Text = "Sửa";
+            this.btnSuaMon.UseVisualStyleBackColor = true;
+            this.btnSuaMon.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CancelButton = this.btnThoat;
-            this.ClientSize = new System.Drawing.Size(1264, 703);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.CancelButton = this.btnthoat;
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.grbDsMon);
+            this.Controls.Add(this.grbDssv);
+            this.Controls.Add(this.grbDsLop);
+            this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.grbDiemSo);
-            this.Controls.Add(this.grbMonHoc);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.grbLop);
-            this.Controls.Add(this.grbSinhVien);
             this.Controls.Add(this.lblPhanMem);
+            this.Controls.Add(this.grbSinhVien);
+            this.Controls.Add(this.grbLop);
+            this.Controls.Add(this.grbMonHoc);
             this.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -275,10 +547,14 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.grbLop.ResumeLayout(false);
             this.grbSinhVien.ResumeLayout(false);
             this.grbMonHoc.ResumeLayout(false);
             this.grbDiemSo.ResumeLayout(false);
+            this.grbDssv.ResumeLayout(false);
+            this.grbDsLop.ResumeLayout(false);
+            this.grbDsMon.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +570,6 @@
         private System.Windows.Forms.Button btnNhapMon;
         private System.Windows.Forms.Button btnInMon;
         private System.Windows.Forms.Button btnInDiemTK;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnNhapDiem;
         private System.Windows.Forms.Button btnInDiemTB;
         private System.Windows.Forms.Button btnInDiem;
@@ -302,6 +577,31 @@
         private System.Windows.Forms.GroupBox grbSinhVien;
         private System.Windows.Forms.GroupBox grbMonHoc;
         private System.Windows.Forms.GroupBox grbDiemSo;
+        private System.Windows.Forms.Button btnthoat;
+        private System.Windows.Forms.GroupBox grbDssv;
+        public System.Windows.Forms.ListView lvSinhVien;
+        private System.Windows.Forms.ColumnHeader clnMaSV;
+        private System.Windows.Forms.ColumnHeader clnHo;
+        private System.Windows.Forms.ColumnHeader clnTen;
+        private System.Windows.Forms.ColumnHeader clnGioiTinh;
+        private System.Windows.Forms.ColumnHeader clnSodt;
+        private System.Windows.Forms.Button btnXoaSv;
+        private System.Windows.Forms.Button btnSuaSv;
+        private System.Windows.Forms.GroupBox grbDsLop;
+        public System.Windows.Forms.ListView lvLop;
+        private System.Windows.Forms.ColumnHeader clnMaLop;
+        private System.Windows.Forms.ColumnHeader clnTenLop;
+        private System.Windows.Forms.ColumnHeader clnNamNhapHoc;
+        private System.Windows.Forms.Button btnXoaLop;
+        private System.Windows.Forms.Button btnSuaLop;
+        private System.Windows.Forms.GroupBox grbDsMon;
+        public System.Windows.Forms.ListView lvDsMon;
+        private System.Windows.Forms.ColumnHeader clnMaMonHoc;
+        private System.Windows.Forms.ColumnHeader clnTenMonHoc;
+        private System.Windows.Forms.ColumnHeader clnSTCLT;
+        private System.Windows.Forms.ColumnHeader clnSTCTH;
+        private System.Windows.Forms.Button btnXoaMon;
+        private System.Windows.Forms.Button btnSuaMon;
     }
 }
 
