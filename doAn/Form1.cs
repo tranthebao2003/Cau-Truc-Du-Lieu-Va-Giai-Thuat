@@ -1,5 +1,7 @@
 ﻿using doAn.formCon;
+using doAn.formSua;
 using doAn.List;
+using doAn.Object;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,10 +89,10 @@ namespace doAn
         {
             if(lvSinhVien.SelectedItems.Count > 0)
             {
-                // nếu ng dùng chọn vào 1 dòng và ấn sửa thì nó se hien lại cái form nhập cho ng dung nhap
+                // nếu ng dùng chọn vào 1 dòng và ấn sửa thì nó se hien lại cái form sửa cho ng dung nhap
                 Program.lvItem = lvSinhVien.SelectedItems[0];
-                frmInputSV a = new frmInputSV();
-                a.txtInPutMaSV.Text = Program.lvItem.SubItems[0].Text;
+                frmEditSv a = new frmEditSv();
+               
                 a.txtInPutHo.Text = Program.lvItem.SubItems[1].Text;
                 a.txtInPutTen.Text = Program.lvItem.SubItems[2].Text;
                 a.txtInputSDT.Text = Program.lvItem.SubItems[4].Text;

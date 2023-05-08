@@ -76,6 +76,12 @@
     <Compile Include="formCon\frmInputSV.Designer.cs">
       <DependentUpon>frmInputSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="formSua\frmEditSv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSua\frmEditSv.Designer.cs">
+      <DependentUpon>frmEditSv.cs</DependentUpon>
+    </Compile>
     <Compile Include="List\DsDiem.cs" />
     <Compile Include="List\DsLop.cs" />
     <Compile Include="List\DsSinhVien.cs" />
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formCon\frmInputSV.resx">
       <DependentUpon>frmInputSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSua\frmEditSv.resx">
+      <DependentUpon>frmEditSv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

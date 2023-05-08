@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             ""}, -1);
             this.btnNhapLop = new System.Windows.Forms.Button();
@@ -330,7 +330,7 @@
             this.lvSinhVien.GridLines = true;
             this.lvSinhVien.HideSelection = false;
             this.lvSinhVien.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7});
+            listViewItem10});
             this.lvSinhVien.Location = new System.Drawing.Point(0, 41);
             this.lvSinhVien.Name = "lvSinhVien";
             this.lvSinhVien.Size = new System.Drawing.Size(610, 254);
@@ -402,7 +402,7 @@
             this.lvLop.GridLines = true;
             this.lvLop.HideSelection = false;
             this.lvLop.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8});
+            listViewItem11});
             this.lvLop.Location = new System.Drawing.Point(0, 41);
             this.lvLop.Name = "lvLop";
             this.lvLop.Size = new System.Drawing.Size(391, 254);
@@ -473,7 +473,7 @@
             this.lvDsMon.GridLines = true;
             this.lvDsMon.HideSelection = false;
             this.lvDsMon.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9});
+            listViewItem12});
             this.lvDsMon.Location = new System.Drawing.Point(0, 41);
             this.lvDsMon.Name = "lvDsMon";
             this.lvDsMon.Size = new System.Drawing.Size(463, 254);
@@ -542,10 +542,11 @@
             this.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.grbLop.ResumeLayout(false);
             this.grbSinhVien.ResumeLayout(false);
             this.grbMonHoc.ResumeLayout(false);
