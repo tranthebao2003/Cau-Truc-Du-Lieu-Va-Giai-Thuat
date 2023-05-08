@@ -1,4 +1,5 @@
-﻿using System;
+﻿using doAn.Object;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace doAn.List
 {
     internal class DsDiem
     {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
         #region Node dach sach lien ket
@@ -94,5 +96,23 @@ namespace doAn.List
             }
         }
 >>>>>>> Stashed changes
+=======
+        public DsLop lop1 ;
+        public Diem diem;
+    
+
+        public void search(string a, string b, int c)
+        {
+            for (int i=0; i < lop1.length(); i++)
+            {
+                if (a == lop1.dsLop[i].maLop)
+                {
+                  
+                }
+            }
+        }
+       
+       
+>>>>>>> c54ece79c48c127426ce70339892d49ebce61386
     }
 }
