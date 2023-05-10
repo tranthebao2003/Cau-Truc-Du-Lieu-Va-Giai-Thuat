@@ -35,6 +35,7 @@ namespace doAn.formCon
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
+            // kiểm tra xem ng dung có nhập đủ thong tin hay ko
             if(txtInPutMaSV.Text == "" || txtInPutHo.Text =="" ||
             txtInPutTen.Text == "" ||
             txtInputSDT.Text == "")
@@ -45,6 +46,8 @@ namespace doAn.formCon
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            // gán những thông tin ng dung da nhap vao sv
             SinhVien sv1 = new SinhVien();
             sv1.maSV = txtInPutMaSV.Text;
             sv1.ho = txtInPutHo.Text; 
@@ -60,7 +63,7 @@ namespace doAn.formCon
             }
 
             // bản chất thuật toán ko trùng mssv là:
-            // nếu nó là node đầu thì gán nó vào dslk lun, còn ko thì ta sẽ so sánh mãsv của node vừa thêm vào (txtInPutMaSV.Text)
+            // nếu nó là node đầu thì gán nó vào dslk lun, còn ko thì ta sẽ so sánh mã sv của node vừa thêm vào (txtInPutMaSV.Text)
             // với all node trong dslk nếu trùng thì return lun còn ko trùng thì thêm nó vào dslk
             if (Program.objectDsSinhVien.head == null)
             {
@@ -84,6 +87,7 @@ namespace doAn.formCon
                 }
                 Program.objectDsSinhVien.add(sv1);
             }
+            // hiện thi ra dssv
             Program.objectDsSinhVien.display(Program.lvItem);
         }
 

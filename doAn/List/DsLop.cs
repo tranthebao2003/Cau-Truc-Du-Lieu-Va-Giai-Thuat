@@ -53,16 +53,18 @@ namespace doAn.List
         // cần xem lại
         public void display(ListViewItem a)
         {
-            Program.formMain.lvLop.Items.Clear(); // xoa nhung dong trong listview trx đó
+            Program.formMain.lvLop.Items.Clear();
             for (int i = 0; i < length(); i++)
             {
-                a = new ListViewItem(dsLop[i].maLop);
-                // khởi tạo ô đầu tiên của dòng đầu tiên
-                //them cac o tiep theo
-                a.SubItems.Add(dsLop[i].tenLop); // ô2
-                a.SubItems.Add(dsLop[i].namHoc.ToString()); // ô3
-
-                Program.formMain.lvLop.Items.Add(a);
+                if(dsLop[i].namHoc == Convert.ToInt32(Program.formMain.txtNamHoc.Text))
+                {
+                    a = new ListViewItem(dsLop[i].maLop);
+                    // khởi tạo ô đầu tiên của dòng đầu tiên
+                    //them cac o tiep theo
+                    a.SubItems.Add(dsLop[i].tenLop); // ô2
+                    a.SubItems.Add(dsLop[i].namHoc.ToString()); // ô3
+                    Program.formMain.lvLop.Items.Add(a);
+                }
             }
         }
     }

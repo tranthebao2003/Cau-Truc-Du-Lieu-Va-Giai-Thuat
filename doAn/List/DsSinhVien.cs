@@ -212,7 +212,5 @@ namespace doAn.List
                 ptr = ptr.next;
             }
         }
-
-      
     }
 }

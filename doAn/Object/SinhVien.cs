@@ -18,23 +18,5 @@ namespace doAn.Object
         {
 
         }
-
-        public void input()
-        {
-            Console.Write("Nhap ma sinh vien: ");
-            this.maSV = Console.ReadLine();
-
-            Console.Write("Nhap ho: ");
-            this.ho = Console.ReadLine();
-
-            Console.Write("Nhap ten: ");
-            this.ten = Console.ReadLine();
-
-            Console.Write("Nhap gio tinh flase(nam) true(nu): ");
-            this.phai = Convert.ToBoolean(Console.ReadLine());
-
-            Console.Write("Nhap so dien thoai: ");
-            this.soDT = Console.ReadLine();
-        }
     }
 }
