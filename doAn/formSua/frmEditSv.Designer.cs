@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.btnThoatNhapLop = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.btnSuaSinhVien = new System.Windows.Forms.Button();
             this.txtInPutTen = new System.Windows.Forms.TextBox();
             this.txtInPutHo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnThoatSv = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtInputSDT = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,16 +51,16 @@
             this.btnThoatNhapLop.Size = new System.Drawing.Size(75, 23);
             this.btnThoatNhapLop.TabIndex = 0;
             // 
-            // btnSua
+            // btnSuaSinhVien
             // 
-            this.btnSua.Location = new System.Drawing.Point(57, 235);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(92, 34);
-            this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnSuaSinhVien.Location = new System.Drawing.Point(57, 235);
+            this.btnSuaSinhVien.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnSuaSinhVien.Name = "btnSuaSinhVien";
+            this.btnSuaSinhVien.Size = new System.Drawing.Size(92, 34);
+            this.btnSuaSinhVien.TabIndex = 1;
+            this.btnSuaSinhVien.Text = "Sửa";
+            this.btnSuaSinhVien.UseVisualStyleBackColor = true;
+            this.btnSuaSinhVien.Click += new System.EventHandler(this.btnSuaSinhVien_Click);
             // 
             // txtInPutTen
             // 
@@ -110,17 +110,17 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Sửa sinh viên";
             // 
-            // btnThoat
+            // btnThoatSv
             // 
-            this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThoat.Location = new System.Drawing.Point(316, 235);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(92, 34);
-            this.btnThoat.TabIndex = 9;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnThoatSv.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnThoatSv.Location = new System.Drawing.Point(316, 235);
+            this.btnThoatSv.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnThoatSv.Name = "btnThoatSv";
+            this.btnThoatSv.Size = new System.Drawing.Size(92, 34);
+            this.btnThoatSv.TabIndex = 9;
+            this.btnThoatSv.Text = "Thoát";
+            this.btnThoatSv.UseVisualStyleBackColor = true;
+            this.btnThoatSv.Click += new System.EventHandler(this.btnThoatSv_Click);
             // 
             // label5
             // 
@@ -177,20 +177,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.CancelButton = this.btnThoat;
+            this.CancelButton = this.btnThoatSv;
             this.ClientSize = new System.Drawing.Size(482, 303);
             this.Controls.Add(this.radNu);
             this.Controls.Add(this.radNam);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtInputSDT);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnThoatSv);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInPutHo);
             this.Controls.Add(this.txtInPutTen);
-            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnSuaSinhVien);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmEditSv";
@@ -205,11 +205,11 @@
         #endregion
 
         private System.Windows.Forms.Button btnThoatNhapLop;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnSuaSinhVien;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnThoatSv;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtInPutTen;

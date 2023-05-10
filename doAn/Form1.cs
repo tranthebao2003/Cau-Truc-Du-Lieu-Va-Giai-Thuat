@@ -57,13 +57,6 @@ namespace doAn
             frmDiem.Show();
         }
 
-        private void btnInSv_Click(object sender, EventArgs e)
-        {
-            //frmInputSV sv1 = new frmInputSV();
-            ////ban đầu khi ng dung chưa ấn j thì nó sẽ ẩn bảng đi sau khi ng dùng click in thì nó sẽ hiện
-            //grbDssv.Visible = true;
-        }
-
         private void btnXoaSv_Click(object sender, EventArgs e) // làm tới đây chưa xong
         {
             if(lvSinhVien.SelectedItems.Count > 0)// kiem tra xe co dong nao dc chon ko
@@ -71,7 +64,7 @@ namespace doAn
                 while (lvSinhVien.SelectedItems.Count > 0) //trong khi còn lựa chọn thì cứ xóa thằng đầu tiên
                 {
 
-                    Program.ds1.removeTree(lvSinhVien.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
+                    Program.objectDsSinhVien.remove(lvSinhVien.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
                     lvSinhVien.Items.Remove(lvSinhVien.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
                                                                         //SelectedItems[0]: trả về dòng đầu tiên dược chọn
                 }
@@ -87,6 +80,7 @@ namespace doAn
 
         private void btnSuaSv_Click(object sender, EventArgs e)
         {
+            // mã sv là duy nhat nen ko đc sửa chỉ sửa nhug thog tin khác
             if(lvSinhVien.SelectedItems.Count > 0)
             {
                 // nếu ng dùng chọn vào 1 dòng và ấn sửa thì nó se hien lại cái form sửa cho ng dung nhap
@@ -107,24 +101,47 @@ namespace doAn
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnXoaLop_Click(object sender, EventArgs e)
         {
-
+            
+            if (lvLop.SelectedItems.Count > 0)// kiem tra xem co dong nao dc chon ko
+            {
+                while (lvLop.SelectedItems.Count > 0) //trong khi còn lựa chọn thì cứ xóa thằng đầu tiên
+                {
+                    Program.objectDslop.remove(lvLop.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
+                    lvLop.Items.Remove(lvLop.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
+                                                                          //SelectedItems[0]: trả về dòng đầu tiên dược chọn
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "Bạn chưa chọn ô cần xóa!",
+                "Thông báo",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnSuaLop_Click(object sender, EventArgs e)
         {
+            // tương tự ma sv thi ma lop la duy nhat nen chi sua thong tin lop do thoi
+            if (lvLop.SelectedItems.Count > 0)
+            {
+                // nếu ng dùng chọn vào 1 dòng và ấn sửa thì nó se hien lại cái form sửa cho ng dung nhap
+                Program.lvItem = lvLop.SelectedItems[0];
+                frmEditLop a = new frmEditLop();
 
+                a.txtInPuTenLop.Text = Program.lvItem.SubItems[1].Text;
+                a.txtInPuNam.Text = Program.lvItem.SubItems[2].Text;
+                a.Show(); // show form eidt sv ra
+            }
+            else
+            {
+                MessageBox.Show(
+               "Bạn chưa chọn ô cần sửa!",
+               "Thông báo",
+               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

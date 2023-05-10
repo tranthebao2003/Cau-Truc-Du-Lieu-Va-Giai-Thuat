@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace doAn.List
 {
@@ -28,19 +29,19 @@ namespace doAn.List
            
         Node head;
         Node tail;
-        int Size = 0;
+        int size = 0;
 
         public DsDiem()
         {
             head = null;
             tail = null;
-            Size = 0;
+            size = 0;
         }
 
         public void add(Diem a)
         {
             Node key = new Node(a);
-            if (Size == 0)
+            if (size == 0)
             {
                 head = key;
                 tail = key;
@@ -50,40 +51,70 @@ namespace doAn.List
                 tail.next = key;
                 tail = key;  
             }
-            Size++;
+            size++;
         }
 
-        //public void remove(Diem a)
-        //{
-        //    Node key = new Node(a);
-        //    Node p = head, delete = null;
-        //    for (int i = 0; i < Size; i++)
-        //    {
-        //        if(p == key)
-        //        {
-        //            if (i == 0)
-        //            {
-        //                head = head.next;
-        //            }
-        //            else
-        //            {
-        //                delete.next = p.next;
-        //            }
-        //            Size--;
-        //            return;
-        //        }
-        //        else
-        //        {
-        //            delete = p;
-        //            p = p.next;
-        //        }
-        //    }
-        //}
+        public int length()
+        {
+            return size;
+        }
 
+        public bool isEmpty()
+        {
+            return size == 0;
+        }
+
+        public void remove(int position)
+        {
+            if (isEmpty())
+            {
+                MessageBox.Show(
+                 "Chưa có phần tử nào để xóa",
+                 "Thông báo",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (length() == 1) // nếu chỉ có 1 sv thì gán head == null lun
+                {
+                    head = null;
+                }
+                else if (position == (length() - 1)) // neu ng ta chọn xóa cái cuối thì dùng removeLast
+                {
+                    removeLast();
+                }
+                else // neu ng ta chọn bất kì thì dùng removeAny
+                {
+                    Node ptr = head;
+                    int i = 1;
+                    while (i < position - 1)
+                    { // tìm cái node gần phần tử muốn xóa
+                        ptr = ptr.next;
+                        i += 1;
+                    }
+                    ptr.next = ptr.next.next;
+                }
+            }
+            size--;
+        }
+
+        public void removeLast()
+        {
+            Node p = head;
+            while (p.next.next != null) // tìm node của phần tử trước phần tử cuối
+            { // p.next.next: trỏ đến cái next của ô kế tiếp so với địa chỉ hiện tại mà p đang lưu
+                p = p.next;
+            }
+            p.next = null;
+        }
+
+
+        // chưa xong đâu cứ v đã
         public void display()
         {
             Node key = head;
-            for (int i=0; i<Size; i++)
+            for (int i=0; i<size; i++)
             {
                 string a = key.diem.maMonHoc;
                 int b = key.diem.soLanThi;
