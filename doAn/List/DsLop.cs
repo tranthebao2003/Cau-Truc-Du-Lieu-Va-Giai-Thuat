@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace doAn.List
 {
@@ -16,42 +17,20 @@ namespace doAn.List
             return size;
         }
 
+        public bool isEmpty()
+        {
+            return size == 0;
+        }
+
+        // add vào mang ta ko can vòng lặp nữa vì ta đã có nút btn Nhập
         public void add(Lop a)
         {
-            int mark = 0;
-            while (true)
-            {
-                mark = 0;
-                for (int i = 0; i < length(); i++)
-                {
-                    if (dsLop[i].maLop == a.maLop)
-                    {
-                        mark = 1;
-                        Console.WriteLine("Ma lop da ton tai! Vui long nhap lai ma lop");
-                        a.maLop = Console.ReadLine();
-                    }
-                }
-                if (mark == 0)
-                {
-                    break;
-                }
-            }
-
             dsLop[size] = a;
             size++;
         }
 
-        public void remove(string maLop)
+        public void remove(int index)
         {
-            int index = 0;
-            for (int i = 0; i < length(); i++)
-            {
-                if (dsLop[i].maLop == maLop)
-                {
-                    index = i;
-                    break;
-                }
-            }
             for (int i = index; i < size; i++)
             {
                 dsLop[i] = dsLop[i + 1];
@@ -59,7 +38,7 @@ namespace doAn.List
             size--;
         }
 
-        public void edit(Lop lop)
+        public void editLop(Lop lop)
         {
             for (int i = 0; i < length(); i++)
             {
@@ -71,17 +50,19 @@ namespace doAn.List
             }
         }
 
-        public void display(int year)
+        // cần xem lại
+        public void display(ListViewItem a)
         {
+            Program.formMain.lvLop.Items.Clear(); // xoa nhung dong trong listview trx đó
             for (int i = 0; i < length(); i++)
             {
-                if (dsLop[i].namHoc == year)
-                {
-                    Console.WriteLine("Ma lop: " + dsLop[i].maLop);
-                    Console.WriteLine("Ten lop: " + dsLop[i].tenLop);
-                    Console.WriteLine("Nam hoc: " + dsLop[i].namHoc);
-                    Console.WriteLine();
-                }
+                a = new ListViewItem(dsLop[i].maLop);
+                // khởi tạo ô đầu tiên của dòng đầu tiên
+                //them cac o tiep theo
+                a.SubItems.Add(dsLop[i].tenLop); // ô2
+                a.SubItems.Add(dsLop[i].namHoc.ToString()); // ô3
+
+                Program.formMain.lvLop.Items.Add(a);
             }
         }
     }

@@ -62,13 +62,13 @@ namespace doAn.formCon
             // bản chất thuật toán ko trùng mssv là:
             // nếu nó là node đầu thì gán nó vào dslk lun, còn ko thì ta sẽ so sánh mãsv của node vừa thêm vào (txtInPutMaSV.Text)
             // với all node trong dslk nếu trùng thì return lun còn ko trùng thì thêm nó vào dslk
-            if (Program.ds1.head == null)
+            if (Program.objectDsSinhVien.head == null)
             {
-                Program.ds1.add(sv1);
+                Program.objectDsSinhVien.add(sv1);
             }
             else
             {
-                DsSinhVien.Node ptr = Program.ds1.head;
+                DsSinhVien.Node ptr = Program.objectDsSinhVien.head;
 
                 while(ptr != null)
                 {
@@ -82,9 +82,9 @@ namespace doAn.formCon
                     }
                     ptr = ptr.next;
                 }
-                Program.ds1.add(sv1);
+                Program.objectDsSinhVien.add(sv1);
             }
-            Program.ds1.display(Program.lvItem);
+            Program.objectDsSinhVien.display(Program.lvItem);
         }
 
         private void frmInputSV_Load(object sender, EventArgs e)

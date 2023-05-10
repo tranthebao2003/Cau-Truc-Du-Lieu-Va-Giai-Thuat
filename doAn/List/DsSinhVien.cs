@@ -122,47 +122,34 @@ namespace doAn.List
 
         public void removeLast()
         {
-  
             Node p = head;
             while (p.next.next != null) // tìm node của phần tử trước phần tử cuối
             { // p.next.next: trỏ đến cái next của ô kế tiếp so với địa chỉ hiện tại mà p đang lưu
                 p = p.next;
             }
             p.next = null;
-            
         }
 
-        public void removeTree(int position)
+        public void remove(int position)
         {
-            if (isEmpty())
+            if(length() == 1) // nếu chỉ có 1 sv thì gán head == null lun
             {
-                MessageBox.Show(
-                 "Chưa có phần tử nào để xóa",
-                 "Thông báo",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information);
+                head = null;
+            } 
+            else if(position == (length() - 1)) // neu ng ta chọn xóa cái cuối thì dùng removeLast
+            {
+                removeLast();
             }
-            else
+            else // neu ng ta chọn bất kì thì dùng removeAny
             {
-                if(length() == 1) // nếu chỉ có 1 sv thì gán head == null lun
-                {
-                    head = null;
-                } 
-                else if(position == (length() - 1)) // neu ng ta chọn xóa cái cuối thì dùng removeLast
-                {
-                    removeLast();
+                Node ptr = head;
+                int i = 1;
+                while (i < position - 1)
+                { // tìm cái node gần phần tử muốn xóa
+                    ptr = ptr.next;
+                    i += 1;
                 }
-                else // neu ng ta chọn bất kì thì dùng removeAny
-                {
-                    Node ptr = head;
-                    int i = 1;
-                    while (i < position - 1)
-                    { // tìm cái node gần phần tử muốn xóa
-                        ptr = ptr.next;
-                        i += 1;
-                    }
-                    ptr.next = ptr.next.next;
-                }
+                ptr.next = ptr.next.next;
             }
             size--;
         }
@@ -178,7 +165,7 @@ namespace doAn.List
                 {
                     e.next = ptr.next;
                     head = e;
-                    break;
+                    return; // vì nếu vào đây nghĩa là đã thay thế xong luôn rồi nên thoát
                 }
                 else if (ptr.sv.maSV == e.sv.maSV)
                 {
