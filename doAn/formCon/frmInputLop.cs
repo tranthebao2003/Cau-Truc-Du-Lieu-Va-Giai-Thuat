@@ -61,7 +61,6 @@ namespace doAn.formCon
                 }
             }
             Program.objectDslop.add(lop1);
-            Program.objectDslop.display(Program.lvItem);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

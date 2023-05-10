@@ -16,40 +16,18 @@ namespace doAn.Object
 
         public DsSinhVien dssv; // con trỏ này trỏ đến class dssv 
 
+
         public Lop()
         {
-
+            this.dssv = new DsSinhVien(); // phải khởi tạo con trỏ này vì khi ta khởi tạo đội tướng result ở sự kiện double click nó sẽ gọi đến hàm này
         }
+
         public Lop(string maLop, string tenLop, int namHoc)
         {
             this.maLop = maLop;
             this.tenLop = tenLop;
             this.namHoc = namHoc;
-        }
-
-        public void input()
-        {
-
-            do
-            {
-                Console.Write("Nhap ma lop: ");
-                this.maLop = Console.ReadLine(); // gán thẳng cho thuộc tính của đối tượng
-            } while (this.maLop.Trim().Length > 15 || this.maLop.Trim().Length == 0); // trim loại bỏ khoảng trắng
-
-            do
-            {
-                Console.Write("Nhap ten lop: ");
-                this.tenLop = Console.ReadLine();
-            } while (this.tenLop.Trim().Length == 0); // trim loại bỏ khoảng trắng
-
-            do
-            {
-                Console.Write("Nhap nam hoc: ");
-                this.namHoc = Convert.ToInt32(Console.ReadLine());
-            } while (this.namHoc <= 0);
-
             this.dssv = new DsSinhVien();
         }
-
     }
 }

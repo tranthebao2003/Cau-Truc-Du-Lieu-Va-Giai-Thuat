@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             ""}, -1);
             this.btnNhapLop = new System.Windows.Forms.Button();
@@ -46,6 +46,8 @@
             this.btnInDiemTB = new System.Windows.Forms.Button();
             this.btnInDiem = new System.Windows.Forms.Button();
             this.grbLop = new System.Windows.Forms.GroupBox();
+            this.txtNamHoc = new System.Windows.Forms.TextBox();
+            this.btnInLop = new System.Windows.Forms.Button();
             this.grbSinhVien = new System.Windows.Forms.GroupBox();
             this.grbMonHoc = new System.Windows.Forms.GroupBox();
             this.grbDiemSo = new System.Windows.Forms.GroupBox();
@@ -86,7 +88,7 @@
             // btnNhapLop
             // 
             this.btnNhapLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnNhapLop.Location = new System.Drawing.Point(39, 42);
+            this.btnNhapLop.Location = new System.Drawing.Point(39, 39);
             this.btnNhapLop.Margin = new System.Windows.Forms.Padding(5);
             this.btnNhapLop.Name = "btnNhapLop";
             this.btnNhapLop.Size = new System.Drawing.Size(281, 43);
@@ -111,7 +113,7 @@
             // btnNhapSv
             // 
             this.btnNhapSv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnNhapSv.Location = new System.Drawing.Point(39, 42);
+            this.btnNhapSv.Location = new System.Drawing.Point(39, 37);
             this.btnNhapSv.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapSv.Name = "btnNhapSv";
             this.btnNhapSv.Size = new System.Drawing.Size(281, 43);
@@ -123,7 +125,7 @@
             // btnNhapMon
             // 
             this.btnNhapMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnNhapMon.Location = new System.Drawing.Point(37, 42);
+            this.btnNhapMon.Location = new System.Drawing.Point(37, 37);
             this.btnNhapMon.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMon.Name = "btnNhapMon";
             this.btnNhapMon.Size = new System.Drawing.Size(281, 43);
@@ -180,16 +182,40 @@
             // grbLop
             // 
             this.grbLop.BackColor = System.Drawing.Color.Transparent;
+            this.grbLop.Controls.Add(this.txtNamHoc);
+            this.grbLop.Controls.Add(this.btnInLop);
             this.grbLop.Controls.Add(this.btnNhapLop);
             this.grbLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.grbLop.Location = new System.Drawing.Point(33, 493);
             this.grbLop.Margin = new System.Windows.Forms.Padding(4);
             this.grbLop.Name = "grbLop";
             this.grbLop.Padding = new System.Windows.Forms.Padding(4);
-            this.grbLop.Size = new System.Drawing.Size(349, 112);
+            this.grbLop.Size = new System.Drawing.Size(349, 145);
             this.grbLop.TabIndex = 14;
             this.grbLop.TabStop = false;
             this.grbLop.Text = "Lớp";
+            // 
+            // txtNamHoc
+            // 
+            this.txtNamHoc.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamHoc.Location = new System.Drawing.Point(247, 94);
+            this.txtNamHoc.Multiline = true;
+            this.txtNamHoc.Name = "txtNamHoc";
+            this.txtNamHoc.Size = new System.Drawing.Size(73, 34);
+            this.txtNamHoc.TabIndex = 3;
+            this.txtNamHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnInLop
+            // 
+            this.btnInLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnInLop.Location = new System.Drawing.Point(39, 94);
+            this.btnInLop.Margin = new System.Windows.Forms.Padding(5);
+            this.btnInLop.Name = "btnInLop";
+            this.btnInLop.Size = new System.Drawing.Size(200, 34);
+            this.btnInLop.TabIndex = 2;
+            this.btnInLop.Text = "In lớp theo năm";
+            this.btnInLop.UseVisualStyleBackColor = true;
+            this.btnInLop.Click += new System.EventHandler(this.btnInLop_Click);
             // 
             // grbSinhVien
             // 
@@ -200,7 +226,7 @@
             this.grbSinhVien.Margin = new System.Windows.Forms.Padding(4);
             this.grbSinhVien.Name = "grbSinhVien";
             this.grbSinhVien.Padding = new System.Windows.Forms.Padding(4);
-            this.grbSinhVien.Size = new System.Drawing.Size(349, 112);
+            this.grbSinhVien.Size = new System.Drawing.Size(349, 96);
             this.grbSinhVien.TabIndex = 15;
             this.grbSinhVien.TabStop = false;
             this.grbSinhVien.Text = "Sinh viên";
@@ -214,7 +240,7 @@
             this.grbMonHoc.Margin = new System.Windows.Forms.Padding(4);
             this.grbMonHoc.Name = "grbMonHoc";
             this.grbMonHoc.Padding = new System.Windows.Forms.Padding(4);
-            this.grbMonHoc.Size = new System.Drawing.Size(349, 112);
+            this.grbMonHoc.Size = new System.Drawing.Size(349, 96);
             this.grbMonHoc.TabIndex = 16;
             this.grbMonHoc.TabStop = false;
             this.grbMonHoc.Text = "Môn học";
@@ -227,7 +253,7 @@
             this.grbDiemSo.Controls.Add(this.btnInDiemTK);
             this.grbDiemSo.Controls.Add(this.btnInDiemTB);
             this.grbDiemSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.grbDiemSo.Location = new System.Drawing.Point(33, 628);
+            this.grbDiemSo.Location = new System.Drawing.Point(33, 655);
             this.grbDiemSo.Margin = new System.Windows.Forms.Padding(4);
             this.grbDiemSo.Name = "grbDiemSo";
             this.grbDiemSo.Padding = new System.Windows.Forms.Padding(4);
@@ -290,7 +316,7 @@
             this.lvSinhVien.GridLines = true;
             this.lvSinhVien.HideSelection = false;
             this.lvSinhVien.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem25});
+            listViewItem1});
             this.lvSinhVien.Location = new System.Drawing.Point(0, 41);
             this.lvSinhVien.Name = "lvSinhVien";
             this.lvSinhVien.Size = new System.Drawing.Size(610, 254);
@@ -362,13 +388,14 @@
             this.lvLop.GridLines = true;
             this.lvLop.HideSelection = false;
             this.lvLop.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem26});
+            listViewItem2});
             this.lvLop.Location = new System.Drawing.Point(0, 41);
             this.lvLop.Name = "lvLop";
             this.lvLop.Size = new System.Drawing.Size(391, 254);
             this.lvLop.TabIndex = 23;
             this.lvLop.UseCompatibleStateImageBehavior = false;
             this.lvLop.View = System.Windows.Forms.View.Details;
+            this.lvLop.DoubleClick += new System.EventHandler(this.lvLop_DoubleClick);
             // 
             // clnMaLop
             // 
@@ -433,7 +460,7 @@
             this.lvDsMon.GridLines = true;
             this.lvDsMon.HideSelection = false;
             this.lvDsMon.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem27});
+            listViewItem3});
             this.lvDsMon.Location = new System.Drawing.Point(0, 41);
             this.lvDsMon.Name = "lvDsMon";
             this.lvDsMon.Size = new System.Drawing.Size(463, 254);
@@ -507,6 +534,7 @@
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.grbLop.ResumeLayout(false);
+            this.grbLop.PerformLayout();
             this.grbSinhVien.ResumeLayout(false);
             this.grbMonHoc.ResumeLayout(false);
             this.grbDiemSo.ResumeLayout(false);
@@ -557,6 +585,8 @@
         private System.Windows.Forms.ColumnHeader clnSTCTH;
         private System.Windows.Forms.Button btnXoaMon;
         private System.Windows.Forms.Button btnSuaMon;
+        private System.Windows.Forms.Button btnInLop;
+        public System.Windows.Forms.TextBox txtNamHoc;
     }
 }
 
