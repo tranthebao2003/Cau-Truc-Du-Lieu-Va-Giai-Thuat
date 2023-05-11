@@ -65,14 +65,8 @@ namespace doAn.formCon
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-               "Bạn có chắc muốn thoát?",
-               "Thông báo",
-               MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-            {
-                Close();
-            }
+            
+             Close();
         }
     }
 }

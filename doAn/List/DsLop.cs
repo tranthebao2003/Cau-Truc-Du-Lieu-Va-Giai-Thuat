@@ -50,7 +50,6 @@ namespace doAn.List
             }
         }
 
-        // cần xem lại
         public void display(ListViewItem a)
         {
             Program.formMain.lvLop.Items.Clear();

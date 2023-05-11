@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace doAn.Object
 {
@@ -30,9 +31,8 @@ namespace doAn.Object
             this.root = null;
         }
         
-        public void insert(Node temproot, MonHoc e)
+        public bool insert(Node temproot, MonHoc e)
         {
-
             // bản chất ở đây ta cần 2 biến tạm là temp và temproot để chứa địa chỉ của root
             //  temproot dùng để tìm vị trí thích hợp khi chen, còn temp thì để liên kết 2 node lại vs nhau
             Node temp = null;
@@ -43,13 +43,17 @@ namespace doAn.Object
                 
                 if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 0)//note
                 {
-                    return;
+                    MessageBox.Show(
+                        "Mã môn học bị trùng!",
+                        "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
                 }
-                else if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == -1) // phần tử x < gốc thì thêm vào trái
+                else if (e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == -1) // phần tử x < gốc thì thêm vào trái
                 {
                     temproot = temproot.left;
                 }
-                else if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 1) // phần tử x > gốc thì thêm vào trái
+                else if (e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == 1) // phần tử x > gốc thì thêm vào trái
                 {
                     temproot = temproot.right;
                 }
@@ -58,27 +62,35 @@ namespace doAn.Object
             Node n = new Node(e);
             if (root != null)
             {
-                if (e.maMonHoc.CompareTo(temp.monHoc.maMonHoc) == -1)
+                if (e.tenMonHoc.CompareTo(temp.monHoc.tenMonHoc) == -1)
                     temp.left = n;
-                else if(e.maMonHoc.CompareTo(temp.monHoc.maMonHoc) == 1)
+                else if(e.tenMonHoc.CompareTo(temp.monHoc.tenMonHoc) == 1)
                     temp.right = n;
             }
             else
             {
                 root = n;
             }
+            return true;
         }
 
-        public void displayPreOrder(Node tmpRoot)
+        // ở đây ta dùng inOrder là vì cây này sẽ duyệt từ bé đến lớn và ta chỉ cần thêm môn học dựa theo tên môn học
+        // và thêm điều kiện ko đc trùng mã môn học là sẽ tự động sắp sếp tên môn học từ bé đến lớn
+        public void displayInOrder(Node tmpRoot, ListViewItem a)
         {
             if (tmpRoot != null)
             {
-                Console.WriteLine(tmpRoot.monHoc.maMonHoc + " ");
-                Console.WriteLine(tmpRoot.monHoc.tenMonHoc + " ");
-                Console.WriteLine(tmpRoot.monHoc.tinChiLT + " ");
-                Console.WriteLine(tmpRoot.monHoc.tinChiTH + " ");
-                displayPreOrder(tmpRoot.left);
-                displayPreOrder(tmpRoot.right);
+                displayInOrder(tmpRoot.left, a);
+
+                a = new ListViewItem(tmpRoot.monHoc.maMonHoc);
+                // khởi tạo ô đầu tiên của dòng đầu tiên
+                //them cac o tiep theo
+                a.SubItems.Add(tmpRoot.monHoc.tenMonHoc); // ô2
+                a.SubItems.Add(tmpRoot.monHoc.tinChiLT.ToString()); // ô3
+                a.SubItems.Add(tmpRoot.monHoc.tinChiTH.ToString()); // ô4
+                Program.formMain.lvDsMon.Items.Add(a);
+
+                displayInOrder(tmpRoot.right, a);
             }
         }
     }
