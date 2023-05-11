@@ -91,8 +91,8 @@ namespace doAn
 
         private void btnNhapDiem_Click(object sender, EventArgs e)
         {
-            frmInputDiem frmDiem = new frmInputDiem(); // tạo 1 đối tượng từ class frmInputLop
-            frmDiem.Show();
+            frmUser frmUser = new frmUser(); // tạo 1 đối tượng từ class frmInputLop
+            frmUser.Show();
         }
 
         #region Sửa và xóa sv
@@ -227,6 +227,28 @@ namespace doAn
             Program.objectDsSinhVien.display(Program.lvItem); // hiển thị dssv thôi
         }
         #endregion
+
+        // chưa xong
+        private void btnXoaMon_Click(object sender, EventArgs e)
+        {
+            if (lvDsMon.SelectedItems.Count > 0)// kiem tra xe co dong nao dc chon ko
+            {
+                //while (lvDsMon.SelectedItems.Count > 0) //trong khi còn lựa chọn thì cứ xóa thằng đầu tiên
+                //{
+
+                //    Program.objectDsSinhVien.remove(lvSinhVien.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
+                //    lvSinhVien.Items.Remove(lvDsMon.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
+                //                                                          //SelectedItems[0]: trả về dòng đầu tiên dược chọn
+                //}
+            }
+            else
+            {
+                MessageBox.Show(
+                "Bạn chưa chọn ô cần xóa!",
+                "Thông báo",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
 

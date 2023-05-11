@@ -1,4 +1,5 @@
 ﻿using doAn.List;
+using doAn.Object;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace doAn
     {
         public static DsSinhVien objectDsSinhVien = new DsSinhVien(); // tạo 1 phương thức tĩnh của class program, phương thức này khởi tạo 1 dsSinhVien
         public static DsLop objectDslop = new DsLop();
+        public static DsMonHoc objectDsMonHoc = new DsMonHoc();
+
         public static Form1 formMain;
         public static ListViewItem lvItem;
          
