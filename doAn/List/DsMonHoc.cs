@@ -31,6 +31,8 @@ namespace doAn.Object
             this.root = null;
         }
         
+        // ta bat buộc phải dùng mã môn học để thêm node vao cay nhi phan vì ma mon học là duy nhất còn nếu dung tên môn học để
+        // in ra kieu inorder nhằm sap xep theo ten mon hoc thì khi ng dung nhap ten mon hoc trung nhau nó sẽ bị lỗi
         public bool insert(Node temproot, MonHoc e)
         {
             // bản chất ở đây ta cần 2 biến tạm là temp và temproot để chứa địa chỉ của root
@@ -49,22 +51,23 @@ namespace doAn.Object
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
-                else if (e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == -1) // phần tử x < gốc thì thêm vào trái
+                else if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == -1) // phần tử x < gốc thì thêm vào trái
                 {
                     temproot = temproot.left;
                 }
-                else if (e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == 1) // phần tử x > gốc thì thêm vào trái
+                else if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 1) // phần tử x > gốc thì thêm vào trái
                 {
                     temproot = temproot.right;
                 }
+           
             }
 
             Node n = new Node(e);
             if (root != null)
             {
-                if (e.tenMonHoc.CompareTo(temp.monHoc.tenMonHoc) == -1)
+                if (e.maMonHoc.CompareTo(temp.monHoc.maMonHoc) == -1)
                     temp.left = n;
-                else if(e.tenMonHoc.CompareTo(temp.monHoc.tenMonHoc) == 1)
+                else if(e.maMonHoc.CompareTo(temp.monHoc.maMonHoc) == 1)
                     temp.right = n;
             }
             else
@@ -74,8 +77,72 @@ namespace doAn.Object
             return true;
         }
 
-        // ở đây ta dùng inOrder là vì cây này sẽ duyệt từ bé đến lớn và ta chỉ cần thêm môn học dựa theo tên môn học
-        // và thêm điều kiện ko đc trùng mã môn học là sẽ tự động sắp sếp tên môn học từ bé đến lớn
+        public Node timNodeTheMang(Node rootCanXoa, Node PhaiRootCanXoa)
+        {
+            // tìm node trái nhất của cây con phải(cây con phải của cái node cần xóa)
+            // thì khi node thể mạng này thay thế node cần xóa nó sẽ đảm bảo tính chất của cây nhị phân
+            // tóm lại ta chỉ cần thay thế element của node cần xóa == element của node thế mạng rồi xong đó nó quay ve truong hợp xóa node leaf va dung ham xoa 1 lan nua
+            if (PhaiRootCanXoa.left != null)
+            {
+                rootCanXoa = timNodeTheMang(rootCanXoa, PhaiRootCanXoa.left);
+            }
+            else // tim ra đc node trái nhất
+            {
+                rootCanXoa.monHoc = PhaiRootCanXoa.monHoc;
+                /*PhaiRootCanXoa = PhaiRootCanXoa.right;*/ // nếu mà mik gán thẳng thàng rootY bằng null thì những thằng sau sẽ bị mất
+            }
+            return rootCanXoa;
+        }
+
+        // xóa đc node 1 con và node leaf
+        // phải sử dụng nút ref để tham chiếu đến cây nhị phân thì mới xóa đc node trong cây nhị phân
+        // tempRoot no chính la cai root thực sự lun vì hien tai dang dung ref(tham chieu) vì the no se co quyen thay
+        // the node trong cay
+        public Node removeNode(Node tempRoot, MonHoc e)
+        {
+            if (tempRoot == null)
+            {
+                return null;
+            }
+            else
+            {
+                if (e.tenMonHoc.CompareTo(tempRoot.monHoc.tenMonHoc) == -1)
+                {
+                    tempRoot.left = removeNode(tempRoot.left, e);
+                }
+                else if (e.tenMonHoc.CompareTo(tempRoot.monHoc.tenMonHoc) == 1)
+                {
+                    tempRoot.right = removeNode(tempRoot.right, e);
+                }
+
+                // bản chất thuật toán này là nếu là node leaf thì nó sẽ trả về null lun
+                // còn nếu là node có 1 con thì nó sẽ lấy node cha của node cần xóa liên kết với node con của node cần xóa
+                else // e == tempRoot.element, đã tìm ra node can xoa
+                {
+                    if (tempRoot.left == null && tempRoot.right == null)
+                    {
+                        return null; 
+                    }
+                    else if (tempRoot.left == null)
+                    {
+                        return tempRoot.right;
+                    }
+                    else if (tempRoot.right == null)
+                    {
+                        return tempRoot.left;
+                    }
+                    // Node can xoa node co 2 con
+                    else
+                    {
+                        Node minNode = timNodeTheMang(tempRoot, tempRoot.right); // nó trả về node nhỏ nhất của tempRoot.right và đồng thời đã thay e của node đó vào node cần xóa
+                        tempRoot.right = removeNode(tempRoot.right, minNode.monHoc); // h ta chỉ cần xóa node thế mạng kia là xong, ta cần truyen vao cái root của node thể mạng và cái element của node thế mạng
+                    }
+                }
+            }
+            return tempRoot; // cập nhật lại tempRoot sau quá trình sửa đổi ở trên
+        }
+
+        
         public void displayInOrder(Node tmpRoot, ListViewItem a)
         {
             if (tmpRoot != null)

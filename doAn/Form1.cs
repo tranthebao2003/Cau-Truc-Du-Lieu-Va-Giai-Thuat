@@ -233,13 +233,21 @@ namespace doAn
         {
             if (lvDsMon.SelectedItems.Count > 0)// kiem tra xe co dong nao dc chon ko
             {
-                //while (lvDsMon.SelectedItems.Count > 0) //trong khi còn lựa chọn thì cứ xóa thằng đầu tiên
-                //{
+                while (lvDsMon.SelectedItems.Count > 0) //trong khi còn lựa chọn thì cứ xóa thằng đầu tiên
+                {
+                    Program.lvItem = lvDsMon.SelectedItems[0];
+                    MonHoc monHoc1 = new MonHoc();
+                    monHoc1.maMonHoc = Program.lvItem.SubItems[0].Text;
+                    monHoc1.tenMonHoc = Program.lvItem.SubItems[1].Text;
+                    monHoc1.tinChiLT = Convert.ToInt32(Program.lvItem.SubItems[2].Text);
+                    monHoc1.tinChiTH = Convert.ToInt32(Program.lvItem.SubItems[3].Text);
 
-                //    Program.objectDsSinhVien.remove(lvSinhVien.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
-                //    lvSinhVien.Items.Remove(lvDsMon.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
-                //                                                          //SelectedItems[0]: trả về dòng đầu tiên dược chọn
-                //}
+                    //MessageBox.Show(monHoc1.maMonHoc + monHoc1.tenMonHoc + monHoc1.tinChiLT + monHoc1.tinChiTH);
+
+                    Program.objectDsMonHoc.root = Program.objectDsMonHoc.removeNode(Program.objectDsMonHoc.root, monHoc1); // trong ngoặc nó trả về index dòng đâu tien dc chon
+                    lvDsMon.Items.Remove(lvDsMon.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
+                                                                    //SelectedItems[0]: trả về dòng đầu tiên dược chọn
+                }
             }
             else
             {
