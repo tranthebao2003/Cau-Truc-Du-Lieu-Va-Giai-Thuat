@@ -17,26 +17,6 @@ namespace doAn.Object
         {
         }
         // không cần hàm khởi tạo full tham so vì mik đã có phương thức input và gán thẳng những j ng dùng nhập vào thuộc tính lun roi
-        public void input()
-        {
-           
-            Console.Write("Nhap ma mon hoc: ");
-            this.maMonHoc = Console.ReadLine(); // gán thẳng cho thuộc tính của đối tượng (#)
-
-            Console.Write("Nhap ten mon hoc: ");
-            this.tenMonHoc = Console.ReadLine();
-
-            do
-            {
-                Console.Write("Nhap tin chi li thuyet: ");
-                this.tinChiLT = Convert.ToInt32(Console.ReadLine());
-            } while (tinChiLT <= 0);
-
-            do
-            {
-                Console.Write("Nhap tin chi thuc hanh: ");
-                this.tinChiTH = Convert.ToInt32(Console.ReadLine());
-            } while (tinChiTH <= 0);
-        }
+        
     }
 }
