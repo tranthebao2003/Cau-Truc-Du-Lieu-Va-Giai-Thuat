@@ -31,8 +31,8 @@ namespace doAn.Object
             this.root = null;
         }
         
-        // ta bat buộc phải dùng mã môn học để thêm node vao cay nhi phan vì ma mon học là duy nhất còn nếu dung tên môn học để
-        // in ra kieu inorder nhằm sap xep theo ten mon hoc thì khi ng dung nhap ten mon hoc trung nhau nó sẽ bị lỗi
+        // ta sẽ in theo ten mon hoc de khi dung inorder thi no se duyet theo thu tu tang dan ten mon hoc
+        // vi them theo ten mon hoc va ma mon hoc ko trung nen ta se rang buoc ten mon hoc va ma mon hoc deu khong duoc trung nhau
         public bool insert(Node temproot, MonHoc e)
         {
             // bản chất ở đây ta cần 2 biến tạm là temp và temproot để chứa địa chỉ của root
@@ -43,7 +43,7 @@ namespace doAn.Object
             {
                 temp = temproot; // 2 thằng này giờ đang lưu trữ địa chỉ của root
                 
-                if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 0)//note
+                if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 0)  //note
                 {
                     MessageBox.Show(
                         "Mã môn học bị trùng!",
@@ -51,11 +51,19 @@ namespace doAn.Object
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
-                else if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == -1) // phần tử x < gốc thì thêm vào trái
+                if(e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == 0)
+                {
+                    MessageBox.Show(
+                        "Tên môn học bị trùng!",
+                        "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+                else if (e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == -1) // phần tử x < gốc thì thêm vào trái
                 {
                     temproot = temproot.left;
                 }
-                else if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 1) // phần tử x > gốc thì thêm vào trái
+                else if (e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == 1) // phần tử x > gốc thì thêm vào trái
                 {
                     temproot = temproot.right;
                 }
@@ -65,9 +73,9 @@ namespace doAn.Object
             Node n = new Node(e);
             if (root != null)
             {
-                if (e.maMonHoc.CompareTo(temp.monHoc.maMonHoc) == -1)
+                if (e.tenMonHoc.CompareTo(temp.monHoc.tenMonHoc) == -1)
                     temp.left = n;
-                else if(e.maMonHoc.CompareTo(temp.monHoc.maMonHoc) == 1)
+                else if(e.tenMonHoc.CompareTo(temp.monHoc.tenMonHoc) == 1)
                     temp.right = n;
             }
             else
