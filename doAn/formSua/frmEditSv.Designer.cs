@@ -195,7 +195,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmEditSv";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập lớp";
+            this.Text = "Sửa sinh viên";
             this.Load += new System.EventHandler(this.frmEditSv_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

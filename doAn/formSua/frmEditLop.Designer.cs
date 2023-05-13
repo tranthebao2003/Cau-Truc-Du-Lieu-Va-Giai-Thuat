@@ -135,7 +135,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmEditLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập lớp";
+            this.Text = "Sửa lớp";
             this.ResumeLayout(false);
             this.PerformLayout();
 
