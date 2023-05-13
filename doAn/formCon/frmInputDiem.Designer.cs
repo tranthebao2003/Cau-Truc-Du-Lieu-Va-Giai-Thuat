@@ -146,7 +146,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmInputDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập lớp";
+            this.Text = "Nhập điểm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

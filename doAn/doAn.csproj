@@ -82,6 +82,12 @@
     <Compile Include="formSua\frmEditLop.Designer.cs">
       <DependentUpon>frmEditLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="formSua\frmEditMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSua\frmEditMon.Designer.cs">
+      <DependentUpon>frmEditMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="formSua\frmEditSv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formSua\frmEditLop.resx">
       <DependentUpon>frmEditLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSua\frmEditMon.resx">
+      <DependentUpon>frmEditMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formSua\frmEditSv.resx">
       <DependentUpon>frmEditSv.cs</DependentUpon>

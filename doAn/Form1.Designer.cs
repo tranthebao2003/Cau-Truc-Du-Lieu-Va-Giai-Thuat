@@ -508,6 +508,7 @@
             this.btnSuaMon.TabIndex = 25;
             this.btnSuaMon.Text = "Sửa";
             this.btnSuaMon.UseVisualStyleBackColor = true;
+            this.btnSuaMon.Click += new System.EventHandler(this.btnSuaMon_Click);
             // 
             // Form1
             // 

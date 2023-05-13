@@ -150,7 +150,20 @@ namespace doAn.Object
             return tempRoot; // cập nhật lại tempRoot sau quá trình sửa đổi ở trên
         }
 
-        
+        // thuat toan này mik cho sửa mã môn lun mac dù nó là duy nhất vì thuat toan sửa này kết hết giữa thêm và xóa
+        // nếu ta ko cho sửa ma mon thì khi thêm vào sẽ bị lỗi vì ngay từ đầu ta đã ko cho ng dùng nhập trùng mã môn
+        public Node modifyNode(Node root, MonHoc target, MonHoc newValue)
+        {
+            bool mark = insert(root, newValue);
+            if (mark == true)
+            {
+               root =  removeNode(root, target);
+               
+            }
+            return root;
+        }
+
+
         public void displayInOrder(Node tmpRoot, ListViewItem a)
         {
             if (tmpRoot != null)
