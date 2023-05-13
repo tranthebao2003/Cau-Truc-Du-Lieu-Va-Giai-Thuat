@@ -217,7 +217,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmInputSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập lớp";
+            this.Text = "Nhập sinh viên";
             this.Load += new System.EventHandler(this.frmInputSV_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

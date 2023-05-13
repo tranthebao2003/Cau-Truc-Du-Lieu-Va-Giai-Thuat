@@ -228,7 +228,6 @@ namespace doAn
         }
         #endregion
 
-        // chưa xong
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
             if (lvDsMon.SelectedItems.Count > 0)// kiem tra xe co dong nao dc chon ko
@@ -255,6 +254,30 @@ namespace doAn
                 "Bạn chưa chọn ô cần xóa!",
                 "Thông báo",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnSuaMon_Click(object sender, EventArgs e)
+        {
+            // tuong tu ko cho su ma mon vi ma mon la duy nhat
+            if (lvDsMon.SelectedItems.Count > 0)
+            {
+                // nếu ng dùng chọn vào 1 dòng và ấn sửa thì nó se hien lại cái form sửa cho ng dung nhap
+                Program.lvItem = lvDsMon.SelectedItems[0];
+                frmEditMon a = new frmEditMon();
+
+                a.txtInputMaMon.Text = Program.lvItem.SubItems[0].Text;
+                a.txtInPutTenMon.Text = Program.lvItem.SubItems[1].Text;
+                a.txtInPutSTCLT.Text = Program.lvItem.SubItems[2].Text;
+                a.txtInPutSTCTH.Text = Program.lvItem.SubItems[3].Text;
+                a.Show(); // show form eidt sv ra
+            }
+            else
+            {
+                MessageBox.Show(
+               "Bạn chưa chọn ô cần sửa!",
+               "Thông báo",
+               MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
