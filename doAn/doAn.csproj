@@ -105,6 +105,12 @@
     <Compile Include="formCon\frmInputSV.Designer.cs">
       <DependentUpon>frmInputSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="formDiem\frmBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiem\frmBangDiem.Designer.cs">
+      <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="formSua\frmEditLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formCon\frmInputSV.resx">
       <DependentUpon>frmInputSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiem\frmBangDiem.resx">
+      <DependentUpon>frmBangDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formSua\frmEditLop.resx">
       <DependentUpon>frmEditLop.cs</DependentUpon>

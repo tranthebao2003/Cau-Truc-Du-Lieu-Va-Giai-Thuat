@@ -27,8 +27,8 @@ namespace doAn.List
 
         #endregion
            
-        Node head;
-        Node tail;
+        public Node head { get; set; }
+        public Node tail { get; set; }
         int size = 0;
 
         public DsDiem()

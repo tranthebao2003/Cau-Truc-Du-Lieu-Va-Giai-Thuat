@@ -34,6 +34,8 @@ namespace doAn.formCon
             lop1.maLop = txtInPutMaLop.Text;
             lop1.tenLop = txtInPutTenLop.Text;
 
+            DsSinhVien objectDsSinhVien = new DsSinhVien();
+
             // bước này kiểm tra xem ng dung có nhập số int hay ko
             int nam;
             if(int.TryParse(txtInPutNamHoc.Text, out nam) == true)
@@ -48,6 +50,8 @@ namespace doAn.formCon
               MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            lop1.dssv = objectDsSinhVien;
 
             for (int i = 0; i < Program.objectDslop.length(); i++)
             {

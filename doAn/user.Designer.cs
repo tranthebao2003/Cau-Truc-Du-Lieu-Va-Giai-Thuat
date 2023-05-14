@@ -57,6 +57,7 @@
             this.btnNhapLop.TabIndex = 1;
             this.btnNhapLop.Text = "Nhập";
             this.btnNhapLop.UseVisualStyleBackColor = true;
+            this.btnNhapLop.Click += new System.EventHandler(this.btnNhapLop_Click);
             // 
             // txtInPutMaLop
             // 

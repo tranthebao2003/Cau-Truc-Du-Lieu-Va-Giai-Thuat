@@ -20,22 +20,50 @@ namespace doAn.formSua
 
         private void btnSuaSinhVien_Click(object sender, EventArgs e) // vẫn lỗi
         {
-            string maSvChon = Program.lvItem.SubItems[0].Text;
-            SinhVien sv1 = new SinhVien();
-            sv1.maSV = maSvChon;
-            sv1.ho = txtInPutHo.Text;
-            sv1.ten = txtInPutTen.Text;
-            sv1.soDT = txtInputSDT.Text;
-            if (radNu.Checked == true) // nếu ng dùng click vao nữ thì ta cho phai là true
+            if(Program.formMain.lvSinhVien.SelectedItems.Count > 0)
             {
-                sv1.phai = true;
+                string maSvChon = Program.lvItem.SubItems[0].Text;
+                SinhVien sv1 = new SinhVien();
+                sv1.maSV = maSvChon;
+                sv1.ho = txtInPutHo.Text;
+                sv1.ten = txtInPutTen.Text;
+                sv1.soDT = txtInputSDT.Text;
+                if (radNu.Checked == true) // nếu ng dùng click vao nữ thì ta cho phai là true
+                {
+                    sv1.phai = true;
+                }
+                else if (radNam.Checked == true)
+                {
+                    sv1.phai = false;
+                }
+
+                // tìm mã lớp mà ng dùng đã chọn trong lvLop
+
+                Program.lvItem = Program.formMain.lvLop.SelectedItems[0];
+                string maLop = Program.lvItem.SubItems[0].Text;
+
+                Lop result = new Lop();
+                // dò mã lớp đó vs all mã lớp trong ds lop
+                // nếu mã lớp nào trong dsLop trùng với mã lớp mà ng dùng đã chọn thì lưu vào result và thoát 
+                for (int i = 0; i < Program.objectDslop.length(); i++)
+                {
+                    Lop lop1 = Program.objectDslop.dsLop[i];
+                    if (maLop == lop1.maLop)
+                    {
+                        result = lop1;
+                        break;
+                    }
+                }
+                result.dssv.editSv(sv1);
+                result.dssv.display(Program.lvItem);
             }
-            else if (radNam.Checked == true)
+            else
             {
-                sv1.phai = false;
+                MessageBox.Show(
+              "Bạn chưa chọn ô cần sửa!",
+              "Thông báo",
+              MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Program.objectDsSinhVien.editSv(sv1);
-            Program.objectDsSinhVien.display(Program.lvItem);
         }
 
         private void frmEditSv_Load(object sender, EventArgs e)
