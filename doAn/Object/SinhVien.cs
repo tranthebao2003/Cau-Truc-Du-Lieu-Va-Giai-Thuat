@@ -1,4 +1,5 @@
-﻿using System;
+﻿using doAn.List;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,11 @@ namespace doAn.Object
         public bool phai { get; set; }
         public string soDT { get; set; } // 10 so, số đầu tiên phải là 0
 
+        public DsDiem ptrDsDiem; // con trỏ này trỏ đến dsDiem của sv nào đó
+
         public SinhVien()
         {
-
+            this.ptrDsDiem = new DsDiem();
         }
     }
 }

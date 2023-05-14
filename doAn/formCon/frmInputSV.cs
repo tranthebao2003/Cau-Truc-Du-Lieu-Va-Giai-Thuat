@@ -55,16 +55,35 @@ namespace doAn.formCon
                 sv1.phai = false;
             }
 
+            // tìm mã lớp mà ng dùng đã chọn trong lvLop
+           
+            Program.lvItem = Program.formMain.lvLop.SelectedItems[0];
+            string maLop = Program.lvItem.SubItems[0].Text;
+
+            Lop result = new Lop();
+            // dò mã lớp đó vs all mã lớp trong ds lop
+            // nếu mã lớp nào trong dsLop trùng với mã lớp mà ng dùng đã chọn thì lưu vào result và thoát 
+            for (int i = 0; i < Program.objectDslop.length(); i++)
+            {
+                Lop lop1 = Program.objectDslop.dsLop[i];
+                if (maLop == lop1.maLop)
+                {
+                    result = lop1;
+                    break;
+                }
+            }
+
+
             // bản chất thuật toán ko trùng mssv là:
             // nếu nó là node đầu thì gán nó vào dslk lun, còn ko thì ta sẽ so sánh mã sv của node vừa thêm vào (txtInPutMaSV.Text)
             // với all node trong dslk nếu trùng thì return lun còn ko trùng thì thêm nó vào dslk
-            if (Program.objectDsSinhVien.head == null)
+            if (result.dssv.head == null)
             {
-                Program.objectDsSinhVien.add(sv1);
+                result.dssv.add(sv1);
             }
             else
             {
-                DsSinhVien.Node ptr = Program.objectDsSinhVien.head;
+                DsSinhVien.Node ptr = result.dssv.head;
 
                 while(ptr != null)
                 {
@@ -78,10 +97,10 @@ namespace doAn.formCon
                     }
                     ptr = ptr.next;
                 }
-                Program.objectDsSinhVien.add(sv1);
+                result.dssv.add(sv1);
             }
             // hiện thi ra dssv
-            Program.objectDsSinhVien.display(Program.lvItem);
+            result.dssv.display(Program.lvItem);
         }
 
         private void frmInputSV_Load(object sender, EventArgs e)

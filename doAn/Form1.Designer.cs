@@ -471,17 +471,17 @@
             // clnMaMonHoc
             // 
             this.clnMaMonHoc.Text = "Mã môn học";
-            this.clnMaMonHoc.Width = 140;
+            this.clnMaMonHoc.Width = 120;
             // 
             // clnTenMonHoc
             // 
             this.clnTenMonHoc.Text = "Tên môn học";
-            this.clnTenMonHoc.Width = 140;
+            this.clnTenMonHoc.Width = 180;
             // 
             // clnSTCLT
             // 
             this.clnSTCLT.Text = "STCLT";
-            this.clnSTCLT.Width = 90;
+            this.clnSTCLT.Width = 70;
             // 
             // clnSTCTH
             // 

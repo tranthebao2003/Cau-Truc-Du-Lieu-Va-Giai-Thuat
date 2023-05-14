@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,26 +51,11 @@ namespace doAn
         {
             if(lvLop.SelectedItems.Count > 0)
             {
-                // tìm mã lớp mà ng dùng đã chọn trong lvLop
-                Program.lvItem = lvLop.SelectedItems[0];
-                string maLop = Program.lvItem.SubItems[0].Text;
-
-                Lop result = new Lop();
-                // dò mã lớp đó vs all mã lớp trong ds lop
-                // nếu mã lớp nào trong dsLop trùng với mã lớp mà ng dùng đã chọn thì lưu vào result và thoát 
-                for (int i = 0; i < Program.objectDslop.length(); i++)
-                {
-                    Lop lop1 = Program.objectDslop.dsLop[i];
-                    if (maLop == lop1.maLop)
-                    {
-                        result = lop1;
-                        break;
-                    }
-                }
-
+                
                 // result.dssv: là đối tượng lớp có phuong thuc là dssv ( đây là 1 con trỏ, con trỏ kiểu DsSinhVien)
                 // nghĩa là con trỏ này có thể lưu địa chỉ của 1 dssv (dssv co kieu du lieu la lk Don)
-                result.dssv = Program.objectDsSinhVien; // như đã nói trên thì lúc này cái lớp có con trỏ kiểu dssv có thể lưu đc địa chỉ của 1 dssv
+                
+                //result.dssv = Program.objectDsSinhVien; // như đã nói trên thì lúc này cái lớp có con trỏ kiểu dssv có thể lưu đc địa chỉ của 1 dssv
                 frmInputSV frmSV = new frmInputSV(); // tạo 1 đối tượng từ class frmInputLop
                 frmSV.Show();
             }
@@ -85,8 +71,29 @@ namespace doAn
 
         private void btnNhapMon_Click(object sender, EventArgs e)
         {
-            frmInputMon frmMon = new frmInputMon(); // tạo 1 đối tượng từ class frmInputLop
-            frmMon.Show();
+            frmInputMon frmMon1 = new frmInputMon(); // tạo 1 đối tượng từ class frmInputLop
+            frmMon1.Show();
+
+            // file.radAllLine
+            string path = "D:\\khác\\nam_2\\ki 2\\cauTrucDuLieu\\doAnFinal\\duLieuDoAn\\monHoc.txt";
+            using (StreamReader sr = new StreamReader(path))
+            {
+                while (sr.EndOfStream == false) // thuộc tính EndOfStream = true nghĩa là đã đọc hết dữ liệu rồi
+                {
+                    string line = sr.ReadLine(); // sr nó sẽ đọc từng dòng và lưu vào line
+                    string[] values = line.Split(','); // nó sẽ cắt line thành tưởng chuỗi nhỏ hơn dữa vào dấu ","
+
+                    // dựa vào chỉ số của mảng để truy xuất nội dung từng cột ở đây
+                    ListViewItem lv = new ListViewItem(values[0]);
+
+                    lv.SubItems.Add(values[1]);
+                    lv.SubItems.Add(values[2]);
+                    lv.SubItems.Add(values[3]);
+                    lvDsMon.Items.Add(lv);
+                }
+            }
+
+           
         }
 
         private void btnNhapDiem_Click(object sender, EventArgs e)
@@ -102,8 +109,23 @@ namespace doAn
             {
                 while (lvSinhVien.SelectedItems.Count > 0) //trong khi còn lựa chọn thì cứ xóa thằng đầu tiên
                 {
+                    // tìm mã lớp mà ng dùng đã chọn trong lvLop
+                    Program.lvItem = lvLop.SelectedItems[0];
+                    string maLop = Program.lvItem.SubItems[0].Text;
 
-                    Program.objectDsSinhVien.remove(lvSinhVien.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
+                    Lop result = new Lop();
+                    // dò mã lớp đó vs all mã lớp trong ds lop
+                    // nếu mã lớp nào trong dsLop trùng với mã lớp mà ng dùng đã chọn thì lưu vào result và thoát 
+                    for (int i = 0; i < Program.objectDslop.length(); i++)
+                    {
+                        Lop lop1 = Program.objectDslop.dsLop[i];
+                        if (maLop == lop1.maLop)
+                        {
+                            result = lop1;
+                            break;
+                        }
+                    }
+                    result.dssv.remove(lvSinhVien.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
                     lvSinhVien.Items.Remove(lvSinhVien.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
                                                                         //SelectedItems[0]: trả về dòng đầu tiên dược chọn
                 }
@@ -222,12 +244,13 @@ namespace doAn
                 }
             }
             // sau đó gán địa chỉ cả dssv (có kiểu dữ liệu là 1 dslk) vào con trỏ có cùng kiểu ở trong class Lop (con trỏ, trỏ đến dssv đã tạo khi tạo dsLop)
-            result.dssv = Program.objectDsSinhVien ;
 
-            Program.objectDsSinhVien.display(Program.lvItem); // hiển thị dssv thôi
+
+            result.dssv.display(Program.lvItem); // hiển thị dssv thôi
         }
         #endregion
 
+        #region xóa và sửa môn
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
             if (lvDsMon.SelectedItems.Count > 0)// kiem tra xe co dong nao dc chon ko
@@ -280,6 +303,7 @@ namespace doAn
                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        #endregion
     }
 }
 
