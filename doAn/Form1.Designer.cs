@@ -34,9 +34,6 @@
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "",
-            ""}, -1);
             this.btnNhapLop = new System.Windows.Forms.Button();
             this.lblPhanMem = new System.Windows.Forms.Label();
             this.btnNhapSv = new System.Windows.Forms.Button();
@@ -144,6 +141,7 @@
             this.btnInDiemTK.TabIndex = 9;
             this.btnInDiemTK.Text = "In bảng điểm tổng kết";
             this.btnInDiemTK.UseVisualStyleBackColor = true;
+            this.btnInDiemTK.Click += new System.EventHandler(this.btnInDiemTK_Click);
             // 
             // btnNhapDiem
             // 
@@ -167,6 +165,8 @@
             this.btnInDiemTB.TabIndex = 12;
             this.btnInDiemTB.Text = "In điểm trung bình";
             this.btnInDiemTB.UseVisualStyleBackColor = true;
+            this.btnInDiemTB.Visible = false;
+            this.btnInDiemTB.Click += new System.EventHandler(this.btnInDiemTB_Click);
             // 
             // btnInDiem
             // 
@@ -178,6 +178,8 @@
             this.btnInDiem.TabIndex = 13;
             this.btnInDiem.Text = "In bảng điểm";
             this.btnInDiem.UseVisualStyleBackColor = true;
+            this.btnInDiem.Visible = false;
+            this.btnInDiem.Click += new System.EventHandler(this.btnInDiem_Click);
             // 
             // grbLop
             // 
@@ -327,17 +329,17 @@
             // clnMaSV
             // 
             this.clnMaSV.Text = "Mã sinh viên";
-            this.clnMaSV.Width = 160;
+            this.clnMaSV.Width = 140;
             // 
             // clnHo
             // 
             this.clnHo.Text = "Họ";
-            this.clnHo.Width = 100;
+            this.clnHo.Width = 140;
             // 
             // clnTen
             // 
             this.clnTen.Text = "Tên";
-            this.clnTen.Width = 100;
+            this.clnTen.Width = 80;
             // 
             // clnGioiTinh
             // 
@@ -400,17 +402,17 @@
             // clnMaLop
             // 
             this.clnMaLop.Text = "Mã lớp";
-            this.clnMaLop.Width = 120;
+            this.clnMaLop.Width = 130;
             // 
             // clnTenLop
             // 
             this.clnTenLop.Text = "Tên lớp";
-            this.clnTenLop.Width = 120;
+            this.clnTenLop.Width = 170;
             // 
             // clnNamNhapHoc
             // 
-            this.clnNamNhapHoc.Text = "Năm nhập học";
-            this.clnNamNhapHoc.Width = 150;
+            this.clnNamNhapHoc.Text = "Năm học";
+            this.clnNamNhapHoc.Width = 100;
             // 
             // btnXoaLop
             // 
@@ -459,8 +461,6 @@
             this.lvDsMon.FullRowSelect = true;
             this.lvDsMon.GridLines = true;
             this.lvDsMon.HideSelection = false;
-            this.lvDsMon.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
             this.lvDsMon.Location = new System.Drawing.Point(0, 41);
             this.lvDsMon.Name = "lvDsMon";
             this.lvDsMon.Size = new System.Drawing.Size(463, 254);
@@ -554,10 +554,7 @@
         private System.Windows.Forms.Label lblPhanMem;
         private System.Windows.Forms.Button btnNhapSv;
         private System.Windows.Forms.Button btnNhapMon;
-        private System.Windows.Forms.Button btnInDiemTK;
         private System.Windows.Forms.Button btnNhapDiem;
-        private System.Windows.Forms.Button btnInDiemTB;
-        private System.Windows.Forms.Button btnInDiem;
         private System.Windows.Forms.GroupBox grbLop;
         private System.Windows.Forms.GroupBox grbSinhVien;
         private System.Windows.Forms.GroupBox grbMonHoc;
@@ -589,6 +586,9 @@
         private System.Windows.Forms.Button btnSuaMon;
         private System.Windows.Forms.Button btnInLop;
         public System.Windows.Forms.TextBox txtNamHoc;
+        public System.Windows.Forms.Button btnInDiemTK;
+        public System.Windows.Forms.Button btnInDiemTB;
+        public System.Windows.Forms.Button btnInDiem;
     }
 }
 

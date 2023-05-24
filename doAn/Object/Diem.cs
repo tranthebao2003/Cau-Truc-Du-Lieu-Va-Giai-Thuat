@@ -14,7 +14,6 @@ namespace doAn.Object
 
         public Diem()
         {
-
         }
         public Diem(string maMonHoc, int soLanThi, float diem)
         {

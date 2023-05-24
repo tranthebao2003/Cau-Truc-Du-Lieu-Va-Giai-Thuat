@@ -1,6 +1,6 @@
 ﻿namespace doAn
 {
-    partial class frmUser
+    partial class frmUserNhapDiem
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnThoatNhapLop = new System.Windows.Forms.Button();
-            this.btnNhapLop = new System.Windows.Forms.Button();
+            this.btnNhapInforUser = new System.Windows.Forms.Button();
             this.txtInPutMaLop = new System.Windows.Forms.TextBox();
             this.txtInPutLanThi = new System.Windows.Forms.TextBox();
             this.txtInPutMaMon = new System.Windows.Forms.TextBox();
@@ -48,16 +48,16 @@
             this.btnThoatNhapLop.Size = new System.Drawing.Size(75, 23);
             this.btnThoatNhapLop.TabIndex = 0;
             // 
-            // btnNhapLop
+            // btnNhapInforUser
             // 
-            this.btnNhapLop.Location = new System.Drawing.Point(57, 234);
-            this.btnNhapLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnNhapLop.Name = "btnNhapLop";
-            this.btnNhapLop.Size = new System.Drawing.Size(92, 34);
-            this.btnNhapLop.TabIndex = 1;
-            this.btnNhapLop.Text = "Nhập";
-            this.btnNhapLop.UseVisualStyleBackColor = true;
-            this.btnNhapLop.Click += new System.EventHandler(this.btnNhapLop_Click);
+            this.btnNhapInforUser.Location = new System.Drawing.Point(57, 234);
+            this.btnNhapInforUser.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnNhapInforUser.Name = "btnNhapInforUser";
+            this.btnNhapInforUser.Size = new System.Drawing.Size(92, 34);
+            this.btnNhapInforUser.TabIndex = 1;
+            this.btnNhapInforUser.Text = "Nhập";
+            this.btnNhapInforUser.UseVisualStyleBackColor = true;
+            this.btnNhapInforUser.Click += new System.EventHandler(this.btnNhapInforUser_Click);
             // 
             // txtInPutMaLop
             // 
@@ -124,9 +124,9 @@
             this.label4.Location = new System.Drawing.Point(161, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 35);
+            this.label4.Size = new System.Drawing.Size(247, 35);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Đăng Nhập";
+            this.label4.Text = "User Nhập Điểm";
             // 
             // btnThoat
             // 
@@ -140,7 +140,7 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // frmUser
+            // frmUserNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,10 +155,10 @@
             this.Controls.Add(this.txtInPutMaMon);
             this.Controls.Add(this.txtInPutLanThi);
             this.Controls.Add(this.txtInPutMaLop);
-            this.Controls.Add(this.btnNhapLop);
+            this.Controls.Add(this.btnNhapInforUser);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "frmUser";
+            this.Name = "frmUserNhapDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User";
             this.ResumeLayout(false);
@@ -169,14 +169,14 @@
         #endregion
 
         private System.Windows.Forms.Button btnThoatNhapLop;
-        private System.Windows.Forms.Button btnNhapLop;
-        private System.Windows.Forms.TextBox txtInPutMaLop;
-        private System.Windows.Forms.TextBox txtInPutLanThi;
-        private System.Windows.Forms.TextBox txtInPutMaMon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnThoat;
+        public System.Windows.Forms.TextBox txtInPutMaLop;
+        public System.Windows.Forms.TextBox txtInPutLanThi;
+        public System.Windows.Forms.TextBox txtInPutMaMon;
+        public System.Windows.Forms.Button btnNhapInforUser;
     }
 }
