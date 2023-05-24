@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace doAn.List
 {
@@ -26,7 +25,7 @@ namespace doAn.List
         }
 
         #endregion
-           
+
         public Node head { get; set; }
         public Node tail { get; set; }
         int size = 0;
@@ -38,6 +37,7 @@ namespace doAn.List
             size = 0;
         }
 
+        // thêm thì khog đc cùng lúc trùng so lan thi va ma mon hoc
         public void add(Diem a)
         {
             Node key = new Node(a);
@@ -45,13 +45,24 @@ namespace doAn.List
             {
                 head = key;
                 tail = key;
+                size++;
+
             }
             else
             {
+                Node ptr = head;
+                while (ptr != null)
+                {
+                    if (ptr.diem.soLanThi == a.soLanThi && ptr.diem.maMonHoc == a.maMonHoc && a.diem.ToString() == "") // ràng buộc thêm a.diem.ToString() == "", để khi ta thêm điểm user nhập thì nó sẽ thêm vào đc mặc dù trùng cả mã môn và lần thi
+                    {
+                        return;
+                    }
+                    ptr = ptr.next;
+                }
                 tail.next = key;
-                tail = key;  
+                tail = key;
+                size++;
             }
-            size++;
         }
 
         public int length()
@@ -68,11 +79,7 @@ namespace doAn.List
         {
             if (isEmpty())
             {
-                MessageBox.Show(
-                 "Chưa có phần tử nào để xóa",
-                 "Thông báo",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information);
+
             }
             else
             {
@@ -109,12 +116,31 @@ namespace doAn.List
             p.next = null;
         }
 
+        public Node removeNode(Node tmp) // hàm này phục vụ cho câu j
+        {
+            Node ptr = head;
+            while (ptr != null)
+            {
+                if (ptr == tmp) // nếu node cần xóa là node đầu thì phải dùng head
+                {
+                    head = head.next;
+                }
 
-        // chưa xong đâu cứ v đã
+                else if (ptr.next == tmp)
+                {
+                    ptr.next = ptr.next.next;
+                }
+                ptr = ptr.next;
+            }
+
+            size--;
+            return head; // cập nhật lại cái head
+        }
+
         public void display()
         {
             Node key = head;
-            for (int i=0; i<size; i++)
+            for (int i = 0; i < size; i++)
             {
                 string a = key.diem.maMonHoc;
                 int b = key.diem.soLanThi;
@@ -122,6 +148,7 @@ namespace doAn.List
                 Console.WriteLine("Ma mon hoc: " + a);
                 Console.WriteLine("So lan thi: " + b);
                 Console.WriteLine("Diem: " + c);
+                key = key.next;
             }
         }
     }

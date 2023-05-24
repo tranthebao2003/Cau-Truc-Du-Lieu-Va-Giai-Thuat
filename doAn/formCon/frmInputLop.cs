@@ -45,7 +45,7 @@ namespace doAn.formCon
             else
             {
                 MessageBox.Show(
-              "Bạn đã nhập sai định dạng",
+              "Năm phải là số",
               "Thông báo",
               MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -69,7 +69,6 @@ namespace doAn.formCon
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            
              Close();
         }
     }

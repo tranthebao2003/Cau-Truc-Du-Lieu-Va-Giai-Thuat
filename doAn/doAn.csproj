@@ -81,12 +81,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="formCon\frmInputDiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formCon\frmInputDiem.Designer.cs">
-      <DependentUpon>frmInputDiem.cs</DependentUpon>
-    </Compile>
     <Compile Include="formCon\frmInputLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +104,24 @@
     </Compile>
     <Compile Include="formDiem\frmBangDiem.Designer.cs">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDiem\frmBangDiemDaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiem\frmBangDiemDaThi.Designer.cs">
+      <DependentUpon>frmBangDiemDaThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDiem\frmBangDiemTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiem\frmBangDiemTB.Designer.cs">
+      <DependentUpon>frmBangDiemTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDiem\frmBangDiemTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDiem\frmBangDiemTK.Designer.cs">
+      <DependentUpon>frmBangDiemTK.cs</DependentUpon>
     </Compile>
     <Compile Include="formSua\frmEditLop.cs">
       <SubType>Form</SubType>
@@ -139,17 +151,20 @@
     <Compile Include="Object\SinhVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="user.cs">
+    <Compile Include="User\frmUserInDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user.Designer.cs">
-      <DependentUpon>user.cs</DependentUpon>
+    <Compile Include="User\frmUserInDiem.Designer.cs">
+      <DependentUpon>frmUserInDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\frmUserNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmUserNhapDiem.Designer.cs">
+      <DependentUpon>frmUserNhapDiem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formCon\frmInputDiem.resx">
-      <DependentUpon>frmInputDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formCon\frmInputLop.resx">
       <DependentUpon>frmInputLop.cs</DependentUpon>
@@ -162,6 +177,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formDiem\frmBangDiem.resx">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiem\frmBangDiemDaThi.resx">
+      <DependentUpon>frmBangDiemDaThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiem\frmBangDiemTB.resx">
+      <DependentUpon>frmBangDiemTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDiem\frmBangDiemTK.resx">
+      <DependentUpon>frmBangDiemTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formSua\frmEditLop.resx">
       <DependentUpon>frmEditLop.cs</DependentUpon>
@@ -181,8 +205,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="user.resx">
-      <DependentUpon>user.cs</DependentUpon>
+    <EmbeddedResource Include="User\frmUserInDiem.resx">
+      <DependentUpon>frmUserInDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\frmUserNhapDiem.resx">
+      <DependentUpon>frmUserNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="doAn_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

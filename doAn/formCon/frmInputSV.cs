@@ -55,8 +55,12 @@ namespace doAn.formCon
                 sv1.phai = false;
             }
 
+            // moi sv sẽ có 1 ds diem riêng và gán dia chi dsDiem do cho con trỏ cùng kieu trong doi tuong sv
+            DsDiem objectDsDiem = new DsDiem();
+            sv1.ptrDsDiem = objectDsDiem;
+
             // tìm mã lớp mà ng dùng đã chọn trong lvLop
-           
+
             Program.lvItem = Program.formMain.lvLop.SelectedItems[0];
             string maLop = Program.lvItem.SubItems[0].Text;
 
@@ -72,7 +76,6 @@ namespace doAn.formCon
                     break;
                 }
             }
-
 
             // bản chất thuật toán ko trùng mssv là:
             // nếu nó là node đầu thì gán nó vào dslk lun, còn ko thì ta sẽ so sánh mã sv của node vừa thêm vào (txtInPutMaSV.Text)

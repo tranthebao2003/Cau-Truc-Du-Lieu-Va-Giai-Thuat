@@ -49,11 +49,12 @@ namespace doAn.formCon
             bool mark = Program.objectDsMonHoc.insert(Program.objectDsMonHoc.root, monHoc1);
 
             // hiển thị nhưng chưa sắp xếp đc theo tên môn phuog pha là thay đổi cách add dựa vào ten mon chứ ko phai ma mon nua
-            if(mark == true)
+           if(mark == true)
             {
                 Program.formMain.lvDsMon.Items.Clear(); // này là chỉ xóa hiển thị cho ng dùng, chứ bản chất cái node vẫn tồn tại trong cây
                 Program.objectDsMonHoc.displayInOrder(Program.objectDsMonHoc.root, Program.lvItem);
             }
+               
         }
     }
 }
