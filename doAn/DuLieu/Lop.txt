@@ -1,0 +1,5 @@
+﻿D21CQPT01-N,Đa phương tiện,2023
+D21CQDT02-N,Điện tử,2023
+D21CQCN03-N,Công nghệ thông tin,2023
+D21CQPT02-N,Thiết kế đồ họa,2022
+D21CQPT05-N,Tự động hóa,2022
