@@ -96,7 +96,7 @@ namespace doAn
                 DsSinhVien.Node tmp1 = a.head;
 
                 // sau khi chạy xong đoạn code này thi mỗi thằng sv sẽ có 1 ds điểm riêng và ds đó lấy từ file txt
-                string path = "D:\\khác\\nam_2\\ki 2\\cauTrucDuLieu\\doAnFinal\\duLieuDoAn\\DsDiem1.txt";
+                string path = "../../DuLieu/DsDiem1.txt";
                 int markDsDiem = 1;
                 while (tmp1 != null) // duyet tu dau den cuoi ds sinh vien
                 {
@@ -121,14 +121,14 @@ namespace doAn
                     //if va else if ở dưới là để đổi những dsDiem va gán no cho các sv
                     if (markDsDiem == 1)
                     {
-                        path = "D:\\khác\\nam_2\\ki 2\\cauTrucDuLieu\\doAnFinal\\duLieuDoAn\\DsDiem2.txt";
+                        path = "../../DuLieu/DsDiem2.txt";
                         markDsDiem = 0;
                         tmp1 = tmp1.next;
                         continue;
                     }
                     else if (markDsDiem == 0)
                     {
-                        path = "D:\\khác\\nam_2\\ki 2\\cauTrucDuLieu\\doAnFinal\\duLieuDoAn\\DsDiem1.txt";
+                        path = "../../DuLieu/DsDiem1.txt";
                         markDsDiem = 1;
                         tmp1 = tmp1.next;
                     }

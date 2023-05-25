@@ -44,7 +44,7 @@ namespace doAn
             frmLop.Show();
             // file.radAllLine
             // đọc dữ liệu từ file txt
-            string path = "D:\\khác\\nam_2\\ki 2\\cauTrucDuLieu\\doAnFinal\\duLieuDoAn\\Lop.txt";
+            string path = "../../DuLieu/Lop.txt";
             using (StreamReader sr = new StreamReader(path))
             {
                 while (sr.EndOfStream == false) // thuộc tính EndOfStream = true nghĩa là đã đọc hết dữ liệu rồi
@@ -95,7 +95,8 @@ namespace doAn
 
                 // file.radAllLine
                 // đọc dữ liệu từ file txt
-                string path = "D:\\khác\\nam_2\\ki 2\\cauTrucDuLieu\\doAnFinal\\duLieuDoAn\\sinhVienDpt.txt";
+                // đường dẫn tương đối thì cái file hiện tại phải cùng cấp với file mình cần đọc
+                string path = "../../DuLieu/sinhVienDpt.txt"; // ../ là đi ra khỏi thư mục debug ../ 1 lần nữa là ra khỏi thư mục bin (./ là thư mục hiện tại)
                 using (StreamReader sr = new StreamReader(path))
                 {
                     while (sr.EndOfStream == false) // thuộc tính EndOfStream = true nghĩa là đã đọc hết dữ liệu rồi
@@ -181,7 +182,7 @@ namespace doAn
            
             // file.radAllLine
             // đọc dữ liệu từ file txt
-            string path = "D:\\khác\\nam_2\\ki 2\\cauTrucDuLieu\\doAnFinal\\duLieuDoAn\\monHoc.txt";
+            string path = "../../DuLieu/monHoc.txt";
             using (StreamReader sr = new StreamReader(path))
             {
                 while (sr.EndOfStream == false) // thuộc tính EndOfStream = true nghĩa là đã đọc hết dữ liệu rồi
