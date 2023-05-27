@@ -47,7 +47,7 @@
             this.btnSuaMon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSuaMon.Name = "btnSuaMon";
             this.btnSuaMon.Size = new System.Drawing.Size(92, 34);
-            this.btnSuaMon.TabIndex = 1;
+            this.btnSuaMon.TabIndex = 4;
             this.btnSuaMon.Text = "Sửa";
             this.btnSuaMon.UseVisualStyleBackColor = true;
             this.btnSuaMon.Click += new System.EventHandler(this.btnSuaMon_Click);
@@ -58,7 +58,7 @@
             this.txtInPutSTCLT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutSTCLT.Name = "txtInPutSTCLT";
             this.txtInPutSTCLT.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutSTCLT.TabIndex = 3;
+            this.txtInPutSTCLT.TabIndex = 2;
             // 
             // txtInPutTenMon
             // 
@@ -66,7 +66,7 @@
             this.txtInPutTenMon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutTenMon.Name = "txtInPutTenMon";
             this.txtInPutTenMon.Size = new System.Drawing.Size(179, 30);
-            this.txtInPutTenMon.TabIndex = 4;
+            this.txtInPutTenMon.TabIndex = 1;
             // 
             // label2
             // 
@@ -107,7 +107,7 @@
             this.btnThoatMon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnThoatMon.Name = "btnThoatMon";
             this.btnThoatMon.Size = new System.Drawing.Size(92, 34);
-            this.btnThoatMon.TabIndex = 9;
+            this.btnThoatMon.TabIndex = 5;
             this.btnThoatMon.Text = "Thoát";
             this.btnThoatMon.UseVisualStyleBackColor = true;
             this.btnThoatMon.Click += new System.EventHandler(this.btnThoatMon_Click);
@@ -128,7 +128,7 @@
             this.txtInPutSTCTH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutSTCTH.Name = "txtInPutSTCTH";
             this.txtInPutSTCTH.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutSTCTH.TabIndex = 11;
+            this.txtInPutSTCTH.TabIndex = 3;
             // 
             // label1
             // 
@@ -146,7 +146,7 @@
             this.txtInputMaMon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInputMaMon.Name = "txtInputMaMon";
             this.txtInputMaMon.Size = new System.Drawing.Size(179, 30);
-            this.txtInputMaMon.TabIndex = 12;
+            this.txtInputMaMon.TabIndex = 0;
             // 
             // frmEditMon
             // 

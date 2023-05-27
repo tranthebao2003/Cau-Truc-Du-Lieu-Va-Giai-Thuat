@@ -289,7 +289,7 @@ namespace doAn
             {
                 while (lvLop.SelectedItems.Count > 0) //trong khi còn lựa chọn thì cứ xóa thằng đầu tiên
                 {
-                    Program.objectDslop.remove(lvLop.SelectedItems[0].Index); // trong ngoặc nó trả về index dòng đâu tien dc chon
+                    Program.objectDslop.remove(lvLop.SelectedItems[0].SubItems[0].Text); // trong ngoặc nó trả về mã lớp (SubItems[0].Text) của dòng đầu tiên đc chọn
                     lvLop.Items.Remove(lvLop.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
                                                                           //SelectedItems[0]: trả về dòng đầu tiên dược chọn
                 }
@@ -533,6 +533,19 @@ namespace doAn
         #endregion
 
         #region In điểm tổng kết của all Sv trong 1 lớp (j)
+        // tổng quan về câu G
+
+        /* Giai Đoạn 1: add các columns và listView: line 550 -> 640 */
+        // B1 tìm lớp đó là lớp nào dựa vào sự lựa chọn của ng dùng, từ đó hiển thị ra lop và năm
+        // B2 khi có lop roi ta sẽ có dssv của lớp đó và mỗi sv sẽ có 1 dsDiem riêng
+        // B3 tạo ra các columns dựa vào mã môn học trong dsDiem của mỗi sv.
+        // B4 sắp xếp các columns (trừ 2 columns đầu là Mã sv và tên sv) theo thứ tự tăng dần của mã môn học trong dsDiem
+
+        /* Giai Đoạn 2: add sv và điểm */
+        //B1 thêm từng sv vào cùng với dsDiem của họ
+        //B2 dsDiem của mỗi sv sẽ phải tìm ra dsDiemMax, sau đó sắp xếp dsDiemMax này theo mã môn học từ nhỏ đến lớn
+        //B3 thêm vào bảng listView thôi, dò từ đầu đến cuối header columns đã dc sắp xep,
+        //thấy cái nào trùng vs mã môn học trong dsDiem thì thêm điểm đó vào columns đó
         private void btnInDiemTK_Click(object sender, EventArgs e)
         {
             if (lvLop.SelectedItems.Count > 0)
@@ -568,25 +581,19 @@ namespace doAn
                 // vi dụ: môn a thi lần 2 5đ lần 3 6đ thì ta chỉ xuất ra 6đ của môn đó
 
 
-                // gán maSv va ho ten vào bảng
-                ListViewItem tmpCholvBangDiemTK = new ListViewItem();
                 while (nodeTmpDsSv != null)
                 {
-                    
                     SinhVien svTmp = nodeTmpDsSv.sv;
-                    ListViewItem tmpCholvBangDiemTKTG = new ListViewItem(svTmp.maSV);
-                    //tmpCholvBangDiemTK.SubItems[0].Text = svTmp.maSV.ToString();
-                    // tạo 1 listview tạm để lưu thông tin của sv bao gồm: họ và tên
-
-                    tmpCholvBangDiemTKTG.SubItems.Add(svTmp.ho + " " + svTmp.ten);
-
 
                     // lấy DsDiem của từng sv thông qua con trỏ ptrDsDiem
                     DsDiem dsDiemTmp = svTmp.ptrDsDiem;
-                    DsDiem.Node nodeTmpDsDiem = dsDiemTmp.head;  // gán node head của dsDiemTmp cho nodeTmpDsDiem 
 
-                    
-                    while(nodeTmpDsDiem != null)
+                    // ta tạo 1 ds diem (dsDiemSort) để lưu mỗi dsDiem đã sắp xếp vào
+                    //DsDiem dsDiemSort = dsDiemTmp.sortDsDiem(dsDiemTmp.head);
+                    //DsDiem.Node nodeTmpDsDiem = dsDiemSort.head;
+
+                    DsDiem.Node nodeTmpDsDiem = dsDiemTmp.head;
+                    while (nodeTmpDsDiem != null)
                     {
                         bool mark = true;
                         Diem tmpDiem = nodeTmpDsDiem.diem;
@@ -617,8 +624,22 @@ namespace doAn
                         }
                         nodeTmpDsDiem = nodeTmpDsDiem.next;
                     }
-                    bangDiemTK1.lvBangDiemTK.Items.Add(tmpCholvBangDiemTKTG);
+                    //bangDiemTK1.lvBangDiemTK.Items.Add(tmpCholvBangDiemTKTG);
                     nodeTmpDsSv = nodeTmpDsSv.next;
+                }
+
+                // SẮP XẾP CÁC COLUNMS
+                for (int i = 0; i < bangDiemTK1.lvBangDiemTK.Columns.Count; i++)
+                {
+                    for (int j = i+1; j < bangDiemTK1.lvBangDiemTK.Columns.Count; j++)
+                    {
+                        if(bangDiemTK1.lvBangDiemTK.Columns[i].Text.CompareTo(bangDiemTK1.lvBangDiemTK.Columns[j].Text) == 1)
+                        {
+                            string tmpTenComlums = bangDiemTK1.lvBangDiemTK.Columns[i].Text;
+                            bangDiemTK1.lvBangDiemTK.Columns[i].Text = bangDiemTK1.lvBangDiemTK.Columns[j].Text;
+                            bangDiemTK1.lvBangDiemTK.Columns[j].Text = tmpTenComlums;
+                        }
+                    }
                 }
 
 
@@ -633,7 +654,10 @@ namespace doAn
                     listViewItemTmp.SubItems.Add(svTmp2.ho + " " + svTmp2.ten);
 
                     DsDiem dsDiemTmp2 = svTmp2.ptrDsDiem;
-                    DsDiem.Node nodeTmpDsDiem2 = Program.dsDiemMax(dsDiemTmp2);
+                    DsDiem dsDiemSort2 = dsDiemTmp2.sortDsDiem(dsDiemTmp2.head);
+
+                    DsDiem.Node nodeTmpDsDiem2 = Program.dsDiemMax(dsDiemSort2);
+
 
                     int i = 2; // VÌ BỎ QUA 2 CỘT MÃ SV VÀ HỌ TÊN SV
                     while (nodeTmpDsDiem2 != null)
@@ -641,7 +665,7 @@ namespace doAn
                         Diem tmpDiem2 = nodeTmpDsDiem2.diem;
 
                        // CÓ TIỂN TRIỂN RỒI, H CHỈ CẦN CHO PHÉP TRÙNG MÃ MÔN VÂN ĐC NHƯNG CÁI NÀO ĐIỂM CAO HƠN THÌ MIK LẤY
-                        while(i < bangDiemTK1.lvBangDiemTK.Columns.Count)
+                        while(i < bangDiemTK1.lvBangDiemTK.Columns.Count) 
                         {
 
                             if (bangDiemTK1.lvBangDiemTK.Columns[i].Text == tmpDiem2.maMonHoc)
@@ -661,8 +685,6 @@ namespace doAn
 
                         nodeTmpDsDiem2 = nodeTmpDsDiem2.next;
                     }
-
-                    bangDiemTK1.lvBangDiemTK.Items[0].Remove();
                    
                     bangDiemTK1.lvBangDiemTK.Items.Add(listViewItemTmp);
                     nodeTmpDsSv2 = nodeTmpDsSv2.next;

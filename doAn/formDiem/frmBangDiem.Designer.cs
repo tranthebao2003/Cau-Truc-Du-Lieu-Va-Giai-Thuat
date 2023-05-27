@@ -92,14 +92,14 @@
             this.txtInputDiem.Location = new System.Drawing.Point(172, 313);
             this.txtInputDiem.Name = "txtInputDiem";
             this.txtInputDiem.Size = new System.Drawing.Size(114, 30);
-            this.txtInputDiem.TabIndex = 26;
+            this.txtInputDiem.TabIndex = 0;
             // 
             // btnNhapDiem
             // 
             this.btnNhapDiem.Location = new System.Drawing.Point(321, 312);
             this.btnNhapDiem.Name = "btnNhapDiem";
             this.btnNhapDiem.Size = new System.Drawing.Size(123, 30);
-            this.btnNhapDiem.TabIndex = 27;
+            this.btnNhapDiem.TabIndex = 1;
             this.btnNhapDiem.Text = "Nhập";
             this.btnNhapDiem.UseVisualStyleBackColor = true;
             this.btnNhapDiem.Click += new System.EventHandler(this.btnNhapDiem_Click);

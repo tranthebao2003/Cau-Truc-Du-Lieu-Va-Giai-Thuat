@@ -59,7 +59,7 @@
             this.btnNhap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.Size = new System.Drawing.Size(92, 34);
-            this.btnNhap.TabIndex = 1;
+            this.btnNhap.TabIndex = 6;
             this.btnNhap.Text = "Nhập";
             this.btnNhap.UseVisualStyleBackColor = true;
             this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
@@ -70,7 +70,7 @@
             this.txtInPutMaSV.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutMaSV.Name = "txtInPutMaSV";
             this.txtInPutMaSV.Size = new System.Drawing.Size(226, 30);
-            this.txtInPutMaSV.TabIndex = 2;
+            this.txtInPutMaSV.TabIndex = 0;
             // 
             // txtInPutTen
             // 
@@ -78,7 +78,7 @@
             this.txtInPutTen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutTen.Name = "txtInPutTen";
             this.txtInPutTen.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutTen.TabIndex = 3;
+            this.txtInPutTen.TabIndex = 2;
             // 
             // txtInPutHo
             // 
@@ -86,7 +86,7 @@
             this.txtInPutHo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutHo.Name = "txtInPutHo";
             this.txtInPutHo.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutHo.TabIndex = 4;
+            this.txtInPutHo.TabIndex = 1;
             // 
             // label1
             // 
@@ -95,7 +95,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 24);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 8;
             this.label1.Text = "Mã sinh viên";
             // 
             // label2
@@ -105,7 +105,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 24);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Tên";
             // 
             // label3
@@ -115,7 +115,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 24);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Họ";
             // 
             // label4
@@ -127,7 +127,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(232, 35);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 10;
             this.label4.Text = "Nhập Sinh Viên";
             // 
             // btnThoat
@@ -137,7 +137,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(92, 34);
-            this.btnThoat.TabIndex = 9;
+            this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -158,7 +158,7 @@
             this.txtInputSDT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInputSDT.Name = "txtInputSDT";
             this.txtInputSDT.Size = new System.Drawing.Size(221, 30);
-            this.txtInputSDT.TabIndex = 11;
+            this.txtInputSDT.TabIndex = 5;
             // 
             // label6
             // 
@@ -176,7 +176,7 @@
             this.radNam.Location = new System.Drawing.Point(327, 154);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(73, 28);
-            this.radNam.TabIndex = 13;
+            this.radNam.TabIndex = 4;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
             this.radNam.UseVisualStyleBackColor = true;
@@ -187,7 +187,7 @@
             this.radNu.Location = new System.Drawing.Point(262, 155);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(59, 28);
-            this.radNu.TabIndex = 14;
+            this.radNu.TabIndex = 3;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
             this.radNu.UseVisualStyleBackColor = true;

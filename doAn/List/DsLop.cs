@@ -29,10 +29,11 @@ namespace doAn.List
             size++;
         }
 
-        public void remove(int index)
+        public void remove(string maLopInput)
         {
-            for (int i = index; i < size; i++)
+            for (int i = 0; i < size; i++)
             {
+                if(maLopInput == dsLop[i].maLop)
                 dsLop[i] = dsLop[i + 1];
             }
             size--;

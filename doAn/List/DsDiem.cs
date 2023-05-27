@@ -137,6 +137,46 @@ namespace doAn.List
             return head; // cập nhật lại cái head
         }
 
+        // bản chất của thuật toán này là ta chuyển 1 dslk đơn về 1 mảng sau đó sắp xếp trong mảng
+        // rồi lại chuyển mảng đó về dslk đơn 
+        public DsDiem sortDsDiem(Node tmp)
+        {
+            Diem[] mangTmpDiem = new Diem[size]; // tạo 1 mảng điểm vs kich thuoc la dsDiem
+            int i = 0;
+            while (tmp != null) // đưa từng phan tu trong dslk đơn vào mảng
+            {
+                mangTmpDiem[i] = tmp.diem;
+                tmp = tmp.next;
+                i++;
+            }
+
+            for (int j = 0; j < mangTmpDiem.Length; j++)
+            {
+                for (int k = j + 1; k < mangTmpDiem.Length; k++)
+                {
+                    if (mangTmpDiem[j].maMonHoc.CompareTo(mangTmpDiem[k].maMonHoc) == 1) // sắp xếp mảng dựa vào mã môn học
+                    {
+                        Diem diemTmp = mangTmpDiem[j];
+                        mangTmpDiem[j] = mangTmpDiem[k];
+                        mangTmpDiem[k] = diemTmp;
+                    }
+                }
+            }
+
+            DsDiem tmpDsDiem = new DsDiem();
+
+
+            for (int a = 0; a < mangTmpDiem.Length; a++) // đưa tần ptu của mảng vào dslk đơn mới
+            {
+                //if(a == 0)
+                //{
+                //    tmpDsDiem.head = mangTmpDiem[0];
+                //}
+                tmpDsDiem.add(mangTmpDiem[a]);
+            }
+            return tmpDsDiem; // trả về dslk mới đã đc sắp xếp
+        }
+
         public void display()
         {
             Node key = head;

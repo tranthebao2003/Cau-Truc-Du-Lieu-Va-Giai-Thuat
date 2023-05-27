@@ -57,7 +57,7 @@
             this.btnSuaSinhVien.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSuaSinhVien.Name = "btnSuaSinhVien";
             this.btnSuaSinhVien.Size = new System.Drawing.Size(92, 34);
-            this.btnSuaSinhVien.TabIndex = 1;
+            this.btnSuaSinhVien.TabIndex = 3;
             this.btnSuaSinhVien.Text = "Sửa";
             this.btnSuaSinhVien.UseVisualStyleBackColor = true;
             this.btnSuaSinhVien.Click += new System.EventHandler(this.btnSuaSinhVien_Click);
@@ -68,7 +68,7 @@
             this.txtInPutTen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutTen.Name = "txtInPutTen";
             this.txtInPutTen.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutTen.TabIndex = 3;
+            this.txtInPutTen.TabIndex = 1;
             // 
             // txtInPutHo
             // 
@@ -76,7 +76,7 @@
             this.txtInPutHo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutHo.Name = "txtInPutHo";
             this.txtInPutHo.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutHo.TabIndex = 4;
+            this.txtInPutHo.TabIndex = 0;
             // 
             // label2
             // 
@@ -117,7 +117,7 @@
             this.btnThoatSv.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnThoatSv.Name = "btnThoatSv";
             this.btnThoatSv.Size = new System.Drawing.Size(92, 34);
-            this.btnThoatSv.TabIndex = 9;
+            this.btnThoatSv.TabIndex = 4;
             this.btnThoatSv.Text = "Thoát";
             this.btnThoatSv.UseVisualStyleBackColor = true;
             this.btnThoatSv.Click += new System.EventHandler(this.btnThoatSv_Click);
@@ -138,7 +138,7 @@
             this.txtInputSDT.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInputSDT.Name = "txtInputSDT";
             this.txtInputSDT.Size = new System.Drawing.Size(221, 30);
-            this.txtInputSDT.TabIndex = 11;
+            this.txtInputSDT.TabIndex = 2;
             // 
             // label6
             // 
