@@ -52,7 +52,7 @@
             this.btnSuaLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSuaLop.Name = "btnSuaLop";
             this.btnSuaLop.Size = new System.Drawing.Size(92, 34);
-            this.btnSuaLop.TabIndex = 1;
+            this.btnSuaLop.TabIndex = 2;
             this.btnSuaLop.Text = "Sửa";
             this.btnSuaLop.UseVisualStyleBackColor = true;
             this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
@@ -63,7 +63,7 @@
             this.txtInPuTenLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPuTenLop.Name = "txtInPuTenLop";
             this.txtInPuTenLop.Size = new System.Drawing.Size(221, 30);
-            this.txtInPuTenLop.TabIndex = 3;
+            this.txtInPuTenLop.TabIndex = 0;
             // 
             // label2
             // 
@@ -94,7 +94,7 @@
             this.btnThoatLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnThoatLop.Name = "btnThoatLop";
             this.btnThoatLop.Size = new System.Drawing.Size(92, 34);
-            this.btnThoatLop.TabIndex = 9;
+            this.btnThoatLop.TabIndex = 3;
             this.btnThoatLop.Text = "Thoát";
             this.btnThoatLop.UseVisualStyleBackColor = true;
             this.btnThoatLop.Click += new System.EventHandler(this.btnThoatLop_Click);
@@ -115,7 +115,7 @@
             this.txtInPuNam.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPuNam.Name = "txtInPuNam";
             this.txtInPuNam.Size = new System.Drawing.Size(134, 30);
-            this.txtInPuNam.TabIndex = 11;
+            this.txtInPuNam.TabIndex = 1;
             // 
             // frmEditLop
             // 

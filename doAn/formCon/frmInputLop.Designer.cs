@@ -54,7 +54,7 @@
             this.btnNhapLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnNhapLop.Name = "btnNhapLop";
             this.btnNhapLop.Size = new System.Drawing.Size(92, 34);
-            this.btnNhapLop.TabIndex = 1;
+            this.btnNhapLop.TabIndex = 3;
             this.btnNhapLop.Text = "Nhập";
             this.btnNhapLop.UseVisualStyleBackColor = true;
             this.btnNhapLop.Click += new System.EventHandler(this.btnNhapLop_Click);
@@ -65,7 +65,7 @@
             this.txtInPutMaLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutMaLop.Name = "txtInPutMaLop";
             this.txtInPutMaLop.Size = new System.Drawing.Size(241, 30);
-            this.txtInPutMaLop.TabIndex = 2;
+            this.txtInPutMaLop.TabIndex = 0;
             // 
             // txtInPutNamHoc
             // 
@@ -73,7 +73,7 @@
             this.txtInPutNamHoc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutNamHoc.Name = "txtInPutNamHoc";
             this.txtInPutNamHoc.Size = new System.Drawing.Size(133, 30);
-            this.txtInPutNamHoc.TabIndex = 3;
+            this.txtInPutNamHoc.TabIndex = 2;
             // 
             // txtInPutTenLop
             // 
@@ -81,7 +81,7 @@
             this.txtInPutTenLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutTenLop.Name = "txtInPutTenLop";
             this.txtInPutTenLop.Size = new System.Drawing.Size(241, 30);
-            this.txtInPutTenLop.TabIndex = 4;
+            this.txtInPutTenLop.TabIndex = 1;
             // 
             // label1
             // 
@@ -90,7 +90,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 24);
-            this.label1.TabIndex = 5;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Mã lớp";
             // 
             // label2
@@ -100,7 +100,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 24);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Năm học";
             // 
             // label3
@@ -110,7 +110,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 24);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 3;
             this.label3.Text = "Tên lớp";
             // 
             // label4
@@ -122,7 +122,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 35);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Nhập Lớp";
             // 
             // btnThoat
@@ -132,7 +132,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(92, 34);
-            this.btnThoat.TabIndex = 9;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);

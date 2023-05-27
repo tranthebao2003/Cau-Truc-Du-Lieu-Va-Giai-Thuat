@@ -54,7 +54,7 @@
             this.btnNhapInforUser.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnNhapInforUser.Name = "btnNhapInforUser";
             this.btnNhapInforUser.Size = new System.Drawing.Size(92, 34);
-            this.btnNhapInforUser.TabIndex = 1;
+            this.btnNhapInforUser.TabIndex = 3;
             this.btnNhapInforUser.Text = "Nhập";
             this.btnNhapInforUser.UseVisualStyleBackColor = true;
             this.btnNhapInforUser.Click += new System.EventHandler(this.btnNhapInforUser_Click);
@@ -65,7 +65,7 @@
             this.txtInPutMaLop.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutMaLop.Name = "txtInPutMaLop";
             this.txtInPutMaLop.Size = new System.Drawing.Size(216, 30);
-            this.txtInPutMaLop.TabIndex = 2;
+            this.txtInPutMaLop.TabIndex = 0;
             // 
             // txtInPutLanThi
             // 
@@ -73,7 +73,7 @@
             this.txtInPutLanThi.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutLanThi.Name = "txtInPutLanThi";
             this.txtInPutLanThi.Size = new System.Drawing.Size(216, 30);
-            this.txtInPutLanThi.TabIndex = 3;
+            this.txtInPutLanThi.TabIndex = 2;
             // 
             // txtInPutMaMon
             // 
@@ -81,7 +81,7 @@
             this.txtInPutMaMon.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtInPutMaMon.Name = "txtInPutMaMon";
             this.txtInPutMaMon.Size = new System.Drawing.Size(216, 30);
-            this.txtInPutMaMon.TabIndex = 4;
+            this.txtInPutMaMon.TabIndex = 1;
             // 
             // label1
             // 
@@ -135,7 +135,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(92, 34);
-            this.btnThoat.TabIndex = 9;
+            this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);

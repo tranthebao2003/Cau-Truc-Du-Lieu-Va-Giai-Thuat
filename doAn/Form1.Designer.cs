@@ -89,7 +89,7 @@
             this.btnNhapLop.Margin = new System.Windows.Forms.Padding(5);
             this.btnNhapLop.Name = "btnNhapLop";
             this.btnNhapLop.Size = new System.Drawing.Size(281, 43);
-            this.btnNhapLop.TabIndex = 1;
+            this.btnNhapLop.TabIndex = 0;
             this.btnNhapLop.Text = "Nhập lớp";
             this.btnNhapLop.UseVisualStyleBackColor = true;
             this.btnNhapLop.Click += new System.EventHandler(this.btnNhapLop_Click);
@@ -114,7 +114,7 @@
             this.btnNhapSv.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapSv.Name = "btnNhapSv";
             this.btnNhapSv.Size = new System.Drawing.Size(281, 43);
-            this.btnNhapSv.TabIndex = 5;
+            this.btnNhapSv.TabIndex = 0;
             this.btnNhapSv.Text = "Nhập sinh viên";
             this.btnNhapSv.UseVisualStyleBackColor = true;
             this.btnNhapSv.Click += new System.EventHandler(this.btnNhapSv_Click);
@@ -126,7 +126,7 @@
             this.btnNhapMon.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMon.Name = "btnNhapMon";
             this.btnNhapMon.Size = new System.Drawing.Size(281, 43);
-            this.btnNhapMon.TabIndex = 7;
+            this.btnNhapMon.TabIndex = 0;
             this.btnNhapMon.Text = "Nhập môn học";
             this.btnNhapMon.UseVisualStyleBackColor = true;
             this.btnNhapMon.Click += new System.EventHandler(this.btnNhapMon_Click);
@@ -138,9 +138,10 @@
             this.btnInDiemTK.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDiemTK.Name = "btnInDiemTK";
             this.btnInDiemTK.Size = new System.Drawing.Size(281, 43);
-            this.btnInDiemTK.TabIndex = 9;
+            this.btnInDiemTK.TabIndex = 3;
             this.btnInDiemTK.Text = "In bảng điểm tổng kết";
             this.btnInDiemTK.UseVisualStyleBackColor = true;
+            this.btnInDiemTK.Visible = false;
             this.btnInDiemTK.Click += new System.EventHandler(this.btnInDiemTK_Click);
             // 
             // btnNhapDiem
@@ -150,7 +151,7 @@
             this.btnNhapDiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapDiem.Name = "btnNhapDiem";
             this.btnNhapDiem.Size = new System.Drawing.Size(281, 43);
-            this.btnNhapDiem.TabIndex = 11;
+            this.btnNhapDiem.TabIndex = 0;
             this.btnNhapDiem.Text = "Nhập điểm";
             this.btnNhapDiem.UseVisualStyleBackColor = true;
             this.btnNhapDiem.Click += new System.EventHandler(this.btnNhapDiem_Click);
@@ -162,7 +163,7 @@
             this.btnInDiemTB.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDiemTB.Name = "btnInDiemTB";
             this.btnInDiemTB.Size = new System.Drawing.Size(281, 43);
-            this.btnInDiemTB.TabIndex = 12;
+            this.btnInDiemTB.TabIndex = 2;
             this.btnInDiemTB.Text = "In điểm trung bình";
             this.btnInDiemTB.UseVisualStyleBackColor = true;
             this.btnInDiemTB.Visible = false;
@@ -175,7 +176,7 @@
             this.btnInDiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDiem.Name = "btnInDiem";
             this.btnInDiem.Size = new System.Drawing.Size(281, 43);
-            this.btnInDiem.TabIndex = 13;
+            this.btnInDiem.TabIndex = 1;
             this.btnInDiem.Text = "In bảng điểm";
             this.btnInDiem.UseVisualStyleBackColor = true;
             this.btnInDiem.Visible = false;
@@ -193,7 +194,7 @@
             this.grbLop.Name = "grbLop";
             this.grbLop.Padding = new System.Windows.Forms.Padding(4);
             this.grbLop.Size = new System.Drawing.Size(349, 145);
-            this.grbLop.TabIndex = 14;
+            this.grbLop.TabIndex = 2;
             this.grbLop.TabStop = false;
             this.grbLop.Text = "Lớp";
             // 
@@ -204,7 +205,7 @@
             this.txtNamHoc.Multiline = true;
             this.txtNamHoc.Name = "txtNamHoc";
             this.txtNamHoc.Size = new System.Drawing.Size(73, 34);
-            this.txtNamHoc.TabIndex = 3;
+            this.txtNamHoc.TabIndex = 1;
             this.txtNamHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnInLop
@@ -229,7 +230,7 @@
             this.grbSinhVien.Name = "grbSinhVien";
             this.grbSinhVien.Padding = new System.Windows.Forms.Padding(4);
             this.grbSinhVien.Size = new System.Drawing.Size(349, 96);
-            this.grbSinhVien.TabIndex = 15;
+            this.grbSinhVien.TabIndex = 4;
             this.grbSinhVien.TabStop = false;
             this.grbSinhVien.Text = "Sinh viên";
             // 
@@ -243,7 +244,7 @@
             this.grbMonHoc.Name = "grbMonHoc";
             this.grbMonHoc.Padding = new System.Windows.Forms.Padding(4);
             this.grbMonHoc.Size = new System.Drawing.Size(349, 96);
-            this.grbMonHoc.TabIndex = 16;
+            this.grbMonHoc.TabIndex = 6;
             this.grbMonHoc.TabStop = false;
             this.grbMonHoc.Text = "Môn học";
             // 
@@ -260,7 +261,7 @@
             this.grbDiemSo.Name = "grbDiemSo";
             this.grbDiemSo.Padding = new System.Windows.Forms.Padding(4);
             this.grbDiemSo.Size = new System.Drawing.Size(1476, 118);
-            this.grbDiemSo.TabIndex = 17;
+            this.grbDiemSo.TabIndex = 7;
             this.grbDiemSo.TabStop = false;
             this.grbDiemSo.Text = "Điểm số";
             // 
@@ -278,7 +279,7 @@
             this.btnthoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnthoat.Name = "btnthoat";
             this.btnthoat.Size = new System.Drawing.Size(133, 34);
-            this.btnthoat.TabIndex = 21;
+            this.btnthoat.TabIndex = 8;
             this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = false;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
@@ -289,7 +290,7 @@
             this.btnSuaSv.Location = new System.Drawing.Point(72, 333);
             this.btnSuaSv.Name = "btnSuaSv";
             this.btnSuaSv.Size = new System.Drawing.Size(90, 36);
-            this.btnSuaSv.TabIndex = 25;
+            this.btnSuaSv.TabIndex = 1;
             this.btnSuaSv.Text = "Sửa";
             this.btnSuaSv.UseVisualStyleBackColor = true;
             this.btnSuaSv.Click += new System.EventHandler(this.btnSuaSv_Click);
@@ -300,7 +301,7 @@
             this.btnXoaSv.Location = new System.Drawing.Point(440, 333);
             this.btnXoaSv.Name = "btnXoaSv";
             this.btnXoaSv.Size = new System.Drawing.Size(90, 36);
-            this.btnXoaSv.TabIndex = 26;
+            this.btnXoaSv.TabIndex = 2;
             this.btnXoaSv.Text = "Xóa";
             this.btnXoaSv.UseVisualStyleBackColor = true;
             this.btnXoaSv.Click += new System.EventHandler(this.btnXoaSv_Click);
@@ -322,7 +323,7 @@
             this.lvSinhVien.Location = new System.Drawing.Point(0, 41);
             this.lvSinhVien.Name = "lvSinhVien";
             this.lvSinhVien.Size = new System.Drawing.Size(610, 254);
-            this.lvSinhVien.TabIndex = 23;
+            this.lvSinhVien.TabIndex = 0;
             this.lvSinhVien.UseCompatibleStateImageBehavior = false;
             this.lvSinhVien.View = System.Windows.Forms.View.Details;
             // 
@@ -361,7 +362,7 @@
             this.grbDssv.Location = new System.Drawing.Point(430, 97);
             this.grbDssv.Name = "grbDssv";
             this.grbDssv.Size = new System.Drawing.Size(610, 380);
-            this.grbDssv.TabIndex = 27;
+            this.grbDssv.TabIndex = 3;
             this.grbDssv.TabStop = false;
             this.grbDssv.Text = "Danh sách sinh viên";
             // 
@@ -375,7 +376,7 @@
             this.grbDsLop.Location = new System.Drawing.Point(33, 97);
             this.grbDsLop.Name = "grbDsLop";
             this.grbDsLop.Size = new System.Drawing.Size(391, 380);
-            this.grbDsLop.TabIndex = 28;
+            this.grbDsLop.TabIndex = 0;
             this.grbDsLop.TabStop = false;
             this.grbDsLop.Text = "Danh sách Lớp";
             // 
@@ -394,7 +395,7 @@
             this.lvLop.Location = new System.Drawing.Point(0, 41);
             this.lvLop.Name = "lvLop";
             this.lvLop.Size = new System.Drawing.Size(391, 254);
-            this.lvLop.TabIndex = 23;
+            this.lvLop.TabIndex = 0;
             this.lvLop.UseCompatibleStateImageBehavior = false;
             this.lvLop.View = System.Windows.Forms.View.Details;
             this.lvLop.DoubleClick += new System.EventHandler(this.lvLop_DoubleClick);
@@ -420,7 +421,7 @@
             this.btnXoaLop.Location = new System.Drawing.Point(270, 333);
             this.btnXoaLop.Name = "btnXoaLop";
             this.btnXoaLop.Size = new System.Drawing.Size(90, 36);
-            this.btnXoaLop.TabIndex = 26;
+            this.btnXoaLop.TabIndex = 2;
             this.btnXoaLop.Text = "Xóa";
             this.btnXoaLop.UseVisualStyleBackColor = true;
             this.btnXoaLop.Click += new System.EventHandler(this.btnXoaLop_Click);
@@ -431,7 +432,7 @@
             this.btnSuaLop.Location = new System.Drawing.Point(35, 333);
             this.btnSuaLop.Name = "btnSuaLop";
             this.btnSuaLop.Size = new System.Drawing.Size(90, 36);
-            this.btnSuaLop.TabIndex = 25;
+            this.btnSuaLop.TabIndex = 1;
             this.btnSuaLop.Text = "Sửa";
             this.btnSuaLop.UseVisualStyleBackColor = true;
             this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
@@ -446,7 +447,7 @@
             this.grbDsMon.Location = new System.Drawing.Point(1046, 97);
             this.grbDsMon.Name = "grbDsMon";
             this.grbDsMon.Size = new System.Drawing.Size(461, 380);
-            this.grbDsMon.TabIndex = 28;
+            this.grbDsMon.TabIndex = 5;
             this.grbDsMon.TabStop = false;
             this.grbDsMon.Text = "Danh sách môn";
             // 
@@ -464,7 +465,7 @@
             this.lvDsMon.Location = new System.Drawing.Point(0, 41);
             this.lvDsMon.Name = "lvDsMon";
             this.lvDsMon.Size = new System.Drawing.Size(463, 254);
-            this.lvDsMon.TabIndex = 23;
+            this.lvDsMon.TabIndex = 0;
             this.lvDsMon.UseCompatibleStateImageBehavior = false;
             this.lvDsMon.View = System.Windows.Forms.View.Details;
             // 
@@ -494,7 +495,7 @@
             this.btnXoaMon.Location = new System.Drawing.Point(312, 333);
             this.btnXoaMon.Name = "btnXoaMon";
             this.btnXoaMon.Size = new System.Drawing.Size(90, 36);
-            this.btnXoaMon.TabIndex = 26;
+            this.btnXoaMon.TabIndex = 2;
             this.btnXoaMon.Text = "Xóa";
             this.btnXoaMon.UseVisualStyleBackColor = true;
             this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
@@ -505,7 +506,7 @@
             this.btnSuaMon.Location = new System.Drawing.Point(65, 333);
             this.btnSuaMon.Name = "btnSuaMon";
             this.btnSuaMon.Size = new System.Drawing.Size(90, 36);
-            this.btnSuaMon.TabIndex = 25;
+            this.btnSuaMon.TabIndex = 1;
             this.btnSuaMon.Text = "Sửa";
             this.btnSuaMon.UseVisualStyleBackColor = true;
             this.btnSuaMon.Click += new System.EventHandler(this.btnSuaMon_Click);
