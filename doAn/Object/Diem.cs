@@ -15,11 +15,5 @@ namespace doAn.Object
         public Diem()
         {
         }
-        public Diem(string maMonHoc, int soLanThi, float diem)
-        {
-            this.maMonHoc = maMonHoc;//note
-            this.soLanThi = soLanThi;//note
-            this.diem = diem;//note
-        }
     }
 }

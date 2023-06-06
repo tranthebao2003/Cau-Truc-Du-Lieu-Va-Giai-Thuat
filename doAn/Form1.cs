@@ -37,6 +37,7 @@ namespace doAn
                 Application.Exit();
             }
         }
+
         #region Nhập lớp
         private void btnNhapLop_Click(object sender, EventArgs e)
         {
@@ -44,7 +45,8 @@ namespace doAn
             frmLop.Show();
             // file.radAllLine
             // đọc dữ liệu từ file txt
-            string path = "../../DuLieu/Lop.txt";
+            string path = "../../DuLieu/Lop.txt"; // ".." ra thư mục cha đang chứa cái file này => ra 2 lần.
+                                                  // sau khi ra 2 lần thì thư mục đang chứa file này mới cùng cấp vs thư mục DuLieu
             using (StreamReader sr = new StreamReader(path))
             {
                 while (sr.EndOfStream == false) // thuộc tính EndOfStream = true nghĩa là đã đọc hết dữ liệu rồi
@@ -89,7 +91,6 @@ namespace doAn
             if(lvLop.SelectedItems.Count > 0)
             {
                 
-                //result.dssv = Program.objectDsSinhVien; // như đã nói trên thì lúc này cái lớp có con trỏ kiểu dssv có thể lưu đc địa chỉ của 1 dssv
                 frmInputSV frmSV = new frmInputSV(); // tạo 1 đối tượng từ class frmInputLop
                 frmSV.Show();
 
@@ -159,7 +160,7 @@ namespace doAn
                             result.dssv.add(sv1); 
                         }
                         // hiện thi ra dssv
-                        result.dssv.display(Program.lvItem);
+                        result.dssv.display();
                     }
                 }
             }
@@ -201,10 +202,10 @@ namespace doAn
                     if(mark == true)
                     {
                         Program.formMain.lvDsMon.Items.Clear(); 
-                        Program.objectDsMonHoc.displayInOrder(Program.objectDsMonHoc.root, Program.lvItem);
+                        Program.objectDsMonHoc.displayInOrder(Program.objectDsMonHoc.root);
                     }
                     else
-                    { 
+                    {
                         // có return ở đây là vì tránh ng dung ấn vào nút nhập môn nó sẽ hiển thị ra hàng loạt mã môn trùng thay vào đó ta chỉ cần hiển thị ra 1 lan 
                         return;
                     }
@@ -344,12 +345,12 @@ namespace doAn
                 else
                 {
                     MessageBox.Show(
-                  "Năm phải là số",
+                  "Không đúng định dạng",
                   "Thông báo",
                   MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                Program.objectDslop.display(Program.lvItem);
+                Program.objectDslop.display();
             }
         }
         #endregion
@@ -375,7 +376,7 @@ namespace doAn
             }
             // sau đó gán địa chỉ cả dssv (có kiểu dữ liệu là 1 dslk) vào con trỏ có cùng kiểu ở trong class Lop (con trỏ, trỏ đến dssv đã tạo khi tạo dsLop)
 
-            result.dssv.display(Program.lvItem); // hiển thị dssv thôi
+            result.dssv.display(/*Program.lvItem*/); // hiển thị dssv thôi
         }
         #endregion
 
@@ -395,7 +396,7 @@ namespace doAn
 
                     //MessageBox.Show(monHoc1.maMonHoc + monHoc1.tenMonHoc + monHoc1.tinChiLT + monHoc1.tinChiTH);
 
-                    Program.objectDsMonHoc.root = Program.objectDsMonHoc.removeNode(Program.objectDsMonHoc.root, monHoc1); // trong ngoặc nó trả về index dòng đâu tien dc chon
+                    Program.objectDsMonHoc.root = Program.objectDsMonHoc.removeNode(Program.objectDsMonHoc.root, monHoc1);
                     lvDsMon.Items.Remove(lvDsMon.SelectedItems[0]); // nó sẽ trực tiếp xóa luôn đối tượng đó không cần thông qua index
                                                                     //SelectedItems[0]: trả về dòng đầu tiên dược chọn
                 }
@@ -422,6 +423,7 @@ namespace doAn
                 a.txtInPutTenMon.Text = Program.lvItem.SubItems[1].Text;
                 a.txtInPutSTCLT.Text = Program.lvItem.SubItems[2].Text;
                 a.txtInPutSTCTH.Text = Program.lvItem.SubItems[3].Text;
+
                 a.Show(); // show form eidt sv ra
             }
             else
@@ -514,6 +516,9 @@ namespace doAn
                         nodeTmpDsDiem = nodeTmpDsDiem.next;
                     }
                     diemTBsinhVien = tongDiemSinhVien / tongTinChiSinhVien; // sau khi kết thúc vòng while nghĩa là đã tìm hết đc dsDiem nên sau đó chỉ cần lấy tổng điểm/ tong tín chỉ là xong
+                    // sau khi tính sau phải reset lại 2 cái dưới về 0
+                    tongDiemSinhVien = 0;
+                    tongTinChiSinhVien = 0;
 
                     tmpCholvBangDiemTB.SubItems.Add(diemTBsinhVien.ToString()); // sau đó add diemTB vào subItems để hiển thị ra
                     bangDiemTB1.lvBangDiemTB.Items.Add(tmpCholvBangDiemTB); // add cả 1 dòng vào listView
@@ -574,7 +579,6 @@ namespace doAn
 
                 DsSinhVien dsSv1 = result2.dssv; // lấy dssv từ con trỏ dssv của lớp result2
                 DsSinhVien.Node nodeTmpDsSv = dsSv1.head;
-                // có thể phải tạo thêm cột dựa vào số môn có trong dsMon của mỗi sv
 
                 // ý tưởng: ta sẽ xuất ra toàn bộ môn mà mà sv có điểm (dsDiem), nếu môn nào thi lại nhìu lần
                 // thì ta chỉ xuất ra điểm cao nhất của lần thi tương ứng
@@ -629,7 +633,8 @@ namespace doAn
                 }
 
                 // SẮP XẾP CÁC COLUNMS
-                for (int i = 0; i < bangDiemTK1.lvBangDiemTK.Columns.Count; i++)
+                // chi i chạy từ 2 vì chừa cột 0 và cột 1 ra là mã sv và tên nên khog đc sắp xếp
+                for (int i = 2; i < bangDiemTK1.lvBangDiemTK.Columns.Count; i++)
                 {
                     for (int j = i+1; j < bangDiemTK1.lvBangDiemTK.Columns.Count; j++)
                     {

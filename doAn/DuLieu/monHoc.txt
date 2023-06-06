@@ -7,9 +7,9 @@ MUL006,Cơ sở tạo hình,3,0
 MUL007,Xử lí đa phương tiện,2,0
 MUL008,tin học 2,3,1
 MUL009,Lập trình web,3,0
-MUL010,Tiếng anh 1 ,4,0
-MUL011,Tiếng anh 2 ,4,0
-MUL012,Tiếng anh 3 ,4,0
+MUL010,Tiếng anh 1,4,0
+MUL011,Tiếng anh 2,4,0
+MUL012,Tiếng anh 3,4,0
 MUL013,Toán cao cấp 2,2,0
 MUL014,Toán rời rạc 1,3,0
 MUL015,Hình động 1,2,1

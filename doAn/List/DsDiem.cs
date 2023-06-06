@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace doAn.List
 {
@@ -53,7 +54,7 @@ namespace doAn.List
                 Node ptr = head;
                 while (ptr != null)
                 {
-                    if (ptr.diem.soLanThi == a.soLanThi && ptr.diem.maMonHoc == a.maMonHoc && a.diem.ToString() == "") // ràng buộc thêm a.diem.ToString() == "", để khi ta thêm điểm user nhập thì nó sẽ thêm vào đc mặc dù trùng cả mã môn và lần thi
+                    if (ptr.diem.soLanThi == a.soLanThi && ptr.diem.maMonHoc == a.maMonHoc)
                     {
                         return;
                     }
@@ -139,57 +140,38 @@ namespace doAn.List
 
         // bản chất của thuật toán này là ta chuyển 1 dslk đơn về 1 mảng sau đó sắp xếp trong mảng
         // rồi lại chuyển mảng đó về dslk đơn 
-        public DsDiem sortDsDiem(Node tmp)
+        public DsDiem sortDsDiem(Node tmp) // phục vụ cho câu j
         {
-            Diem[] mangTmpDiem = new Diem[size]; // tạo 1 mảng điểm vs kich thuoc la dsDiem
-            int i = 0;
-            while (tmp != null) // đưa từng phan tu trong dslk đơn vào mảng
+
+            List<Diem> tmpDsDiem = new List<Diem>();
+
+            while (tmp != null) // đưa từng phan tu trong dslk đơn vào LIST
             {
-                mangTmpDiem[i] = tmp.diem;
+                tmpDsDiem.Add(tmp.diem);
                 tmp = tmp.next;
-                i++;
             }
 
-            for (int j = 0; j < mangTmpDiem.Length; j++)
+            //tmpDsDiem.Count: trả về số phần tử trong list tmpDsDiem
+            for (int j = 0; j < tmpDsDiem.Count; j++)
             {
-                for (int k = j + 1; k < mangTmpDiem.Length; k++)
+                for (int k = j + 1; k < tmpDsDiem.Count; k++)
                 {
-                    if (mangTmpDiem[j].maMonHoc.CompareTo(mangTmpDiem[k].maMonHoc) == 1) // sắp xếp mảng dựa vào mã môn học
+                    if (tmpDsDiem[j].maMonHoc.CompareTo(tmpDsDiem[k].maMonHoc) == 1) // sắp xếp list dựa vào mã môn học
                     {
-                        Diem diemTmp = mangTmpDiem[j];
-                        mangTmpDiem[j] = mangTmpDiem[k];
-                        mangTmpDiem[k] = diemTmp;
+                        Diem diemTmp = tmpDsDiem[j];
+                        tmpDsDiem[j] = tmpDsDiem[k];
+                        tmpDsDiem[k] = diemTmp;
                     }
                 }
             }
 
-            DsDiem tmpDsDiem = new DsDiem();
+            DsDiem tmpDsDiem2 = new DsDiem();
 
-
-            for (int a = 0; a < mangTmpDiem.Length; a++) // đưa tần ptu của mảng vào dslk đơn mới
+            for (int a = 0; a < tmpDsDiem.Count; a++) // đưa tần ptu của list vào dslk đơn mới
             {
-                //if(a == 0)
-                //{
-                //    tmpDsDiem.head = mangTmpDiem[0];
-                //}
-                tmpDsDiem.add(mangTmpDiem[a]);
+                tmpDsDiem2.add(tmpDsDiem[a]);
             }
-            return tmpDsDiem; // trả về dslk mới đã đc sắp xếp
-        }
-
-        public void display()
-        {
-            Node key = head;
-            for (int i = 0; i < size; i++)
-            {
-                string a = key.diem.maMonHoc;
-                int b = key.diem.soLanThi;
-                float c = key.diem.diem;
-                Console.WriteLine("Ma mon hoc: " + a);
-                Console.WriteLine("So lan thi: " + b);
-                Console.WriteLine("Diem: " + c);
-                key = key.next;
-            }
+            return tmpDsDiem2; // trả về dslk mới đã đc sắp xếp
         }
     }
 }

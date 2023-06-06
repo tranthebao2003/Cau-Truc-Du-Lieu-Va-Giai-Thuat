@@ -31,7 +31,7 @@ namespace doAn
             DsDiem.Node tmp = NodetmpDsDiem; // đây là node đc tạm để lưu kết quá sau cùng sau khi đã tìm ra đc node có điểm cao nhất
 
             // bản chất của thuật toán này là dò từ đầu đến cuối, lọc ra những thằng trùng mã môn,
-            // xong đó so sánh diêm của 2 thằng đó rồi xóa thằng nhỏ hơn, con nếu 2 thằng bằng điểm nhau (khác số lần thi)
+            // sau đó so sánh điểm của 2 thằng đó rồi xóa thằng nhỏ hơn, con nếu 2 thằng bằng điểm nhau (khác số lần thi)
             // thì xóa 1 trong 2 thằng
             while (NodetmpDsDiem != null)
             {
@@ -44,19 +44,16 @@ namespace doAn
                         if (NodetmpDsDiem.diem.diem > NodetmpDsDiem2.diem.diem)
                         {
                             tmp = dsDiemtmp.removeNode(NodetmpDsDiem2); // truyền vào cái node cần xóa
-                            break;
                         }
 
                         else if (NodetmpDsDiem.diem.diem < NodetmpDsDiem2.diem.diem)
                         {
                             tmp = dsDiemtmp.removeNode(NodetmpDsDiem); // truyền vào cái node cần xóa
-                            break;
                         }
 
-                        else // xoa cai nao  cug dc
+                        else // xoa cai nao cug dc
                         {
                             tmp = dsDiemtmp.removeNode(NodetmpDsDiem2); // truyền vào cái node cần xóa
-                            break;
                         }
                     }
                     NodetmpDsDiem2 = NodetmpDsDiem2.next;

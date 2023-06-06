@@ -19,7 +19,6 @@ namespace doAn.formDiem
             InitializeComponent();
         }
 
-        // tạm thời đã xong phần giải thuật, mai thêm đk nữa là xong
         private void btnNhapDiem_Click(object sender, EventArgs e)
         {
             if(lvBangDiem.SelectedItems.Count > 0)
@@ -78,18 +77,12 @@ namespace doAn.formDiem
                             Diem diem2 = tmpDsDiem1.diem;
                             if (diem2.maMonHoc.CompareTo(maMonNhapVao) == 0 && diem2.soLanThi == lanThiNhapVao)
                             {
+                                // sau khi tìm đc điểm phù hợp rồi thì ta chỉ cần thay điểm của object điểm đó bằng điểm mà user nhập
                                 diem2.diem = diemNhapVao;
                                 dsDiem1.add(diem2);
 
-                                // nó sẽ xóa cái dòng cũ đi và thay vào dòng mới có điểm user đã nhập
-                                
-                                ListViewItem lvItemTmp = new ListViewItem(sv2.maSV); // tạo 1 dối lvItem mới để add sv mới nhưng bây h đã có điểm rồi
-                                lvItemTmp.SubItems.Add(sv2.ho);
-                                lvItemTmp.SubItems.Add(sv2.ten);
-                                lvItemTmp.SubItems.Add(diem2.diem.ToString());
-
-                                lvBangDiem.Items[indexUserChon].Remove(); // xóa dòng tại vị trí cũ mà mik đã lấy ở trên
-                                lvBangDiem.Items.Add(lvItemTmp);
+                                // tiếp theo hiển thị lên cho user thì ta chỉ cần thay thế ô điểm tương ứng mà user chọn bằng điểm đã đc thay thế
+                                lvBangDiem.Items[indexUserChon].SubItems[3].Text = diem2.diem.ToString();
                                 return;
                             }
                             tmpDsDiem1 = tmpDsDiem1.next;
