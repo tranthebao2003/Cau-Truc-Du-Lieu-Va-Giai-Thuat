@@ -41,9 +41,44 @@ namespace doAn.formCon
             MonHoc monHoc1 = new MonHoc();
             monHoc1.maMonHoc = txtInPutMaMon.Text;
             monHoc1.tenMonHoc = txtInPutTenMon.Text;
-            monHoc1.tinChiLT = Convert.ToInt32(txtInPutSTCLT.Text);
-            monHoc1.tinChiTH = Convert.ToInt32(txtInputSTCTH.Text);
+            int tinChiLT, tinChiTH;
 
+            if (int.TryParse(txtInPutSTCLT.Text, out tinChiLT) == true && int.TryParse(txtInputSTCTH.Text, out tinChiTH) == true) // nghĩa là nếu ep đc thì nó sẽ đưa số đó vào biến nienKhoa va tra ve true
+            {
+                monHoc1.tinChiLT = tinChiLT;
+                monHoc1.tinChiTH = tinChiTH;
+            }
+            else
+            {
+                MessageBox.Show(
+              "Không đúng định dạng",
+              "Thông báo",
+              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+            //vì thêm môn vào theo tên môn học nên khi dò mã môn thêm vào có thể sẽ bị trùng nên ta phải chuyển cây thành mảng rồi dò từ đầu đến cuối mảng
+            // nếu trùng mã môn thì không thêm
+
+            List<MonHoc> mangDsMon = new List<MonHoc>();
+
+            DsMonHoc dsMonTmp = Program.objectDsMonHoc;
+            DsMonHoc.Node nodeRootTmp = dsMonTmp.root;
+
+            dsMonTmp.treeSangArray(nodeRootTmp, mangDsMon); // gọi hàm này vào truyền vào root và list để chuyển cây thành mảng
+
+            foreach (MonHoc monA in mangDsMon)
+            {
+                if(txtInPutMaMon.Text == monA.maMonHoc)
+                {
+                    MessageBox.Show(
+                       "Mã môn học bị trùng!",
+                       "Thông báo",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
 
             // biến mark để đánh dấu nếu mark == flase thì  có nghĩa đá có mã môn rồi nên sẽ ko đc hiển thị
             bool mark = Program.objectDsMonHoc.insert(Program.objectDsMonHoc.root, monHoc1);
@@ -52,7 +87,7 @@ namespace doAn.formCon
            if(mark == true)
             {
                 Program.formMain.lvDsMon.Items.Clear(); // này là chỉ xóa hiển thị cho ng dùng, chứ bản chất cái node vẫn tồn tại trong cây
-                Program.objectDsMonHoc.displayInOrder(Program.objectDsMonHoc.root, Program.lvItem);
+                Program.objectDsMonHoc.displayInOrder(Program.objectDsMonHoc.root);
             }
                
         }

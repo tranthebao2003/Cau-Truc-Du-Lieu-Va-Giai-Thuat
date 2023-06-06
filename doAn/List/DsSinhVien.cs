@@ -45,6 +45,7 @@ namespace doAn.List
             return size == 0;
         }
 
+        // bản chất của thuật toán add thằng nào vào là sắp xếp thằng đó luôn
         public void add(SinhVien e)
         {
             Node a = new Node(e);
@@ -89,16 +90,8 @@ namespace doAn.List
 
         public void addFirst(Node e)
         {
-            if (isEmpty())
-            {
-                head = e;
-                tail = e;
-            }
-            else
-            {
-                e.next = head;
-                head = e;
-            }
+            e.next = head;
+            head = e;
         }
 
         public void addAny(Node e, int position) // đang có vấn đề
@@ -175,7 +168,7 @@ namespace doAn.List
                 ptr = ptr.next;
             }
             Node ptr2 = head;
-            while (ptr2 != ptr) // tim thang ke thang dc thay the sau do lien ket no voi thang moi them vao
+            while (ptr2 != ptr) // tim thang kế thang dc thay the sau do lien ket no voi thang moi them vao
             {
                 if (ptr2.next == ptr)
                 {
@@ -187,15 +180,15 @@ namespace doAn.List
         }
 
         // thiếu bước nhập mã lớp rồi mới cho nhập sinh viên vào lớp đó
-        public void display(ListViewItem a)
+        public void display()
         {
             Node ptr = head;
             Program.formMain.lvSinhVien.Items.Clear(); // xoa nhung dong trong listview trx đó
             while (ptr != null)
             {
-                a = new ListViewItem(ptr.sv.maSV);
+                ListViewItem a = new ListViewItem(ptr.sv.maSV);
                 // khởi tạo ô đầu tiên của dòng đầu tiên
-                                                               //them cac o tiep theo
+                //them cac o tiep theo
                 a.SubItems.Add(ptr.sv.ho); // ô2
                 a.SubItems.Add(ptr.sv.ten); // ô3
                 if (ptr.sv.phai == true)

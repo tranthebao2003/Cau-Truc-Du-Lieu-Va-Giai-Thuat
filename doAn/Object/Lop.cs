@@ -22,13 +22,5 @@ namespace doAn.Object
             this.maLop = "";
             this.dssv = new DsSinhVien(); // phải khởi tạo con trỏ này vì khi ta khởi tạo đội tướng result ở sự kiện double click nó sẽ gọi đến hàm này
         }
-
-        public Lop(string maLop, string tenLop, int namHoc)
-        {
-            this.maLop = maLop;
-            this.tenLop = tenLop;
-            this.namHoc = namHoc;
-            this.dssv = new DsSinhVien();
-        }
     }
 }

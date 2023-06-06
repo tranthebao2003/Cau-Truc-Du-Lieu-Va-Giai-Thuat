@@ -51,14 +51,14 @@ namespace doAn.List
             }
         }
 
-        public void display(ListViewItem a)
+        public void display()
         {
             Program.formMain.lvLop.Items.Clear();
             for (int i = 0; i < length(); i++)
             {
                 if(dsLop[i].namHoc == Convert.ToInt32(Program.formMain.txtNamHoc.Text))
                 {
-                    a = new ListViewItem(dsLop[i].maLop);
+                    ListViewItem a = new ListViewItem(dsLop[i].maLop);
                     // khởi tạo ô đầu tiên của dòng đầu tiên
                     //them cac o tiep theo
                     a.SubItems.Add(dsLop[i].tenLop); // ô2

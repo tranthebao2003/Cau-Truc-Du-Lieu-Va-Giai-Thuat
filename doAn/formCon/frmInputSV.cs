@@ -60,7 +60,6 @@ namespace doAn.formCon
             sv1.ptrDsDiem = objectDsDiem;
 
             // tìm mã lớp mà ng dùng đã chọn trong lvLop
-
             Program.lvItem = Program.formMain.lvLop.SelectedItems[0];
             string maLop = Program.lvItem.SubItems[0].Text;
 
@@ -103,7 +102,7 @@ namespace doAn.formCon
                 result.dssv.add(sv1);
             }
             // hiện thi ra dssv
-            result.dssv.display(Program.lvItem);
+            result.dssv.display();
         }
 
         private void frmInputSV_Load(object sender, EventArgs e)

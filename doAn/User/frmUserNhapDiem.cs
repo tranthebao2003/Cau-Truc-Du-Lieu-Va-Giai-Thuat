@@ -92,15 +92,15 @@ namespace doAn
                 }
 
                 #region Gán dsDiem nhưng chưa có điểm từ file txt
-                DsSinhVien a = result2.dssv;
-                DsSinhVien.Node tmp1 = a.head;
+                DsSinhVien dsTmp = result2.dssv;
+                DsSinhVien.Node nodeTmp1 = dsTmp.head;
 
                 // sau khi chạy xong đoạn code này thi mỗi thằng sv sẽ có 1 ds điểm riêng và ds đó lấy từ file txt
                 string path = "../../DuLieu/DsDiem1.txt";
                 int markDsDiem = 1;
-                while (tmp1 != null) // duyet tu dau den cuoi ds sinh vien
+                while (nodeTmp1 != null) // duyet tu dau den cuoi ds sinh vien
                 {
-                    SinhVien sv1 = tmp1.sv; // luu moi sv vào sv1
+                    SinhVien sv1 = nodeTmp1.sv; // luu moi sv vào sv1
                     DsDiem dsDiem1 = sv1.ptrDsDiem; // luu moi ds diem cua sv1 vào dsDiem1
 
                     //tao moi doi tuong diem1 sau do gan thong tin tu file txt vao no roi add no vao dsDiem1
@@ -123,25 +123,25 @@ namespace doAn
                     {
                         path = "../../DuLieu/DsDiem2.txt";
                         markDsDiem = 0;
-                        tmp1 = tmp1.next;
+                        nodeTmp1 = nodeTmp1.next;
                         continue;
                     }
                     else if (markDsDiem == 0)
                     {
                         path = "../../DuLieu/DsDiem1.txt";
                         markDsDiem = 1;
-                        tmp1 = tmp1.next;
+                        nodeTmp1 = nodeTmp1.next;
                     }
                 }
                 #endregion
 
                 #region Hiển thị những sv dựa vào thông tin user đã nhập
                 // đoạn code này sẽ lọc ra những sv có dsDiem mà trong dsDiem này có ma mon va so lan thi trung vs ma mon va so lan thi ma user nhap vao
-                DsSinhVien.Node tmp2 = a.head;
+                DsSinhVien.Node nodeTmp2 = dsTmp.head;
                 bool mark = false;
-                while (tmp2 != null)
+                while (nodeTmp2 != null)
                 {
-                    SinhVien sv2 = tmp2.sv;
+                    SinhVien sv2 = nodeTmp2.sv;
                     DsDiem.Node tmpDsDiem = sv2.ptrDsDiem.head;
                     while (tmpDsDiem != null)
                     {
@@ -158,7 +158,7 @@ namespace doAn
                         }
                         tmpDsDiem = tmpDsDiem.next;
                     }
-                    tmp2 = tmp2.next;
+                    nodeTmp2 = nodeTmp2.next;
                 }
                 if (mark == false)
                 {

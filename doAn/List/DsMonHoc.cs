@@ -31,7 +31,7 @@ namespace doAn.Object
             this.root = null;
         }
         
-        // ta sẽ in theo ten mon hoc de khi dung inorder thi no se duyet theo thu tu tang dan ten mon hoc
+        // ta sẽ them theo ten mon hoc de khi dung inorder thi no se duyet theo thu tu tang dan ten mon hoc
         // vi them theo ten mon hoc va ma mon hoc ko trung nen ta se rang buoc ten mon hoc va ma mon hoc deu khong duoc trung nhau
         public bool insert(Node temproot, MonHoc e)
         {
@@ -43,14 +43,6 @@ namespace doAn.Object
             {
                 temp = temproot; // 2 thằng này giờ đang lưu trữ địa chỉ của root
                 
-                if (e.maMonHoc.CompareTo(temproot.monHoc.maMonHoc) == 0)  //note
-                {
-                    MessageBox.Show(
-                        "Mã môn học bị trùng!",
-                        "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return false;
-                }
                 if(e.tenMonHoc.CompareTo(temproot.monHoc.tenMonHoc) == 0)
                 {
                     MessageBox.Show(
@@ -102,10 +94,7 @@ namespace doAn.Object
             return rootCanXoa;
         }
 
-        // xóa đc node 1 con và node leaf
-        // phải sử dụng nút ref để tham chiếu đến cây nhị phân thì mới xóa đc node trong cây nhị phân
-        // tempRoot no chính la cai root thực sự lun vì hien tai dang dung ref(tham chieu) vì the no se co quyen thay
-        // the node trong cay
+        // xong khi xoa xong thi ta se cập nhật lại cái node trong cây ban đầu
         public Node removeNode(Node tempRoot, MonHoc e)
         {
             if (tempRoot == null)
@@ -114,6 +103,7 @@ namespace doAn.Object
             }
             else
             {
+                // tìm node cần xóa
                 if (e.tenMonHoc.CompareTo(tempRoot.monHoc.tenMonHoc) == -1)
                 {
                     tempRoot.left = removeNode(tempRoot.left, e);
@@ -127,11 +117,11 @@ namespace doAn.Object
                 // còn nếu là node có 1 con thì nó sẽ lấy node cha của node cần xóa liên kết với node con của node cần xóa
                 else // e == tempRoot.element, đã tìm ra node can xoa
                 {
-                    if (tempRoot.left == null && tempRoot.right == null)
+                    if (tempRoot.left == null && tempRoot.right == null) // đây là trường hợp node cần xóa là node leaf
                     {
                         return null; 
                     }
-                    else if (tempRoot.left == null)
+                    else if (tempRoot.left == null) 
                     {
                         return tempRoot.right;
                     }
@@ -163,14 +153,24 @@ namespace doAn.Object
             return root;
         }
 
+        public void treeSangArray(Node nodeRootTmp, List<MonHoc> listMon) // để phục vụ cho việc dò môn học tránh trùng lặp mã môn
+        {
+            // thuật toán này chỉ đơn giản là ta duyệt inorder rồi add vào list thôi
+            if (nodeRootTmp != null)
+            {
+                treeSangArray(nodeRootTmp.left, listMon);
+                listMon.Add(nodeRootTmp.monHoc);
+                treeSangArray(nodeRootTmp.right, listMon);
+            }
+        }
 
-        public void displayInOrder(Node tmpRoot, ListViewItem a)
+        public void displayInOrder(Node tmpRoot)
         {
             if (tmpRoot != null)
             {
-                displayInOrder(tmpRoot.left, a);
+                displayInOrder(tmpRoot.left);
 
-                a = new ListViewItem(tmpRoot.monHoc.maMonHoc);
+                ListViewItem a = new ListViewItem(tmpRoot.monHoc.maMonHoc);
                 // khởi tạo ô đầu tiên của dòng đầu tiên
                 //them cac o tiep theo
                 a.SubItems.Add(tmpRoot.monHoc.tenMonHoc); // ô2
@@ -178,7 +178,7 @@ namespace doAn.Object
                 a.SubItems.Add(tmpRoot.monHoc.tinChiTH.ToString()); // ô4
                 Program.formMain.lvDsMon.Items.Add(a);
 
-                displayInOrder(tmpRoot.right, a);
+                displayInOrder(tmpRoot.right);
             }
         }
     }

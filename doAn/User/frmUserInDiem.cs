@@ -57,11 +57,6 @@ namespace doAn.User
                     return;
                 }
 
-                // dùng bien chinh cua chuong trinh de luu nhung gia tri nay de su dung cho frmBangDiem
-                //Program.maLop = maLopNhapVao;
-                //Program.maMon = maMonNhapVao;
-                //Program.lanThi = lanThiNhapVao.ToString();
-
 
                 Lop result2 = new Lop();
                 // dò mã lớp đó vs all mã lớp trong ds lop
@@ -92,7 +87,7 @@ namespace doAn.User
                 bangDiemDaThi1.lblOutputLanThi.Text = txtInPutLanThi.Text;
 
                 int countDsMon = Program.formMain.lvDsMon.Items.Count;
-                
+
                 // tóm lại đoạn code này dug de in ra dc ten mon hoc từ mã mon học và dựa vào ds Môn
                 if (countDsMon > 0) // kiểm tra ng dùng đã nhập ds Môn chưa?
                 {
@@ -119,15 +114,16 @@ namespace doAn.User
                 }
                 #endregion
 
+
                 // PHẦN CHÍNH
 
                 // đoạn code này sẽ lọc ra những sv có dsDiem mà trong dsDiem này có ma mon va so lan thi trung vs ma mon va so lan thi ma user nhap vao
-                DsSinhVien a = result2.dssv;
-                DsSinhVien.Node tmp2 = a.head;
+                DsSinhVien tmpDsSv = result2.dssv;
+                DsSinhVien.Node tmpNodeSv2 = tmpDsSv.head;
                 bool mark = false;
-                while (tmp2 != null)
+                while (tmpNodeSv2 != null)
                 {
-                    SinhVien sv2 = tmp2.sv;
+                    SinhVien sv2 = tmpNodeSv2.sv;
                     DsDiem.Node tmpDsDiem = sv2.ptrDsDiem.head;
                     while (tmpDsDiem != null)
                     {
@@ -139,13 +135,12 @@ namespace doAn.User
                             lvItemTmp.SubItems.Add(sv2.ten);
                             lvItemTmp.SubItems.Add(diem2.diem.ToString());
                             bangDiemDaThi1.lvBangDiemDaThi.Items.Add(lvItemTmp);
-                            //lvItemTmp.SubItems.Clear();
                             mark = true;
-                            break; // đã tìm thấy diêm phù hợp vs thằng sv nên thoát thôi ko cần dò nữa
+                            break; // đã tìm thấy điểm phù hợp vs thằng sv nên thoát thôi ko cần dò nữa
                         }
                         tmpDsDiem = tmpDsDiem.next;
                     }
-                    tmp2 = tmp2.next;
+                    tmpNodeSv2 = tmpNodeSv2.next;
                 }
                 if (mark == false)
                 {

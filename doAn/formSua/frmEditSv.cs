@@ -55,7 +55,8 @@ namespace doAn.formSua
                     }
                 }
                 result.dssv.editSv(sv1);
-                result.dssv.display(Program.lvItem);
+                result.dssv.display(/*Program.lvItem*/);
+
             }
             else
             {
